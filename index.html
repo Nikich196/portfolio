@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Никита Сацюк — разработка и дизайн</title>
+<meta name="description" content="Сайты, веб- и мобильные приложения, Telegram-боты, ИИ-автоматизация, дизайн и работа с документами. Быстро и под ключ.">
+<meta property="og:title" content="Никита Сацюк — разработка и дизайн">
+<meta property="og:description" content="Сайты, приложения, боты, ИИ-автоматизация, дизайн, документы. Результат до оплаты.">
+<meta property="og:image" content="img/bloomly-banner.jpg">
+<link rel="icon" href="img/bloomly-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f5; --surface: #ffffff; --text: #1b1a19; --muted: #6b6762;
+    --line: #e8e3dc; --accent: #b0456b; --accent-soft: #f6e7ed; --chip: #f1ede7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #131211; --surface: #1c1b19; --text: #f2efe9; --muted: #a39e96;
+      --line: #2e2c29; --accent: #e07ba0; --accent-soft: #2c1c23; --chip: #26241f; }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 Inter, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; letter-spacing: -0.01em; margin: 0; }
+  header { padding: 72px 0 56px; }
+  .kicker { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.05; margin: 14px 0 18px; }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lead { font-size: 19px; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px;
+    text-decoration: none; font-weight: 500; border: 1px solid var(--line); background: var(--surface); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn:hover { transform: translateY(-1px); }
+  section { padding: 48px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: clamp(26px, 3.6vw, 36px); margin-bottom: 26px; }
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+  .card h3 { font-size: 20px; margin-bottom: 6px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .work { display: grid; gap: 28px; grid-template-columns: 1fr; margin-bottom: 44px; }
+  @media (min-width: 860px) { .work { grid-template-columns: 5fr 7fr; align-items: start; } }
+  .work h3 { font-size: 28px; margin-bottom: 4px; }
+  .tag { display: inline-block; font-size: 13px; color: var(--accent); background: var(--accent-soft);
+    padding: 3px 10px; border-radius: 999px; margin-bottom: 12px; }
+  .work p { margin: 0 0 12px; color: var(--muted); }
+  .work ul { margin: 0 0 14px; padding-left: 18px; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .chips span { font-size: 13px; background: var(--chip); padding: 4px 10px; border-radius: 8px; }
+  .links a { font-weight: 500; margin-right: 16px; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  .shot { width: 100%; border-radius: 16px; border: 1px solid var(--line); display: block; }
+  .phones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px; }
+  .phones img { width: 100%; border-radius: 14px; border: 1px solid var(--line); display: block; }
+  .steps { counter-reset: s; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .steps .card::before { counter-increment: s; content: counter(s); font-family: Fraunces, serif;
+    font-size: 30px; color: var(--accent); display: block; margin-bottom: 4px; }
+  footer { padding: 48px 0 64px; border-top: 1px solid var(--line); }
+  footer p { color: var(--muted); margin: 0 0 18px; }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="kicker">Брест · удалённо · RU / EN</div>
+  <h1>Никита Сацюк — <em>разработка и дизайн</em> под ключ</h1>
+  <p class="lead">Сайты, веб- и мобильные приложения, Telegram-боты, ИИ-автоматизация, дизайн и любая работа с документами и данными. Быстро, аккуратно, с результатом до оплаты.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://t.me/Nikich1405">Написать в Telegram</a>
+    <a class="btn" href="mailto:nikich.2018.s@gmail.com">nikich.2018.s@gmail.com</a>
+    <a class="btn" href="https://github.com/Nikich196">GitHub</a>
+  </div>
+</header>
+
+<section class="wrap" id="services">
+  <h2>Что делаю</h2>
+  <div class="grid">
+    <div class="card"><h3>Сайты и веб-приложения</h3><p>Лендинги, корпоративные сайты, личные кабинеты, админки. Next.js, React, правки на Tilda и WordPress.</p></div>
+    <div class="card"><h3>Мобильные приложения</h3><p>React Native / Expo и SwiftUI: от экранов до выкладки в App Store и Google Play.</p></div>
+    <div class="card"><h3>Боты, парсеры, интеграции</h3><p>Telegram-боты, сбор данных с сайтов, связка сервисов по API, CRM и таблиц.</p></div>
+    <div class="card"><h3>ИИ-агенты и автоматизация</h3><p>Ассистенты на Claude и GPT, ответы по вашим документам (RAG), автопостинг, разбор заявок.</p></div>
+    <div class="card"><h3>Дизайн</h3><p>Логотипы, баннеры, иконки, обложки, витрины для сторов, интерфейсы. За плечами художественная школа.</p></div>
+    <div class="card"><h3>Документы и тексты</h3><p>Word, PDF, Excel: оформление, вёрстка, таблицы и формулы, презентации, редактура, сбор и обработка данных.</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="works">
+  <h2>Работы</h2>
+
+  <div class="work">
+    <div>
+      <span class="tag">Свой продукт · веб + мобильное</span>
+      <h3>Bloomly</h3>
+      <p>Маркетплейс цветочных подписок: клиент выбирает магазин, ритм и бюджет, флорист получает заказы в своём кабинете. Продукт, архитектура, дизайн и бренд — мои.</p>
+      <ul>
+        <li>База на Supabase: 65 таблиц, 162 RLS-политики, 70 функций на PL/pgSQL</li>
+        <li>Веб: 84 страницы на Next.js 16 и React 19</li>
+        <li>Мобильное приложение на Expo: 44 экрана, тёмная тема, RU / EN</li>
+      </ul>
+      <div class="chips"><span>Next.js</span><span>React</span><span>Supabase</span><span>PostgreSQL</span><span>Expo</span><span>Дизайн</span></div>
+    </div>
+    <div>
+      <img class="shot" src="img/bloomly-banner.jpg" alt="Баннер Bloomly для Google Play" loading="lazy">
+      <div class="phones">
+        <img src="img/bloomly-01_home.jpg" alt="Главный экран Bloomly" loading="lazy">
+        <img src="img/bloomly-02_bouquets.jpg" alt="Каталог букетов" loading="lazy">
+        <img src="img/bloomly-04_shop.jpg" alt="Страница магазина" loading="lazy">
+        <img src="img/bloomly-08_dark.jpg" alt="Тёмная тема" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <div class="work">
+    <div>
+      <span class="tag">iOS-игра · в разработке</span>
+      <h3>Городки</h3>
+      <p>Спортивная игра о захвате Бреста: обеги участок — и он твой, ровно по контуру следа. Туман над городом, тайники, кланы и дуэли. Проект вдвоём: на мне продукт, дизайн и iOS-приложение.</p>
+      <div class="chips"><span>Swift 6</span><span>SwiftUI</span><span>MapKit</span><span>Core Location</span><span>ASP.NET Core</span><span>PostGIS</span></div>
+      <div class="links"><a href="https://github.com/Nikich196/gorodki">Код на GitHub</a></div>
+    </div>
+    <div class="card"><p><strong>Механика:</strong> трек пробежки превращается в полигон на карте; пересечение с чужой территорией ослабляет её и переводит к вам. Засчитываются только ходьба, бег и велосипед — машина никогда.</p></div>
+  </div>
+
+  <div class="work">
+    <div>
+      <span class="tag">Telegram-бот · облако</span>
+      <h3>Личный ИИ-ассистент в Telegram</h3>
+      <p>Бот работает 24/7 без своего сервера: Cloudflare Workers и Durable Objects. Режимы ИИ-чата, расшифровка голосовых, очередь задач с отметками статуса.</p>
+      <div class="chips"><span>Cloudflare Workers</span><span>Durable Objects</span><span>Telegram Bot API</span><span>LLM</span><span>Python</span></div>
+    </div>
+    <div class="card"><p>Сообщения попадают в очередь, обработчик забирает их и отвечает; если обработчик офлайн, бот сам сообщает, что задача сохранена. Расшифровка голосовых — через облачные модели.</p></div>
+  </div>
+
+  <div class="work">
+    <div>
+      <span class="tag">Бэкенд · API</span>
+      <h3>Цифровая визитка на GraphQL</h3>
+      <p>Сервис-анкета, которая отдаётся одним запросом любой вложенности. Без N+1 (DataLoader), с ограничением глубины запроса, чистыми ошибками и запуском в Docker.</p>
+      <div class="chips"><span>NestJS</span><span>GraphQL</span><span>Prisma</span><span>PostgreSQL</span><span>Docker</span></div>
+      <div class="links"><a href="https://digital-card-eight-ochre.vercel.app/">Живое демо</a><a href="https://github.com/Nikich196/digital-card">Код</a></div>
+    </div>
+    <img class="shot" src="img/dcard.jpg" alt="Страница сервиса Цифровая визитка" loading="lazy">
+  </div>
+
+  <div class="work">
+    <div>
+      <span class="tag">Серия лендингов</span>
+      <h3>40+ персональных КП для бизнеса Бреста</h3>
+      <p>Для каждого заведения — своя страница-предложение с его названием и болью. Страницы собираются из данных автоматически и лежат на GitHub Pages.</p>
+      <div class="chips"><span>HTML / CSS</span><span>Генерация из данных</span><span>Копирайтинг</span></div>
+      <div class="links"><a href="https://github.com/Nikich196/kp">Код на GitHub</a></div>
+    </div>
+    <img class="shot" src="img/kp1.jpg" alt="Пример страницы коммерческого предложения" loading="lazy">
+  </div>
+
+  <div class="work">
+    <div>
+      <span class="tag">Сайт для клиента</span>
+      <h3>Новадар</h3>
+      <p>Сайт-визитка оптовой компании: двуязычный (RU / EN), спокойные анимации, аналитика с согласием на cookies.</p>
+      <div class="chips"><span>Next.js</span><span>Tailwind</span><span>next-intl</span></div>
+      <div class="links"><a href="https://novadar.vercel.app/">Открыть сайт</a></div>
+    </div>
+    <img class="shot" src="img/novadar.jpg" alt="Главная страница сайта Новадар" loading="lazy">
+  </div>
+</section>
+
+<section class="wrap" id="how">
+  <h2>Как работаю</h2>
+  <div class="steps">
+    <div class="card"><h3>Разбираюсь в задаче</h3><p>Задаю вопросы по делу, предлагаю решение, называю срок и цену.</p></div>
+    <div class="card"><h3>Показываю быстро</h3><p>Первый результат — обычно в тот же или на следующий день.</p></div>
+    <div class="card"><h3>Оплата после результата</h3><p>Не подошло — не платите. Работаю с платными ИИ-моделями для скорости, но каждую строку и деталь проверяю сам.</p></div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <h2>Есть задача?</h2>
+  <p>Напишите в Telegram или на почту — отвечаю быстро.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://t.me/Nikich1405">Telegram @Nikich1405</a>
+    <a class="btn" href="mailto:nikich.2018.s@gmail.com">nikich.2018.s@gmail.com</a>
+  </div>
+</footer>
+</body>
+</html>
