@@ -23,22 +23,22 @@
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--bg); color: var(--text);
+  body { margin: 0; overflow-wrap: break-word; background: var(--bg); color: var(--text);
     font: 16px/1.6 Inter, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
   a { color: inherit; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
   h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; letter-spacing: -0.01em; margin: 0; }
-  header { padding: 72px 0 56px; }
+  header.wrap { padding-top: 72px; padding-bottom: 56px; }
   .kicker { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
   h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.05; margin: 14px 0 18px; }
   h1 em { font-style: italic; color: var(--accent); }
   .lead { font-size: 19px; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
   .btns { display: flex; flex-wrap: wrap; gap: 10px; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px;
+  .btn { max-width: 100%; display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px;
     text-decoration: none; font-weight: 500; border: 1px solid var(--line); background: var(--surface); }
   .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
   .btn:hover { transform: translateY(-1px); }
-  section { padding: 48px 0; border-top: 1px solid var(--line); }
+  section.wrap { padding-top: 52px; padding-bottom: 52px; border-top: 1px solid var(--line); }
   h2 { font-size: clamp(26px, 3.6vw, 36px); margin-bottom: 26px; }
   .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
@@ -60,7 +60,7 @@
   .steps { counter-reset: s; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
   .steps .card::before { counter-increment: s; content: counter(s); font-family: Fraunces, serif;
     font-size: 30px; color: var(--accent); display: block; margin-bottom: 4px; }
-  footer { padding: 48px 0 64px; border-top: 1px solid var(--line); }
+  footer.wrap { padding-top: 52px; padding-bottom: 72px; border-top: 1px solid var(--line); }
   footer p { color: var(--muted); margin: 0 0 18px; }
 </style>
 </head>
