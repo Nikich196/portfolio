@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AURUM — ювелирная мастерская · концепт</title>
+<meta name="description" content="Концепт сайта для вымышленной ювелирной мастерской AURUM (Минск): кольца, серьги и подвески из золота и серебра ручной работы. Дизайн и разработка — Никита Сацюк.">
+<meta name="theme-color" content="#0d0a07">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="AURUM — ювелирная мастерская · концепт">
+<meta property="og:description" content="Концепт-проект: сайт ювелирной мастерской ручной работы. Дизайн и разработка — Никита Сацюк.">
+<meta property="og:image" content="https://nikich196.github.io/portfolio/works/aurum/assets/preview-desktop.png">
+<meta property="og:image:width" content="1440">
+<meta property="og:image:height" content="900">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0a07'/%3E%3Ccircle cx='32' cy='37' r='14' fill='none' stroke='%23c8a464' stroke-width='4'/%3E%3Cpath d='M32 9l7 7-7 7-7-7z' fill='%23e3c78f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero.jpg">
+<script>
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      d.classList.add('motion', 'is-loading');
+      // если библиотеки не загрузились — показываем статичную версию
+      setTimeout(function () {
+        if (!window.__aurum) { d.classList.remove('motion', 'is-loading'); }
+      }, 7000);
+    }
+  })();
+</script>
+<style>
+  :root {
+    --ink: #0d0a07;
+    --ink-2: #15100b;
+    --cream: #ece3d3;
+    --gold: #c8a464;
+    --gold-2: #e3c78f;
+    --gold-3: #8c6a2e;
+    --bg: #0d0a07;
+    --fg: #ece3d3;
+    --fg-soft: rgba(236, 227, 211, .62);
+    --line: rgba(236, 227, 211, .14);
+    --accent: #c8a464;
+    --serif: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+    --sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --pad: max(20px, 6vw);
+    --ease-out: cubic-bezier(.19, 1, .22, 1);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { background: #0d0a07; transition: background-color .9s cubic-bezier(.65, 0, .35, 1); -webkit-text-size-adjust: 100%; }
+  html.bg-light { background: #ece3d3; }
+  html.is-light { --bg: #ece3d3; --fg: #1a140e; --fg-soft: rgba(26,20,14,0.68); --line: rgba(26,20,14,0.16); }
+  body {
+    margin: 0; background: transparent; color: var(--fg);
+    font: 400 16px/1.65 var(--sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip; text-rendering: optimizeLegibility;
+  }
+  html.is-loading, html.is-loading body { overflow: hidden; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  ::selection { background: var(--gold); color: var(--ink); }
+  :focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
+  em { font-style: italic; }
+
+  /* Lenis */
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+  .lenis.lenis-stopped { overflow: hidden; }
+
+  .container { width: 100%; max-width: 1560px; margin: 0 auto; padding-inline: var(--pad); }
+  .label {
+    display: inline-flex; align-items: center; gap: 14px; margin: 0 0 28px;
+    font: 500 12px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--accent);
+  }
+  .label::before { content: ""; width: 34px; height: 1px; background: currentColor; opacity: .7; }
+  .h2 {
+    margin: 0; font: 300 clamp(46px, 6.4vw, 112px)/.95 var(--serif); letter-spacing: -.015em;
+  }
+  .h2 em, .hero__title em, .hero__after em { color: var(--gold-2); font-weight: 300; }
+  .line { display: block; overflow: hidden; padding: 0 .12em .14em 0; margin-bottom: -.14em; }
+  .line__in { display: block; will-change: transform; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    min-height: 54px; padding: 0 30px; border-radius: 999px; border: 1px solid var(--line);
+    font: 500 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; cursor: pointer;
+    background: transparent; white-space: nowrap; isolation: isolate; overflow: hidden;
+    transition: color .5s var(--ease-out), border-color .5s var(--ease-out);
+  }
+  .btn::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--gold);
+    transform: translateY(101%); transition: transform .6s var(--ease-out);
+  }
+  .btn:hover::before { transform: translateY(0); }
+  .btn:hover { color: var(--ink); border-color: var(--gold); }
+  .btn__label { display: inline-flex; align-items: center; gap: 12px; pointer-events: none; }
+  .btn--gold { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+  .btn--gold::before { background: var(--gold-2); }
+  .btn--sm { min-height: 44px; padding: 0 22px; font-size: 12px; }
+  .btn--block { width: 100%; }
+  .arrow { display: inline-block; transition: transform .5s var(--ease-out); }
+  .btn:hover .arrow, .link-arrow:hover .arrow { transform: translateX(5px); }
+  .link-arrow {
+    display: inline-flex; align-items: center; gap: 10px; padding: 0 0 6px; border: 0; background: none; cursor: pointer;
+    font: 500 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
+    background-image: linear-gradient(currentColor, currentColor); background-size: 100% 1px; background-position: 0 100%; background-repeat: no-repeat;
+    transition: background-size .6s var(--ease-out);
+  }
+  .link-arrow:hover { background-size: 30% 1px; }
+
+  /* ---------- Grain ---------- */
+  .grain {
+    position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .05; transform: translateZ(0);
+    background: url(assets/grain.png) repeat; background-size: 160px 160px;
+  }
+
+  /* ---------- Loader ---------- */
+  .loader { display: none; }
+  html.motion .loader {
+    position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: var(--ink); color: var(--cream);
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  .loader__inner { width: min(560px, 80vw); }
+  .loader__word { display: flex; justify-content: space-between; overflow: hidden; font: 300 clamp(56px, 10vw, 128px)/1 var(--serif); letter-spacing: .04em; padding-bottom: .06em; }
+  .loader__word span { display: block; transform: translateY(110%); }
+  .loader__bar { height: 1px; margin-top: 22px; background: rgba(236, 227, 211, .14); }
+  .loader__bar i { display: block; height: 100%; background: var(--gold); transform: scaleX(0); transform-origin: 0 50%; }
+  .loader__meta { display: flex; justify-content: space-between; margin-top: 14px; font: 500 11px/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; color: rgba(236, 227, 211, .55); }
+
+  /* ---------- Cursor ---------- */
+  .cursor { display: none; }
+  html.has-cursor .cursor { display: block; position: fixed; inset: 0 auto auto 0; z-index: 95; pointer-events: none; }
+  html.has-cursor, html.has-cursor * { cursor: none !important; }
+  html.has-cursor input, html.has-cursor textarea, html.has-cursor select { cursor: text !important; }
+  .cursor__ring, .cursor__dot { position: fixed; top: 0; left: 0; opacity: 0; transition: opacity .3s; }
+  .cursor.is-on .cursor__ring, .cursor.is-on .cursor__dot { opacity: 1; }
+  .cursor__circle {
+    display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid rgba(200, 164, 100, .75); background: rgba(200, 164, 100, 0);
+    transition: width .45s var(--ease-out), height .45s var(--ease-out), background-color .45s, border-color .45s;
+  }
+  .cursor__label { font: 600 10px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--ink); opacity: 0; transition: opacity .3s; white-space: nowrap; }
+  .cursor__dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold-2); }
+  .cursor.is-link .cursor__circle { width: 66px; height: 66px; background: rgba(200, 164, 100, .14); border-color: rgba(200, 164, 100, .45); }
+  .cursor.is-view .cursor__circle { width: 96px; height: 96px; background: var(--gold); border-color: var(--gold); }
+  .cursor.is-view .cursor__label { opacity: 1; }
+  .cursor.is-view .cursor__dot, .cursor.is-text .cursor__dot { opacity: 0; }
+  .cursor.is-text .cursor__circle { width: 6px; height: 6px; border-color: transparent; }
+  .cursor.is-down .cursor__circle { width: 30px; height: 30px; }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+    transition: transform .7s var(--ease-out), background-color .5s;
+  }
+  .nav.is-scrolled { background: color-mix(in srgb, var(--bg) 94%, transparent); }
+  .nav.is-hidden { transform: translateY(-105%); }
+  .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px var(--pad); }
+  .nav__logo { display: inline-flex; align-items: flex-start; gap: 8px; font: 400 25px/1 var(--serif); letter-spacing: .32em; }
+  .nav__logo sup { font: 500 9px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--fg-soft); padding: 3px 7px; border: 1px solid var(--line); border-radius: 999px; margin-top: -2px; }
+  .nav__links { display: flex; gap: 38px; font: 500 12px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; }
+  .nav__links a { position: relative; padding: 6px 0; }
+  .nav__links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: 100% 50%; transition: transform .6s var(--ease-out); }
+  .nav__links a:hover::after { transform: scaleX(1); transform-origin: 0 50%; }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; height: 100vh; height: 100svh; min-height: 560px; }
+  .hero__stage {
+    position: relative; height: 100%; overflow: hidden;
+    --at: 16vh; --ab: 8vh; --ar: 8.5vw; --aw: min(30vw, 62vh); --al: calc(100vw - var(--ar) - var(--aw));
+  }
+  .hero__media {
+    position: absolute; inset: 0; will-change: clip-path;
+    clip-path: inset(var(--at) var(--ar) var(--ab) var(--al) round calc(var(--aw) / 2) calc(var(--aw) / 2) 0 0);
+  }
+  .hero__reveal, .hero__img-wrap { position: absolute; inset: 0; }
+  .hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; will-change: transform; }
+  .hero__shade { position: absolute; inset: 0; background: radial-gradient(60% 45% at 50% 50%, rgba(13, 10, 7, .55), transparent 75%), linear-gradient(180deg, rgba(13, 10, 7, .55) 0%, rgba(13, 10, 7, .3) 45%, rgba(13, 10, 7, .85) 100%); opacity: 0; }
+  html:not(.motion) .hero__img-wrap { inset: var(--at) var(--ar) var(--ab) var(--al); }
+  html:not(.motion) .hero__img { object-position: 47% 63%; }
+  .hero__content { position: absolute; inset: 0; padding: 0 var(--pad); pointer-events: none; }
+  .hero__content a { pointer-events: auto; }
+  .hero__meta { position: absolute; left: var(--pad); top: 19vh; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 14px; margin: 0; font: 500 12px/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; color: var(--fg-soft); }
+  .eyebrow .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+  .hero__title {
+    position: absolute; left: var(--pad); top: calc(19vh + 34px); margin: 0;
+    font: 300 clamp(54px, 8.6vw, 158px)/.93 var(--serif); letter-spacing: -.02em;
+  }
+  .hero__title .line:nth-child(3) { padding-left: 1.1em; }
+  .hero__foot { position: absolute; left: var(--pad); bottom: 8vh; display: flex; align-items: center; gap: 40px; max-width: calc(100vw - var(--ar) - var(--aw) - 2 * var(--pad) - 60px); }
+  .hero__lead { margin: 0; max-width: 36ch; font-size: 15px; line-height: 1.7; color: var(--fg-soft); }
+  .badge-wrap { position: absolute; left: calc(var(--al) - 62px); bottom: calc(var(--ab) + 36px); z-index: 3; }
+  .badge { position: relative; display: grid; place-items: center; width: 124px; height: 124px; border-radius: 50%; background: var(--ink); color: var(--cream); }
+  .badge svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 22s linear infinite; }
+  .badge text { font: 500 9.4px var(--sans); letter-spacing: .26em; text-transform: uppercase; fill: currentColor; }
+  .badge__arrow { font: 300 30px/1 var(--serif); color: var(--gold-2); transition: transform .6s var(--ease-out); }
+  .badge:hover .badge__arrow { transform: translateY(6px); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .hero__after { display: none; }
+  html.motion .hero__after {
+    display: block; position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); z-index: 2; margin: 0; padding: 0 var(--pad);
+    text-align: center; font: 300 clamp(40px, 6.2vw, 108px)/.98 var(--serif); letter-spacing: -.015em; pointer-events: none;
+  }
+  html.motion .hero__after .line { padding-right: 0; }
+  .hero__scroll-wrap { position: absolute; right: 2.6vw; bottom: 8vh; }
+  .hero__scroll { display: flex; flex-direction: column; align-items: center; gap: 14px; font: 500 10px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--fg-soft); }
+  .hero__scroll span { writing-mode: vertical-rl; }
+  .hero__scroll i { position: relative; width: 1px; height: 64px; background: var(--line); overflow: hidden; }
+  .hero__scroll i::after { content: ""; position: absolute; inset: 0; background: var(--gold); animation: drip 2.2s var(--ease-out) infinite; }
+  @keyframes drip { 0% { transform: translateY(-100%); } 60%, 100% { transform: translateY(100%); } }
+
+  /* ---------- Marquee ---------- */
+  .marquee { position: relative; padding: clamp(28px, 4vw, 54px) 0; border-block: 1px solid var(--line); overflow: hidden; }
+  .marquee__track { display: flex; width: max-content; will-change: transform; }
+  .marquee__group { display: flex; align-items: center; flex-shrink: 0; }
+  .marquee__item { display: inline-flex; align-items: center; gap: clamp(22px, 3vw, 48px); padding-right: clamp(22px, 3vw, 48px); font: 300 clamp(34px, 5.2vw, 84px)/1.1 var(--serif); font-style: italic; white-space: nowrap; }
+  .marquee__item:nth-child(even) .marquee__text { color: transparent; -webkit-text-stroke: 1px var(--gold); }
+  .marquee__star { font-style: normal; font-size: .42em; color: var(--gold); }
+  html:not(.motion) .marquee__track { width: auto; justify-content: center; }
+  html:not(.motion) .marquee__group { flex-wrap: wrap; justify-content: center; flex-shrink: 1; padding-inline: var(--pad); }
+  html:not(.motion) .marquee__group[aria-hidden] { display: none; }
+
+  /* ---------- Manifesto ---------- */
+  .manifesto { padding: clamp(110px, 16vw, 230px) 0 clamp(70px, 8vw, 120px); }
+  .manifesto__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 24px; }
+  .manifesto .label { grid-column: 1 / -1; }
+  .manifesto__text { grid-column: 1 / span 11; margin: 0; font: 300 clamp(32px, 4.3vw, 72px)/1.12 var(--serif); letter-spacing: -.01em; }
+  .manifesto__text em { color: var(--gold-2); }
+  .mw { display: inline; }
+  .manifesto__aside { grid-column: 8 / span 4; margin-top: clamp(40px, 5vw, 80px); color: var(--fg-soft); }
+  .manifesto__aside p { margin: 0 0 26px; }
+  .manifesto__aside .link-arrow { color: var(--fg); }
+
+  /* ---------- Collection ---------- */
+  .collection { position: relative; }
+  .collection__pin { position: relative; padding: clamp(40px, 6vw, 90px) 0; }
+  .collection__rail { display: block; }
+  .collection__head { padding-inline: var(--pad); margin-bottom: 40px; }
+  .collection__head .h2 { font-style: italic; }
+  .collection__intro { max-width: 40ch; margin: 26px 0 0; color: var(--fg-soft); }
+  .collection__hint { display: inline-flex; align-items: center; gap: 12px; margin-top: 30px; font: 500 11px/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; color: var(--accent); }
+  .collection__hint i { width: 46px; height: 1px; background: currentColor; }
+  .collection__track {
+    display: flex; align-items: flex-start; gap: 18px; padding: 10px var(--pad) 24px; overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; scroll-padding-inline: var(--pad); scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .collection__track::-webkit-scrollbar { display: none; }
+  .card { position: relative; flex: 0 0 auto; scroll-snap-align: start; }
+  .card__media { position: relative; overflow: hidden; border-radius: 2px; background: #d8d3cb; outline: 1px solid transparent; outline-offset: 7px; transition: box-shadow .7s var(--ease-out), outline-color .7s var(--ease-out); }
+  .card--sq { width: 76vw; }
+  .card--tall { width: 58vw; }
+  .card__media { width: 100%; }
+  .card--sq .card__media { aspect-ratio: 1 / 1; }
+  .card--tall .card__media { aspect-ratio: 9 / 16; }
+  .card__img-wrap { position: absolute; inset: 0; transition: transform 1.2s var(--ease-out); }
+  .card__media img { position: absolute; top: 0; left: 0; width: 100%; max-width: none; height: 100%; object-fit: cover; }
+  .card__media::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .6s;
+    background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 40%), rgba(255, 236, 196, .38), transparent 62%);
+  }
+  .card__meta { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 8px 14px; padding-top: 18px; }
+  .card__title { grid-column: 2 / -1; }
+  .card__mat { grid-column: 2; grid-row: 2; }
+  .card__price { grid-column: 3; grid-row: 2; }
+  .card__num { font: 500 11px/1 var(--sans); letter-spacing: .12em; color: var(--accent); }
+  .card__title { margin: 0; font: 400 clamp(24px, 2vw, 30px)/1.1 var(--serif); }
+  .card__price { font: 500 14px/1 var(--sans); white-space: nowrap; }
+  .card__mat { margin: 0; font: 500 11px/1.5 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--fg-soft); }
+  .card--cta {
+    width: 72vw; aspect-ratio: 4 / 5; display: flex; flex-direction: column; justify-content: space-between; padding: 30px;
+    border: 1px solid rgba(200, 164, 100, .45); border-radius: 2px; background: radial-gradient(120% 90% at 0% 0%, rgba(200, 164, 100, .14), transparent 60%);
+    transition: border-color .6s, box-shadow .7s var(--ease-out);
+  }
+  .card--cta .card__kicker { font: 500 11px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+  .card--cta .card__big { margin: 0; font: 300 clamp(40px, 3.4vw, 58px)/1 var(--serif); font-style: italic; color: var(--gold-2); }
+  .card--cta p { margin: 18px 0 0; color: var(--fg-soft); font-size: 15px; }
+  .card--cta:hover { border-color: var(--gold); box-shadow: 0 40px 90px -40px rgba(200, 164, 100, .55); }
+  @media (hover: hover) {
+    .card:hover .card__img-wrap { transform: scale(1.05); }
+    .card:hover .card__media { outline-color: rgba(200, 164, 100, .4); box-shadow: 0 0 0 1px rgba(200, 164, 100, .5), 0 40px 90px -34px rgba(200, 164, 100, .55); }
+    .card:hover .card__media::after { opacity: 1; mix-blend-mode: soft-light; }
+  }
+  .collection__progress { display: flex; align-items: center; gap: 18px; padding: 8px var(--pad) 0; font: 500 11px/1 var(--sans); letter-spacing: .18em; color: var(--fg-soft); }
+  .collection__bar { position: relative; flex: 0 0 160px; height: 1px; background: var(--line); overflow: hidden; }
+  .collection__bar i { position: absolute; inset: 0; background: var(--gold); transform: scaleX(0); transform-origin: 0 50%; }
+
+  /* ---------- Workshop ---------- */
+  .workshop { padding: clamp(110px, 14vw, 210px) 0 clamp(90px, 10vw, 150px); }
+  html:not(.motion) .workshop { --fg: #1a140e; --fg-soft: rgba(26, 20, 14, .68); --line: rgba(26, 20, 14, .16); background: var(--cream); color: var(--fg); }
+  .workshop { --accent: var(--gold-3); }
+  .workshop__title { max-width: none; }
+  .workshop__title em { color: var(--gold-3); }
+  .workshop__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 24px; margin-top: clamp(60px, 7vw, 110px); align-items: start; }
+  .workshop__photo { grid-column: 1 / span 6; margin: 0; }
+  .frame { position: relative; overflow: hidden; border-radius: 2px; }
+  .frame img { width: 100%; height: 100%; object-fit: cover; }
+  .workshop__photo .frame { aspect-ratio: 9 / 10; }
+  .workshop__photo .frame img { height: 118%; margin-top: -9%; }
+  figcaption { margin-top: 14px; font: 500 11px/1.5 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--fg-soft); }
+  .workshop__body { grid-column: 8 / span 5; padding-top: clamp(0px, 4vw, 70px); }
+  .workshop__text { margin: 0; font-size: clamp(16px, 1.25vw, 19px); line-height: 1.75; }
+  .workshop__text .line { padding-bottom: 0; margin-bottom: 0; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 24px; margin: clamp(44px, 5vw, 70px) 0 0; }
+  .stat { border-top: 1px solid var(--line); padding-top: 18px; }
+  .stat dt { font: 300 clamp(50px, 5vw, 84px)/1 var(--serif); letter-spacing: -.02em; color: var(--accent); white-space: nowrap; }
+  .stat dd { margin: 10px 0 0; font-size: 14px; color: var(--fg-soft); }
+  .interlude { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 24px; align-items: center; margin-top: clamp(80px, 9vw, 150px); }
+  .interlude__quote { grid-column: 1 / span 6; margin: 0; font: 300 clamp(34px, 3.6vw, 62px)/1.08 var(--serif); letter-spacing: -.01em; }
+  .interlude__quote em { color: var(--gold-3); }
+  .interlude__img { grid-column: 7 / span 6; margin: 0; }
+  .interlude__img img { width: 100%; height: auto; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(closest-side, #000 75%, transparent 100%); mask-image: radial-gradient(closest-side, #000 75%, transparent 100%); }
+  .steps { list-style: none; margin: clamp(90px, 10vw, 160px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .step { position: relative; padding-top: 26px; }
+  .step::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--fg); opacity: .25; transform-origin: 0 50%; transform: scaleX(var(--draw, 1)); }
+  .step__num { font: 300 italic 40px/1 var(--serif); color: var(--accent); }
+  .step h3 { margin: 18px 0 10px; font: 400 30px/1.1 var(--serif); }
+  .step p { margin: 0; color: var(--fg-soft); font-size: 15px; }
+
+  /* ---------- Fitting ---------- */
+  .fitting { padding: clamp(90px, 9vw, 140px) 0 clamp(90px, 10vw, 160px); }
+  .fitting__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 24px; align-items: start; }
+  .fitting__info { grid-column: 1 / span 5; }
+  .fitting__text { margin: 30px 0 0; max-width: 42ch; color: var(--fg-soft); }
+  .facts { list-style: none; margin: 40px 0 0; padding: 0; }
+  .facts li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 16px 0; border-top: 1px solid var(--line); font-size: 15px; }
+  .facts li:last-child { border-bottom: 1px solid var(--line); }
+  .facts span { font: 500 11px/1.9 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .fitting__photo { margin: 54px 0 0; width: min(100%, 340px); }
+  .fitting__photo .frame { aspect-ratio: 3 / 4; border-radius: 999px 999px 2px 2px; }
+  .fitting__formwrap { grid-column: 7 / span 6; position: relative; }
+  .panel { position: relative; padding: clamp(28px, 4vw, 56px); border: 1px solid var(--line); border-radius: 3px; background: linear-gradient(160deg, rgba(236, 227, 211, .05), rgba(236, 227, 211, .015)); }
+  .panel__title { margin: 0 0 8px; font: 300 clamp(32px, 2.6vw, 44px)/1.05 var(--serif); }
+  .panel__sub { margin: 0 0 34px; color: var(--fg-soft); font-size: 15px; }
+  .form { color-scheme: dark; }
+  .field { position: relative; margin-bottom: 26px; }
+  .field input, .field textarea, .field select {
+    width: 100%; padding: 26px 0 12px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; outline: none;
+    font-size: 17px; transition: border-color .4s;
+  }
+  .field textarea { resize: vertical; min-height: 96px; line-height: 1.5; }
+  .field select { appearance: none; -webkit-appearance: none; cursor: pointer; background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%); background-position: calc(100% - 10px) 32px, calc(100% - 5px) 32px; background-size: 5px 5px; background-repeat: no-repeat; }
+  .field select option { background: var(--ink-2); color: var(--cream); }
+  .field label { position: absolute; left: 0; top: 26px; font-size: 17px; color: var(--fg-soft); pointer-events: none; transform-origin: 0 0; transition: transform .45s var(--ease-out), color .45s; }
+  .field input:focus ~ label, .field input:not(:placeholder-shown) ~ label,
+  .field textarea:focus ~ label, .field textarea:not(:placeholder-shown) ~ label, .field label.is-static { transform: translateY(-24px) scale(.72); color: var(--accent); letter-spacing: .04em; }
+  .field::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: 0 50%; transition: transform .6s var(--ease-out); }
+  .field:focus-within::after { transform: scaleX(1); }
+  .field__err { display: block; max-height: 0; overflow: hidden; font-size: 13px; color: #e39a77; transition: max-height .4s, margin .4s; }
+  .field.is-invalid input, .field.is-invalid select { border-bottom-color: #e39a77; }
+  .field.is-invalid .field__err { max-height: 40px; margin-top: 8px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .chips { border: 0; margin: 4px 0 30px; padding: 0; }
+  .chips legend { padding: 0; margin-bottom: 14px; font: 500 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .chips__list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+  .chip span { display: inline-block; padding: 11px 18px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; line-height: 1; cursor: pointer; transition: background-color .4s, color .4s, border-color .4s; }
+  .chip span:hover { border-color: rgba(200, 164, 100, .6); }
+  .chip input:checked + span { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+  .chip input:focus-visible + span { outline: 1px solid var(--gold); outline-offset: 3px; }
+  .form .btn { margin-top: 10px; }
+  .form__note { margin: 16px 0 0; font-size: 12.5px; color: var(--fg-soft); text-align: center; }
+  .success { text-align: center; padding: clamp(30px, 5vw, 70px) 0; }
+  .success[hidden] { display: none; }
+  .success__icon { width: 110px; height: 110px; margin: 0 auto 26px; }
+  .success__icon circle, .success__icon path { fill: none; stroke: var(--gold); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+  .success__title { margin: 0; font: 300 clamp(38px, 3.4vw, 56px)/1.05 var(--serif); }
+  .success__title em { color: var(--gold-2); }
+  .success__text { max-width: 36ch; margin: 18px auto 30px; color: var(--fg-soft); }
+
+  /* ---------- Footer ---------- */
+  .footer { padding: clamp(90px, 10vw, 150px) 0 34px; border-top: 1px solid var(--line); }
+  .footer__top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 30px; }
+  .footer__quote { margin: 0; font: 300 clamp(38px, 4.6vw, 76px)/1 var(--serif); }
+  .footer__quote em { color: var(--gold-2); }
+  .footer__cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: clamp(70px, 8vw, 120px); font-size: 15px; color: var(--fg-soft); }
+  .footer__cols h4 { margin: 0 0 14px; font: 500 11px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+  .footer__cols p { margin: 0; }
+  .footer__cols a:not(.credit-link) { display: block; width: fit-content; }
+  .footer__cols a:hover, .footer__bottom a:hover { color: var(--gold-2); }
+  .footer__author a { color: var(--fg); border-bottom: 1px solid rgba(200, 164, 100, .6); }
+  .footer__word { display: flex; justify-content: space-between; margin-top: clamp(60px, 8vw, 120px); overflow: hidden; font: 300 18.6vw/.78 var(--serif); letter-spacing: -.01em; padding-top: .04em; }
+  .footer__word span { display: block; background: linear-gradient(180deg, #e9cf98 0%, #c8a464 45%, #7d5f2c 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 40px; margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 12.5px; line-height: 1.6; color: var(--fg-soft); }
+  .footer__bottom p { margin: 0; max-width: 72ch; }
+  .footer__bottom a { text-decoration: underline; text-decoration-color: rgba(200, 164, 100, .5); text-underline-offset: 3px; }
+
+  /* ---------- Desktop ---------- */
+  @media (min-width: 900px) {
+    .card--sq { width: min(30vw, 54vh); }
+    .card--tall { width: min(20.5vw, 36.5vh); }
+    .card--cta { width: min(25vw, 46vh); }
+    html:not(.motion) .collection__track { flex-wrap: wrap; overflow: visible; gap: 70px 4vw; }
+    html.motion .collection__pin { height: 100vh; padding: 0; overflow: hidden; }
+    html.motion .collection__rail { display: flex; align-items: center; height: 100%; width: max-content; will-change: transform; }
+    html.motion .collection__head { flex: 0 0 auto; width: min(34vw, 560px); margin: 0; padding-right: 2vw; }
+    html.motion .collection__track { overflow: visible; align-items: center; gap: 5vw; padding: 0 9vw 0 4vw; height: 100%; scroll-snap-type: none; }
+    html.motion .card:nth-child(2) { margin-top: 6vh; }
+    html.motion .card:nth-child(3) { margin-top: -12vh; }
+    html.motion .card:nth-child(4) { margin-top: 10vh; }
+    html.motion .card:nth-child(5) { margin-top: -6vh; }
+    html.motion .card__media img { left: -8%; width: 116%; }
+    html.motion .collection__progress { position: absolute; left: var(--pad); bottom: 7vh; padding: 0; }
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 899px) {
+    .nav__links { display: none; }
+    .nav__inner { padding: 16px var(--pad); }
+    .nav__logo { font-size: 21px; }
+    .hero__stage { --at: 40svh; --ab: 6svh; --aw: 72vw; --al: 14vw; --ar: 14vw; }
+    .hero__meta { top: 92px; }
+    .hero__title { top: 120px; }
+    .hero__title .line:nth-child(3) { padding-left: .9em; }
+    .hero__foot, .hero__scroll-wrap { display: none; }
+    .badge-wrap { left: calc(var(--al) - 34px); bottom: calc(var(--ab) + 18px); }
+    .badge { width: 104px; height: 104px; }
+    .manifesto__text, .manifesto__aside, .workshop__photo, .workshop__body, .fitting__info, .fitting__formwrap, .interlude__quote, .interlude__img { grid-column: 1 / -1; }
+    .interlude, .manifesto__grid, .workshop__grid, .fitting__grid { grid-template-columns: 1fr; }
+    .interlude__img { margin-top: 20px; }
+    .workshop__body { padding-top: 46px; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 44px 20px; }
+    .fitting__formwrap { margin-top: 60px; }
+    .fitting__photo { width: min(100%, 300px); }
+    .footer__cols { grid-template-columns: 1fr 1fr; }
+    .card--tall .card__media { aspect-ratio: 2 / 3; }
+    .collection__pin { padding-bottom: 0; }
+    .workshop { padding-top: 96px; }
+  }
+  @media (max-width: 560px) {
+    .row { grid-template-columns: 1fr; gap: 0; }
+    .steps { grid-template-columns: 1fr; }
+    .stats { gap: 28px 18px; }
+    .facts li { grid-template-columns: 90px 1fr; }
+    .footer__cols { grid-template-columns: 1fr; gap: 26px; }
+    .footer__top .btn { width: 100%; }
+    .chip span { padding: 10px 14px; font-size: 13.5px; }
+  }
+
+  /* ---------- Reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <div class="loader__word"><span>A</span><span>U</span><span>R</span><span>U</span><span>M</span></div>
+    <div class="loader__bar"><i></i></div>
+    <div class="loader__meta"><span>Ювелирная мастерская</span><span class="loader__num">00</span></div>
+  </div>
+</div>
+
+<div class="cursor" aria-hidden="true">
+  <div class="cursor__ring"><div class="cursor__circle"><span class="cursor__label">Смотреть</span></div></div>
+  <div class="cursor__dot"></div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="#top" aria-label="AURUM — концепт, наверх">AURUM<sup>концепт</sup></a>
+    <nav class="nav__links" aria-label="Разделы">
+      <a href="#collection">Коллекция</a>
+      <a href="#workshop">Мастерская</a>
+      <a href="#fitting">Примерка</a>
+    </nav>
+    <a class="btn btn--sm magnetic" href="#fitting"><span class="btn__label">Записаться</span></a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="top" aria-label="AURUM — ювелирная мастерская">
+    <div class="hero__stage">
+      <div class="hero__media">
+        <div class="hero__reveal">
+          <div class="hero__img-wrap">
+            <img class="hero__img" src="assets/hero.jpg" width="1600" height="1066" alt="Маленькие золотые подвески-сердца, только что отлитые в угольной форме" fetchpriority="high" decoding="async">
+          </div>
+        </div>
+        <div class="hero__shade"></div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__meta">
+          <p class="eyebrow"><span>Ювелирная мастерская</span><span class="dot"></span><span>Минск</span></p>
+        </div>
+        <h1 class="hero__title" data-split>Золото,<br>которое помнит<br><em>тепло рук</em></h1>
+        <div class="hero__foot">
+          <p class="hero__lead">Кольца, серьги и&nbsp;подвески из&nbsp;золота и&nbsp;серебра. Каждое изделие&nbsp;— в&nbsp;единственном экземпляре: от&nbsp;эскиза до&nbsp;последней полировки.</p>
+          <a class="btn btn--gold magnetic" href="#collection"><span class="btn__label">Коллекция <span class="arrow">→</span></span></a>
+        </div>
+      </div>
+
+      <div class="badge-wrap">
+        <a class="badge magnetic" href="#collection" aria-label="Перейти к коллекции">
+          <svg viewBox="0 0 124 124" aria-hidden="true">
+            <defs><path id="badgePath" d="M62,62 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs>
+            <text><textPath href="#badgePath" textLength="292" lengthAdjust="spacing">Коллекция «Тишина» · зима 2026 ·</textPath></text>
+          </svg>
+          <span class="badge__arrow">↓</span>
+        </a>
+      </div>
+
+      <p class="hero__after" aria-hidden="true" data-split>Ни одной копии.<br><em>Только оригиналы.</em></p>
+
+      <div class="hero__scroll-wrap" aria-hidden="true">
+        <div class="hero__scroll"><span>Листайте</span><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" role="region" aria-label="Преимущества мастерской">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span class="marquee__item"><span class="marquee__text">Ручная работа</span><span class="marquee__star" aria-hidden="true">✦</span></span>
+        <span class="marquee__item"><span class="marquee__text">Золото 585 и 750</span><span class="marquee__star" aria-hidden="true">✦</span></span>
+        <span class="marquee__item"><span class="marquee__text">Серебро 925</span><span class="marquee__star" aria-hidden="true">✦</span></span>
+        <span class="marquee__item"><span class="marquee__text">Камни с сертификатом</span><span class="marquee__star" aria-hidden="true">✦</span></span>
+        <span class="marquee__item"><span class="marquee__text">Гравировка в подарок</span><span class="marquee__star" aria-hidden="true">✦</span></span>
+        <span class="marquee__item"><span class="marquee__text">Пожизненная чистка</span><span class="marquee__star" aria-hidden="true">✦</span></span>
+      </div>
+      <div class="marquee__group" aria-hidden="true">
+        <span class="marquee__item"><span class="marquee__text">Ручная работа</span><span class="marquee__star">✦</span></span>
+        <span class="marquee__item"><span class="marquee__text">Золото 585 и 750</span><span class="marquee__star">✦</span></span>
+        <span class="marquee__item"><span class="marquee__text">Серебро 925</span><span class="marquee__star">✦</span></span>
+        <span class="marquee__item"><span class="marquee__text">Камни с сертификатом</span><span class="marquee__star">✦</span></span>
+        <span class="marquee__item"><span class="marquee__text">Гравировка в подарок</span><span class="marquee__star">✦</span></span>
+        <span class="marquee__item"><span class="marquee__text">Пожизненная чистка</span><span class="marquee__star">✦</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" id="about" aria-labelledby="manifesto-label">
+    <div class="container manifesto__grid">
+      <p class="label" id="manifesto-label">01 — Философия</p>
+      <p class="manifesto__text" data-words>Мы не&nbsp;делаем украшения на&nbsp;поток. Каждое кольцо начинается с&nbsp;разговора, эскиза от&nbsp;руки и&nbsp;маленького слитка на&nbsp;верстаке&nbsp;— а&nbsp;заканчивается вещью, которую однажды <em>будут носить ваши внуки.</em></p>
+      <div class="manifesto__aside">
+        <p>Кольца, серьги и&nbsp;подвески из&nbsp;золота 585 и&nbsp;750 пробы и&nbsp;серебра 925. Камни&nbsp;— с&nbsp;сертификатами, металл&nbsp;— переплавленный, без новой добычи.</p>
+        <a class="link-arrow" href="#workshop">Как мы работаем <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION -->
+  <section class="collection" id="collection" aria-labelledby="collection-title">
+    <div class="collection__pin">
+      <div class="collection__rail">
+        <div class="collection__head">
+          <p class="label">02 — Коллекция</p>
+          <h2 class="h2" id="collection-title" data-split>«Тишина»</h2>
+          <p class="collection__intro">Осень — зима 2026. Пять изделий, которые не&nbsp;нужно объяснять. Каждое&nbsp;— в&nbsp;единственном экземпляре или малой серией до&nbsp;пяти штук.</p>
+          <p class="collection__hint" aria-hidden="true">Листайте <i></i></p>
+        </div>
+        <div class="collection__track" tabindex="0" aria-label="Изделия коллекции">
+          <article class="card card--sq" data-cursor="view">
+            <div class="card__media"><div class="card__img-wrap"><img src="assets/ring-les.jpg" width="1100" height="1100" decoding="async" alt="Кольцо из жёлтого золота с овальным зелёным сапфиром и бриллиантами"></div></div>
+            <div class="card__meta"><span class="card__num">01</span><h3 class="card__title">Кольцо «Лес»</h3><span class="card__price">4&nbsp;800 BYN</span><p class="card__mat">Золото 585 · зелёный сапфир · бриллианты</p></div>
+          </article>
+          <article class="card card--tall" data-cursor="view">
+            <div class="card__media"><div class="card__img-wrap"><img src="assets/earrings-glubina.jpg" width="678" height="1300" decoding="async" alt="Длинные серьги из золота с синими каплями кианита"></div></div>
+            <div class="card__meta"><span class="card__num">02</span><h3 class="card__title">Серьги «Глубина»</h3><span class="card__price">1&nbsp;150 BYN</span><p class="card__mat">Золото 585 · кианит</p></div>
+          </article>
+          <article class="card card--sq" data-cursor="view">
+            <div class="card__media"><div class="card__img-wrap"><img src="assets/ring-laguna.jpg" width="1100" height="1099" decoding="async" alt="Кольцо из жёлтого золота с бирюзовым сапфиром и бриллиантами-маркизами"></div></div>
+            <div class="card__meta"><span class="card__num">03</span><h3 class="card__title">Кольцо «Лагуна»</h3><span class="card__price">5&nbsp;600 BYN</span><p class="card__mat">Золото 750 · бирюзовый сапфир · бриллианты</p></div>
+          </article>
+          <article class="card card--sq" data-cursor="view">
+            <div class="card__media"><div class="card__img-wrap"><img src="assets/earrings-ottenki.jpg" width="1100" height="1100" decoding="async" alt="Ряд серебряных серёг с жемчугом от тёмного к светлому"></div></div>
+            <div class="card__meta"><span class="card__num">04</span><h3 class="card__title">Серьги «Оттенки»</h3><span class="card__price">от&nbsp;290 BYN</span><p class="card__mat">Серебро 925 · пресноводный жемчуг</p></div>
+          </article>
+          <article class="card card--sq" data-cursor="view">
+            <div class="card__media"><div class="card__img-wrap"><img src="assets/ring-okno.jpg" width="1100" height="1100" decoding="async" alt="Плоское серебряное кольцо с огранённым гранатом"></div></div>
+            <div class="card__meta"><span class="card__num">05</span><h3 class="card__title">Кольцо «Окно»</h3><span class="card__price">420 BYN</span><p class="card__mat">Серебро 925 · гранат</p></div>
+          </article>
+          <a class="card card--cta" href="#fitting">
+            <span class="card__kicker">Индивидуальный заказ</span>
+            <span>
+              <span class="card__big">Ваше изделие</span>
+              <p>Эскиз от&nbsp;руки, 3D-модель и&nbsp;готовое украшение за&nbsp;3–5 недель.</p>
+            </span>
+            <span class="link-arrow">Обсудить идею <span class="arrow">→</span></span>
+          </a>
+        </div>
+      </div>
+      <div class="collection__progress" aria-hidden="true"><span class="collection__count">01 / 06</span><span class="collection__bar"><i></i></span></div>
+    </div>
+  </section>
+
+  <!-- WORKSHOP -->
+  <section class="workshop" id="workshop" aria-labelledby="workshop-title">
+    <div class="container">
+      <p class="label">03 — Мастерская</p>
+      <h2 class="h2 workshop__title" id="workshop-title" data-split>Одна мастерская.<br>Семь пар рук.<br><em>Ни&nbsp;одного конвейера.</em></h2>
+
+      <div class="workshop__grid">
+        <figure class="workshop__photo">
+          <div class="frame reveal-img"><img src="assets/workshop.jpg" width="900" height="1000" decoding="async" alt="Старый деревянный верстак ювелира с инструментами"></div>
+          <figcaption>Верстак ювелира: у&nbsp;каждой выемки своя работа</figcaption>
+        </figure>
+        <div class="workshop__body">
+          <p class="workshop__text" data-split data-revert>Мастерская&nbsp;— светлая комната в&nbsp;центре Минска, где пахнет воском и&nbsp;полировочной пастой. Здесь всё делают руками: эскиз, восковую модель, литьё, закрепку камней и&nbsp;финальную полировку. Мы не&nbsp;перепродаём чужое и&nbsp;не&nbsp;штампуем копии&nbsp;— поэтому знаем историю каждого изделия.</p>
+          <dl class="stats">
+            <div class="stat"><dt><span class="count" data-to="12">12</span></dt><dd>лет у&nbsp;верстака</dd></div>
+            <div class="stat"><dt><span class="count" data-to="3400">3&nbsp;400</span>+</dt><dd>изделий ручной работы</dd></div>
+            <div class="stat"><dt><span class="count" data-to="7">7</span></dt><dd>мастеров в&nbsp;команде</dd></div>
+            <div class="stat"><dt><span class="count" data-to="140">140</span>&nbsp;ч</dt><dd>уходит на&nbsp;одно кольцо «Лес»</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="interlude">
+        <p class="interlude__quote" data-split>Металл помнит каждое движение руки&nbsp;— <em>поэтому мы&nbsp;не&nbsp;спешим.</em></p>
+        <figure class="interlude__img">
+          <img src="assets/sculpt.jpg" width="760" height="620" decoding="async" alt="Массивное золотое кольцо скульптурной формы на светлом фоне">
+        </figure>
+      </div>
+
+      <ol class="steps">
+        <li class="step"><span class="step__num">01</span><h3>Разговор</h3><p>Встречаемся в&nbsp;мастерской, пьём кофе, обсуждаем идею, бюджет и&nbsp;сроки.</p></li>
+        <li class="step"><span class="step__num">02</span><h3>Эскиз</h3><p>Рисуем от&nbsp;руки три–пять вариантов, затем&nbsp;— точную 3D-модель.</p></li>
+        <li class="step"><span class="step__num">03</span><h3>Воск</h3><p>Выращиваем восковую модель и&nbsp;примеряем её на&nbsp;палец до&nbsp;литья.</p></li>
+        <li class="step"><span class="step__num">04</span><h3>Металл</h3><p>Отливаем, закрепляем камни и&nbsp;полируем вручную. Гравировка&nbsp;— в&nbsp;подарок.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FITTING -->
+  <section class="fitting" id="fitting" aria-labelledby="fitting-title">
+    <div class="container fitting__grid">
+      <div class="fitting__info">
+        <p class="label">04 — Примерка</p>
+        <h2 class="h2" id="fitting-title" data-split>Приходите <em>примерить</em></h2>
+        <p class="fitting__text">Покажем изделия из&nbsp;коллекции, подберём размер и&nbsp;обсудим индивидуальный заказ с&nbsp;мастером. Примерка бесплатная и&nbsp;ни&nbsp;к&nbsp;чему не&nbsp;обязывает, кофе&nbsp;— за&nbsp;наш счёт.</p>
+        <ul class="facts">
+          <li><span>Где</span>Минск, центр&nbsp;— точный адрес пришлём после записи</li>
+          <li><span>Когда</span>Пн–Сб, 11:00–20:00</li>
+          <li><span>Сколько</span>Бесплатно, около 40&nbsp;минут</li>
+        </ul>
+        <figure class="fitting__photo">
+          <div class="frame reveal-img"><img src="assets/fitting.jpg" width="1100" height="1100" decoding="async" alt="Пальцы держат кольцо с крупным синим сапфиром"></div>
+        </figure>
+      </div>
+
+      <div class="fitting__formwrap">
+        <div class="panel">
+          <form class="form" id="fitForm" novalidate>
+            <h3 class="panel__title">Записаться на&nbsp;примерку</h3>
+            <p class="panel__sub">Перезвоним в&nbsp;течение часа и&nbsp;подтвердим время.</p>
+            <div class="field">
+              <input id="f-name" name="name" type="text" autocomplete="name" placeholder=" " required>
+              <label for="f-name">Ваше имя</label>
+              <span class="field__err" role="alert">Как к&nbsp;вам обращаться?</span>
+            </div>
+            <div class="field">
+              <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder=" " required>
+              <label for="f-phone">Телефон</label>
+              <span class="field__err" role="alert">Нужен номер, чтобы подтвердить запись</span>
+            </div>
+            <fieldset class="chips">
+              <legend>Что хотите примерить</legend>
+              <div class="chips__list">
+                <label class="chip"><input type="radio" name="what" value="помолвочное кольцо" checked><span>Помолвочное кольцо</span></label>
+                <label class="chip"><input type="radio" name="what" value="обручальные кольца"><span>Обручальные кольца</span></label>
+                <label class="chip"><input type="radio" name="what" value="серьги"><span>Серьги</span></label>
+                <label class="chip"><input type="radio" name="what" value="подвеску"><span>Подвеску</span></label>
+                <label class="chip"><input type="radio" name="what" value="индивидуальный заказ"><span>Индивидуальный заказ</span></label>
+              </div>
+            </fieldset>
+            <div class="row">
+              <div class="field">
+                <input id="f-date" name="date" type="date" required>
+                <label for="f-date" class="is-static">Дата</label>
+                <span class="field__err" role="alert">Выберите дату</span>
+              </div>
+              <div class="field">
+                <select id="f-time" name="time">
+                  <option>11:00</option><option>12:00</option><option>13:00</option><option selected>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:00</option><option>19:00</option>
+                </select>
+                <label for="f-time" class="is-static">Время</label>
+              </div>
+            </div>
+            <div class="field">
+              <textarea id="f-msg" name="message" rows="3" placeholder=" "></textarea>
+              <label for="f-msg">Комментарий — по желанию</label>
+            </div>
+            <button class="btn btn--gold btn--block magnetic" type="submit"><span class="btn__label">Записаться <span class="arrow">→</span></span></button>
+            <p class="form__note">Демо-форма концепт-проекта: данные никуда не&nbsp;отправляются.</p>
+          </form>
+
+          <div class="success" role="status" aria-live="polite" hidden>
+            <svg class="success__icon" viewBox="0 0 120 120" aria-hidden="true">
+              <circle cx="60" cy="70" r="34"/>
+              <path d="M60 14 L72 26 L60 38 L48 26 Z"/>
+            </svg>
+            <h3 class="success__title">Спасибо, <em data-name>гость</em>!</h3>
+            <p class="success__text">Ждём вас <span data-when></span>. Мы&nbsp;позвоним в&nbsp;течение часа, чтобы подтвердить запись.<br><small>(Это демо: на&nbsp;самом деле заявка никуда не&nbsp;ушла.)</small></p>
+            <button class="link-arrow" type="button" data-reset>Записаться ещё раз <span class="arrow">↺</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <p class="footer__quote">Сделано руками.<br><em>Для одной истории.</em></p>
+      <a class="btn btn--gold magnetic" href="#fitting"><span class="btn__label">Записаться на примерку <span class="arrow">→</span></span></a>
+    </div>
+    <div class="footer__cols">
+      <div><h4>Мастерская</h4><p>Минск, центр<br>приём по&nbsp;записи</p></div>
+      <div><h4>Часы</h4><p>Пн–Сб 11:00–20:00<br>Вс&nbsp;— выходной</p></div>
+      <div><h4>Разделы</h4><a href="#collection">Коллекция</a><a href="#workshop">Мастерская</a><a href="#fitting">Примерка</a></div>
+      <div class="footer__author"><h4>О проекте</h4><p>Концепт-проект. Дизайн и&nbsp;разработка&nbsp;— <a class="credit-link" href="https://nikich196.github.io/portfolio/" target="_blank" rel="noopener">Никита Сацюк</a></p></div>
+    </div>
+    <div class="footer__word" aria-hidden="true"><span>A</span><span>U</span><span>R</span><span>U</span><span>M</span></div>
+    <div class="footer__bottom">
+      <p>AURUM&nbsp;— вымышленный бренд, это не&nbsp;магазин. Сайт сделан как демонстрация дизайна и&nbsp;разработки; цены и&nbsp;цифры условные.</p>
+      <p>Фото (Wikimedia Commons, обрезаны и&nbsp;сжаты): W.carter&nbsp;— <a href="https://commons.wikimedia.org/w/index.php?curid=159630930" target="_blank" rel="noopener">обложка</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=167869068" target="_blank" rel="noopener">серьги «Глубина»</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=159629717" target="_blank" rel="noopener">«Оттенки»</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=169980794" target="_blank" rel="noopener">кольцо «Окно»</a>; Mliz2000&nbsp;— <a href="https://commons.wikimedia.org/w/index.php?curid=144520887" target="_blank" rel="noopener">«Лес»</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=144521293" target="_blank" rel="noopener">«Лагуна»</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=144521294" target="_blank" rel="noopener">примерка</a>; все&nbsp;— <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" target="_blank" rel="noopener">CC BY 4.0</a>. Верстак&nbsp;— <a href="https://commons.wikimedia.org/w/index.php?curid=154580222" target="_blank" rel="noopener">Fab5669</a>, кольцо в&nbsp;«Мастерской»&nbsp;— <a href="https://commons.wikimedia.org/w/index.php?curid=88880007" target="_blank" rel="noopener">The Hunt Museum</a>, CC0.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var hasGSAP = !!(window.gsap && window.ScrollTrigger);
+  var motion = root.classList.contains('motion') && hasGSAP;
+  var lenis = null;
+
+  if (!motion) { root.classList.remove('motion', 'is-loading'); }
+  else { window.__aurum = true; }
+
+  /* ---------- helpers ---------- */
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  // оборачивает каждое слово текста в span, не трогая <br> и сохраняя <em>
+  function wrapWords(el, cls) {
+    (function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/([ \t\n\r]+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^[ \t\n\r]+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+            var s = document.createElement('span'); s.className = cls; s.textContent = part; frag.appendChild(s);
+          });
+          n.parentNode.replaceChild(frag, n);
+        } else if (n.nodeType === 1 && n.tagName !== 'BR') { walk(n); }
+      });
+    })(el);
+    return $$('.' + cls, el);
+  }
+
+  // свой split-text: делит текст на визуальные строки по реальной вёрстке
+  function splitLines(el) {
+    if (!el.dataset.html) el.dataset.html = el.innerHTML;
+    el.innerHTML = el.dataset.html;
+    var words = wrapWords(el, 'sw');
+    var lines = [], last = null;
+    words.forEach(function (w) {
+      var top = w.offsetTop;
+      if (last === null || Math.abs(top - last) > 4) { lines.push([]); last = top; }
+      lines[lines.length - 1].push(w);
+    });
+    el.innerHTML = lines.map(function (line) {
+      return '<span class="line"><span class="line__in">' + line.map(function (w) {
+        var t = esc(w.textContent);
+        return w.parentElement && w.parentElement.closest('em') ? '<em>' + t + '</em>' : t;
+      }).join(' ') + '</span></span>';
+    }).join('');
+    return $$('.line__in', el);
+  }
+  function unsplit(el) { if (el.dataset.html) el.innerHTML = el.dataset.html; }
+
+  /* ---------- form (работает всегда) ---------- */
+  (function initForm() {
+    var form = $('#fitForm'), success = $('.success');
+    if (!form) return;
+    var date = $('#f-date');
+    var d = new Date(); d.setDate(d.getDate() + 1); if (d.getDay() === 0) d.setDate(d.getDate() + 1);
+    var iso = function (x) { return x.getFullYear() + '-' + String(x.getMonth() + 1).padStart(2, '0') + '-' + String(x.getDate()).padStart(2, '0'); };
+    date.min = iso(new Date()); date.value = iso(d);
+
+    var phone = $('#f-phone');
+    phone.addEventListener('input', function () { phone.value = phone.value.replace(/[^\d+()\-\s]/g, ''); });
+    $$('.field input', form).forEach(function (i) { i.addEventListener('input', function () { i.closest('.field').classList.remove('is-invalid'); }); });
+
+    function setErr(input, msg) {
+      var f = input.closest('.field'); f.classList.add('is-invalid');
+      if (msg) f.querySelector('.field__err').textContent = msg;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = $('#f-name'), ok = true;
+      if (name.value.trim().length < 2) { setErr(name); ok = false; }
+      var digits = phone.value.replace(/\D/g, '');
+      if (digits.length < 9 || digits.length > 15) { setErr(phone); ok = false; }
+      if (!date.value) { setErr(date, 'Выберите дату'); ok = false; }
+      else {
+        var picked = new Date(date.value + 'T12:00:00');
+        if (picked.getDay() === 0) { setErr(date, 'В воскресенье мы закрыты'); ok = false; }
+        else if (date.value < date.min) { setErr(date, 'Эта дата уже прошла'); ok = false; }
+      }
+      if (!ok) { var first = $('.is-invalid input', form); if (first) first.focus(); return; }
+
+      var when = new Date(date.value + 'T12:00:00').toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' }) + ' в ' + $('#f-time').value;
+      $('[data-name]', success).textContent = name.value.trim().split(/\s+/)[0];
+      $('[data-when]', success).textContent = when;
+
+      var show = function () {
+        form.hidden = true; success.hidden = false;
+        if (motion) {
+          var circle = $('circle', success), path = $('path', success);
+          [circle, path].forEach(function (p) { var L = p.getTotalLength(); gsap.set(p, { strokeDasharray: L, strokeDashoffset: L }); });
+          gsap.timeline()
+            .to(circle, { strokeDashoffset: 0, duration: 1.4, ease: 'power2.inOut' })
+            .to(path, { strokeDashoffset: 0, duration: .8, ease: 'power2.out' }, '-=.6')
+            .from($$('.success__title, .success__text, [data-reset]', success), { y: 24, opacity: 0, duration: .9, stagger: .1, ease: 'expo.out' }, .3);
+        }
+        success.setAttribute('tabindex', '-1'); success.focus({ preventScroll: true });
+      };
+      if (motion) gsap.to(form, { opacity: 0, y: -20, duration: .45, ease: 'power2.in', onComplete: show });
+      else show();
+    });
+
+    $('[data-reset]', success).addEventListener('click', function () {
+      form.reset(); date.value = iso(d);
+      success.hidden = true; form.hidden = false;
+      if (motion) gsap.fromTo(form, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .7, ease: 'expo.out' });
+      $('#f-name').focus();
+    });
+  })();
+
+  /* ---------- плавные якоря ---------- */
+  $$('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      var target = id === '#top' ? document.body : $(id);
+      if (!target) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(id === '#top' ? 0 : target, { duration: 1.6 });
+      else target.scrollIntoView({ behavior: motion ? 'smooth' : 'auto' });
+    });
+  });
+
+  /* ---------- мобильный прогресс галереи (нативный свайп) ---------- */
+  var track = $('.collection__track'), bar = $('.collection__bar i'), count = $('.collection__count');
+  var cardsN = $$('.card', track).length;
+  function setProgress(p) {
+    p = Math.max(0, Math.min(1, p));
+    if (bar) bar.style.transform = 'scaleX(' + p + ')';
+    if (count) count.textContent = String(Math.min(cardsN, Math.floor(p * (cardsN - 1) + 1.5))).padStart(2, '0') + ' / ' + String(cardsN).padStart(2, '0');
+  }
+  track.addEventListener('scroll', function () {
+    var max = track.scrollWidth - track.clientWidth;
+    if (max > 0) setProgress(track.scrollLeft / max);
+  }, { passive: true });
+
+  if (!motion) {
+    var navS = $('#nav');
+    var onS = function () { navS.classList.toggle('is-scrolled', window.scrollY > 40); };
+    window.addEventListener('scroll', onS, { passive: true }); onS();
+    return;
+  }
+
+  /* =================== АНИМАЦИИ =================== */
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true });
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
+  lenis = new Lenis({ lerp: 0.1, smoothWheel: true, wheelMultiplier: 1 });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+  gsap.ticker.lagSmoothing(0);
+  lenis.stop();
+
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* ---------- loader in ---------- */
+  var loaderNum = $('.loader__num'), counter = { v: 0 };
+  var loaderIn = gsap.timeline()
+    .fromTo('.loader__word span', { yPercent: 110 }, { yPercent: 0, duration: 1, stagger: .07, ease: 'expo.out' })
+    .fromTo('.loader__bar i', { scaleX: 0 }, { scaleX: 1, duration: 1.3, ease: 'power2.inOut' }, .1)
+    .to(counter, { v: 100, duration: 1.3, ease: 'power2.inOut', onUpdate: function () { loaderNum.textContent = String(Math.round(counter.v)).padStart(2, '0'); } }, .1);
+
+  var heroImg = $('.hero__img');
+  var wait = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
+  var imgReady = heroImg.decode ? heroImg.decode().catch(function () {}) : Promise.resolve();
+  var fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+  var ready = Promise.race([Promise.all([imgReady, fontsReady]), wait(3500)]);
+  var loaderDone = new Promise(function (r) { loaderIn.eventCallback('onComplete', r); });
+
+  Promise.all([ready, loaderDone]).then(build);
+
+  function build() {
+    /* ---------- split ---------- */
+    var heroTitle = $('.hero__title');
+    var heroLines = splitLines(heroTitle);
+    var afterLines = splitLines($('.hero__after'));
+
+    /* ---------- hero geometry ---------- */
+    var stage = $('.hero__stage'), media = $('.hero__media');
+    var FX = 0.47, FY = 0.63, A = {};
+    function measureHero() {
+      var w = stage.clientWidth, h = stage.clientHeight, aw, t, b, l, r;
+      if (w >= 900) {
+        aw = Math.min(Math.max(w * 0.3, 340), 540, h * 0.62);
+        t = h * 0.16; b = h * 0.08; r = w * 0.085; l = w - r - aw;
+      } else {
+        aw = Math.min(w * 0.72, 360);
+        t = Math.max(h * 0.38, heroTitle.offsetTop + heroTitle.offsetHeight + 30);
+        b = h * 0.06; l = (w - aw) / 2; r = w - l - aw;
+      }
+      var s = Math.max(w / 1600, h / 1066), dw = 1600 * s, dh = 1066 * s;
+      var fx = (w - dw) / 2 + FX * dw, fy = (h - dh) / 2 + FY * dh;
+      A = { t: t, b: b, l: l, r: r, R: aw / 2, dx: l + aw / 2 - fx, dy: t + (h - t - b) / 2 - fy };
+      stage.style.setProperty('--at', t + 'px'); stage.style.setProperty('--ab', b + 'px');
+      stage.style.setProperty('--al', l + 'px'); stage.style.setProperty('--ar', r + 'px'); stage.style.setProperty('--aw', aw + 'px');
+      heroImg.style.transformOrigin = fx + 'px ' + fy + 'px';
+    }
+    measureHero();
+    ScrollTrigger.addEventListener('refreshInit', measureHero);
+    var archClip = function () { return 'inset(' + A.t + 'px ' + A.r + 'px ' + A.b + 'px ' + A.l + 'px round ' + A.R + 'px ' + A.R + 'px 0px 0px)'; };
+    var fullClip = 'inset(0px 0px 0px 0px round 0px 0px 0px 0px)';
+
+    /* ---------- hero: pin + scrub ---------- */
+    var heroTl = gsap.timeline({
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=140%', pin: true, scrub: 1, invalidateOnRefresh: true }
+    });
+    heroTl
+      .fromTo(media, { clipPath: archClip }, { clipPath: fullClip, ease: 'power2.inOut', duration: 1 }, 0)
+      .fromTo(heroImg, { x: function () { return A.dx; }, y: function () { return A.dy; }, scale: 1 }, { x: 0, y: 0, scale: 1.1, ease: 'power2.inOut', duration: 1 }, 0)
+      .to($$('.line', heroTitle), { yPercent: -70, opacity: 0, stagger: .06, ease: 'power2.in', duration: .45 }, 0)
+      .to('.hero__meta, .hero__foot, .badge-wrap, .hero__scroll-wrap', { opacity: 0, y: -40, ease: 'power2.in', duration: .35 }, 0)
+      .to('.hero__shade', { opacity: 1, ease: 'none', duration: .5 }, .45)
+      .fromTo(afterLines, { yPercent: 115 }, { yPercent: 0, stagger: .1, ease: 'power3.out', duration: .35 }, .72)
+      .to({}, { duration: .2 });
+
+    /* ---------- marquee: скорость и направление от скролла ---------- */
+    var mq = gsap.fromTo('.marquee__track', { xPercent: 0 }, { xPercent: -50, duration: 38, ease: 'none', repeat: -1 });
+    mq.totalTime(38 * 200);
+    var dir = 1, boost = 0;
+    ScrollTrigger.create({ start: 0, end: 'max', onUpdate: function (self) { dir = self.direction; boost = Math.min(Math.abs(self.getVelocity()) / 300, 6); } });
+    gsap.ticker.add(function () { boost *= 0.93; mq.timeScale(dir * (1 + boost)); });
+
+    /* ---------- nav ---------- */
+    var nav = $('#nav');
+    ScrollTrigger.create({
+      start: 0, end: 'max',
+      onUpdate: function (self) {
+        var y = self.scroll();
+        nav.classList.toggle('is-scrolled', y > 40);
+        nav.classList.toggle('is-hidden', self.direction === 1 && y > window.innerHeight * 0.6);
+      }
+    });
+
+    /* ---------- manifesto: слова проявляются ---------- */
+    var words = wrapWords($('.manifesto__text'), 'mw');
+    gsap.fromTo(words, { opacity: .14 }, {
+      opacity: 1, ease: 'none', stagger: .08,
+      scrollTrigger: { trigger: '.manifesto__text', start: 'top 78%', end: 'bottom 50%', scrub: true }
+    });
+    gsap.from('.manifesto__aside > *', { y: 30, opacity: 0, duration: 1.1, stagger: .12, ease: 'expo.out', scrollTrigger: { trigger: '.manifesto__aside', start: 'top 88%' } });
+
+    /* ---------- заголовки и тексты построчно ---------- */
+    $$('[data-split]').forEach(function (el) {
+      if (el === heroTitle || el.classList.contains('hero__after')) return;
+      var lines = splitLines(el);
+      gsap.from(lines, {
+        yPercent: 115, duration: 1.25, stagger: .09, ease: 'expo.out',
+        scrollTrigger: { trigger: el, start: 'top 86%' },
+        onComplete: function () { if (el.hasAttribute('data-revert')) unsplit(el); }
+      });
+    });
+    $$('.label').forEach(function (el) {
+      gsap.from(el, { opacity: 0, x: -20, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 90%' } });
+    });
+
+    /* ---------- горизонтальная галерея (десктоп) ---------- */
+    var mm = gsap.matchMedia();
+    mm.add('(min-width: 900px)', function () {
+      var rail = $('.collection__rail');
+      var dist = function () { return Math.max(0, rail.scrollWidth - window.innerWidth); };
+      var hTween = gsap.to(rail, {
+        x: function () { return -dist(); }, ease: 'none',
+        scrollTrigger: {
+          trigger: '.collection__pin', start: 'top top', end: function () { return '+=' + dist(); },
+          pin: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1,
+          onUpdate: function (self) { setProgress(self.progress); }
+        }
+      });
+      $$('.card__media img', rail).forEach(function (img) {
+        gsap.fromTo(img, { xPercent: -5 }, {
+          xPercent: 5, ease: 'none',
+          scrollTrigger: { trigger: img.closest('.card'), containerAnimation: hTween, start: 'left right', end: 'right left', scrub: true }
+        });
+      });
+      $$('.card', rail).forEach(function (card) {
+        gsap.from(card, {
+          y: 80, opacity: 0, rotate: 2, duration: 1.2, ease: 'expo.out',
+          scrollTrigger: { trigger: card, containerAnimation: hTween, start: 'left 92%' }
+        });
+      });
+    });
+    mm.add('(max-width: 899px)', function () {
+      gsap.from('.card', { y: 40, opacity: 0, duration: 1, stagger: .08, ease: 'expo.out', scrollTrigger: { trigger: '.collection__track', start: 'top 85%' } });
+    });
+
+    /* ---------- смена фона: тёмный → бежевый → тёмный ---------- */
+    var meta = $('meta[name="theme-color"]'), themeCall = null;
+    function setTheme(name) {
+      var light = name === 'light';
+      root.classList.toggle('bg-light', light);
+      if (themeCall) themeCall.kill();
+      themeCall = gsap.delayedCall(.42, function () { root.classList.toggle('is-light', light); });
+      if (meta) meta.setAttribute('content', light ? '#ece3d3' : '#0d0a07');
+    }
+    ScrollTrigger.create({
+      trigger: '#workshop', start: 'top 45%', end: 'bottom 70%',
+      onEnter: function () { setTheme('light'); }, onLeave: function () { setTheme('dark'); },
+      onEnterBack: function () { setTheme('light'); }, onLeaveBack: function () { setTheme('dark'); }
+    });
+
+    /* ---------- мастерская ---------- */
+    $$('.reveal-img').forEach(function (frame) {
+      var img = $('img', frame);
+      gsap.fromTo(frame, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: 'expo.inOut', scrollTrigger: { trigger: frame, start: 'top 85%' } });
+      gsap.fromTo(img, { scale: 1.3 }, { scale: 1, duration: 2, ease: 'expo.out', scrollTrigger: { trigger: frame, start: 'top 85%' } });
+    });
+    gsap.fromTo('.workshop__photo .frame img', { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: '.workshop__photo', start: 'top bottom', end: 'bottom top', scrub: true } });
+    gsap.fromTo('.interlude__img img', { scale: .82, rotate: -14, yPercent: 10 }, { scale: 1.04, rotate: 6, yPercent: -6, ease: 'none', scrollTrigger: { trigger: '.interlude', start: 'top bottom', end: 'bottom top', scrub: 1 } });
+
+    $$('.count').forEach(function (el) {
+      var to = +el.dataset.to, o = { v: 0 };
+      el.textContent = '0';
+      gsap.to(o, {
+        v: to, duration: 2.2, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' },
+        onUpdate: function () { el.textContent = Math.round(o.v).toLocaleString('ru-RU'); }
+      });
+    });
+    gsap.from('.stat', { y: 30, opacity: 0, duration: 1, stagger: .1, ease: 'expo.out', scrollTrigger: { trigger: '.stats', start: 'top 85%' } });
+
+    var stepsTl = gsap.timeline({ scrollTrigger: { trigger: '.steps', start: 'top 82%' } });
+    $$('.step').forEach(function (step, i) {
+      stepsTl.fromTo(step, { '--draw': 0 }, { '--draw': 1, duration: 1.4, ease: 'expo.inOut' }, i * .12);
+      stepsTl.from(step.children, { y: 34, opacity: 0, duration: 1, stagger: .07, ease: 'expo.out' }, i * .12 + .25);
+    });
+
+    /* ---------- примерка + подвал ---------- */
+    gsap.from('.facts li', { y: 24, opacity: 0, duration: 1, stagger: .08, ease: 'expo.out', scrollTrigger: { trigger: '.facts', start: 'top 88%' } });
+    gsap.from('.panel', { y: 60, opacity: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '.panel', start: 'top 85%' } });
+    gsap.from('.footer__word span', { yPercent: 105, duration: 1.4, stagger: .07, ease: 'expo.out', scrollTrigger: { trigger: '.footer__word', start: 'top 95%' } });
+    gsap.from('.footer__quote, .footer__top .btn', { y: 40, opacity: 0, duration: 1.2, stagger: .1, ease: 'expo.out', scrollTrigger: { trigger: '.footer__top', start: 'top 88%' } });
+
+    /* ---------- курсор, магниты, наклон карточек (только мышь) ---------- */
+    if (finePointer) initPointer();
+
+    window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+
+    /* ---------- loader out + hero intro ---------- */
+    var loader = $('.loader');
+    gsap.set('.hero__reveal', { clipPath: 'inset(100% 0% 0% 0%)' });
+    gsap.set(heroLines, { yPercent: 118 });
+    gsap.set('.hero__meta .eyebrow, .hero__foot > *, .hero__scroll', { opacity: 0, y: 20 });
+    gsap.set('.badge', { scale: 0, rotate: -120 });
+    gsap.set('.nav__inner', { opacity: 0, y: -20 });
+
+    gsap.timeline()
+      .to('.loader__word span', { yPercent: -110, duration: .7, stagger: .04, ease: 'expo.in' })
+      .to('.loader__meta, .loader__bar', { opacity: 0, duration: .4 }, '<')
+      .to(loader, { clipPath: 'inset(0% 0% 100% 0%)', duration: 1.1, ease: 'expo.inOut' }, '-=.2')
+      .add(function () { root.classList.remove('is-loading'); }, '-=.5')
+      .to('.hero__reveal', { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.6, ease: 'expo.inOut' }, '-=.85')
+      .fromTo('.hero__img-wrap', { scale: 1.4 }, { scale: 1, duration: 2.4, ease: 'expo.out' }, '<.15')
+      .to(heroLines, { yPercent: 0, duration: 1.4, stagger: .11, ease: 'expo.out' }, '<.35')
+      .to('.hero__meta .eyebrow', { opacity: 1, y: 0, duration: 1, ease: 'expo.out' }, '<.15')
+      .to('.nav__inner', { opacity: 1, y: 0, duration: 1.1, ease: 'expo.out' }, '<')
+      .to('.badge', { scale: 1, rotate: 0, duration: 1.6, ease: 'expo.out' }, '<.2')
+      .to('.hero__foot > *', { opacity: 1, y: 0, duration: 1.1, stagger: .1, ease: 'expo.out' }, '<.1')
+      .to('.hero__scroll', { opacity: 1, y: 0, duration: 1, ease: 'expo.out' }, '<.2')
+      .add(function () {
+        lenis.start();
+        if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+        ScrollTrigger.refresh();
+      }, '-=1.2');
+  }
+
+  function initPointer() {
+    root.classList.add('has-cursor');
+    var cursor = $('.cursor'), ring = $('.cursor__ring'), dot = $('.cursor__dot');
+    gsap.set([ring, dot], { xPercent: -50, yPercent: -50, x: -100, y: -100 });
+    var rx = gsap.quickTo(ring, 'x', { duration: .5, ease: 'power3' }), ry = gsap.quickTo(ring, 'y', { duration: .5, ease: 'power3' });
+    var dx = gsap.quickTo(dot, 'x', { duration: .08 }), dy = gsap.quickTo(dot, 'y', { duration: .08 });
+    window.addEventListener('pointermove', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      rx(e.clientX); ry(e.clientY); dx(e.clientX); dy(e.clientY);
+      cursor.classList.add('is-on');
+    }, { passive: true });
+    document.addEventListener('pointerleave', function () { cursor.classList.remove('is-on'); });
+    window.addEventListener('blur', function () { cursor.classList.remove('is-on'); });
+    window.addEventListener('pointerdown', function () { cursor.classList.add('is-down'); });
+    window.addEventListener('pointerup', function () { cursor.classList.remove('is-down'); });
+    document.addEventListener('pointerover', function (e) {
+      var t = e.target.closest ? e.target : e.target.parentElement;
+      var view = t.closest('[data-cursor="view"]');
+      var text = t.closest('input:not([type="radio"]), textarea, select');
+      var link = !view && !text && t.closest('a, button, label, .chip');
+      cursor.classList.toggle('is-view', !!view);
+      cursor.classList.toggle('is-text', !!text);
+      cursor.classList.toggle('is-link', !!link);
+    });
+
+    // магнитные кнопки
+    $$('.magnetic').forEach(function (el) {
+      var label = el.querySelector('.btn__label, .badge__arrow');
+      var xTo = gsap.quickTo(el, 'x', { duration: .7, ease: 'power3' }), yTo = gsap.quickTo(el, 'y', { duration: .7, ease: 'power3' });
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        var mx = e.clientX - (r.left + r.width / 2), my = e.clientY - (r.top + r.height / 2);
+        xTo(mx * .32); yTo(my * .38);
+        if (label) gsap.to(label, { x: mx * .14, y: my * .14, duration: .7, ease: 'power3' });
+      });
+      el.addEventListener('pointerleave', function () {
+        gsap.to(el, { x: 0, y: 0, duration: 1.1, ease: 'elastic.out(1, .35)' });
+        if (label) gsap.to(label, { x: 0, y: 0, duration: 1.1, ease: 'elastic.out(1, .35)' });
+      });
+    });
+
+    // наклон карточек + золотой блик
+    $$('.card').forEach(function (card) {
+      gsap.set(card, { transformPerspective: 1100 });
+      var rX = gsap.quickTo(card, 'rotationX', { duration: .8, ease: 'power3' }), rY = gsap.quickTo(card, 'rotationY', { duration: .8, ease: 'power3' });
+      var media = card.querySelector('.card__media') || card;
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+        rY((px - .5) * 9); rX(-(py - .5) * 7);
+        media.style.setProperty('--mx', (px * 100) + '%'); media.style.setProperty('--my', (py * 100) + '%');
+      });
+      card.addEventListener('pointerleave', function () { rX(0); rY(0); });
+    });
+  }
+})();
+</script>
+</body>
+</html>

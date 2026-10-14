@@ -57,6 +57,15 @@
   .shot { width: 100%; border-radius: 16px; border: 1px solid var(--line); display: block; }
   .phones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px; }
   .phones img { width: 100%; border-radius: 14px; border: 1px solid var(--line); display: block; }
+  .concepts { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .concept { display: block; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+  .concept:hover { transform: translateY(-3px); box-shadow: 0 14px 34px -18px rgba(0,0,0,.35); }
+  .concept img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid var(--line); }
+  .concept div { padding: 18px 20px 20px; }
+  .concept h3 { font-size: 22px; margin-bottom: 6px; }
+  .concept p { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
+  .concept .open { font-weight: 500; color: var(--accent); font-size: 15px; }
+  .note { color: var(--muted); margin: -12px 0 24px; max-width: 680px; }
   .steps { counter-reset: s; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
   .steps .card::before { counter-increment: s; content: counter(s); font-family: Fraunces, serif;
     font-size: 30px; color: var(--accent); display: block; margin-bottom: 4px; }
@@ -71,6 +80,7 @@
   <p class="lead">Сайты, веб- и мобильные приложения, Telegram-боты, ИИ-автоматизация, дизайн и любая работа с документами и данными. Быстро, аккуратно, с результатом до оплаты.</p>
   <div class="btns">
     <a class="btn primary" href="https://t.me/Nikich1405">Написать в Telegram</a>
+    <a class="btn" href="#concepts">Живые сайты</a>
     <a class="btn" href="#urgent">Сайт за 1–3 дня</a>
     <a class="btn" href="mailto:nikich.2018.s@gmail.com">nikich.2018.s@gmail.com</a>
     <a class="btn" href="https://github.com/Nikich196">GitHub</a>
@@ -104,6 +114,25 @@
     <a class="btn primary" href="https://t.me/Nikich1405">Нужен сайт срочно</a>
     <a class="btn" href="files/sait-za-1-3-dnya.pdf">Карточка для заказчиков (PDF)</a>
     <a class="btn" href="files/rezyume-satsiuk.pdf">Резюме (PDF)</a>
+  </div>
+</section>
+
+<section class="wrap" id="concepts">
+  <h2>Живые концепт-сайты</h2>
+  <p class="note">Бренды вымышленные — это витрина того, как я делаю дизайн и анимацию. Откройте и прокрутите: переходы, закреплённые сцены, интерактив.</p>
+  <div class="concepts">
+    <a class="concept" href="works/zerno/">
+      <img src="img/concept-zerno.jpg" alt="Концепт-сайт кофейни «Зерно»" loading="lazy">
+      <div><h3>«Зерно» — кофейня</h3><p>След из фото за курсором, сцена «от зерна до чашки» со сменой кадров по скроллу, меню с фильтрами, карточки сортов с переворотом.</p><span class="open">Открыть сайт →</span></div>
+    </a>
+    <a class="concept" href="works/aurum/">
+      <img src="img/concept-aurum.jpg" alt="Концепт-сайт ювелирной мастерской AURUM" loading="lazy">
+      <div><h3>AURUM — ювелирная мастерская</h3><p>Заставка, раскрытие арки на весь экран, горизонтальная галерея при вертикальном скролле, смена тёмной и светлой темы, форма записи.</p><span class="open">Открыть сайт →</span></div>
+    </a>
+    <a class="concept" href="works/legkiy-shag/">
+      <img src="img/concept-legkiy-shag.jpg" alt="Концепт-сайт онлайн-школы «Лёгкий шаг»" loading="lazy">
+      <div><h3>«Лёгкий шаг» — онлайн-школа 45+</h3><p>Линия пути, которая дорисовывается по скроллу, квиз подбора курса, тарифы с переключателем, крупный шрифт и спокойный ритм под возрастную аудиторию.</p><span class="open">Открыть сайт →</span></div>
+    </a>
   </div>
 </section>
 

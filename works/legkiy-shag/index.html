@@ -1,0 +1,1473 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Лёгкий шаг — онлайн-школа движения · концепт</title>
+<meta name="description" content="Концепт сайта онлайн-школы здорового движения для людей 45+: мягкие занятия для спины и суставов дома по 20 минут, кураторы рядом, подбор курса за 3 вопроса.">
+<meta name="theme-color" content="#F6EFE3">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Лёгкий шаг — онлайн-школа движения · концепт">
+<meta property="og:description" content="Мягкие занятия для спины и суставов по 20 минут дома. Концепт-проект: дизайн и разработка — Никита Сацюк.">
+<meta property="og:url" content="https://nikich196.github.io/portfolio/works/legkiy-shag/">
+<meta property="og:image" content="https://nikich196.github.io/portfolio/works/legkiy-shag/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%234E5A2E'/%3E%3Cpath d='M19 45c3-15 13-24 27-26-2 14-11 24-25 27' fill='%23F6EFE3'/%3E%3Ccircle cx='21' cy='46' r='4.5' fill='%23E3936B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..600&family=Manrope:wght@400..800&display=swap">
+<link rel="preload" as="image" href="assets/hero-sm.jpg" imagesrcset="assets/hero-sm.jpg 820w, assets/hero.jpg 1066w" imagesizes="(max-width: 960px) 88vw, 520px">
+<script>
+  document.documentElement.classList.add('js');
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('reduce');
+</script>
+<style>
+
+:root{
+  --cream:#F6EFE3; --paper:#FFFCF6; --ink:#2B2722; --muted:#5F574C;
+  --olive:#4E5A2E; --olive-2:#6E7B45; --olive-l:#DCE2C7; --olive-d:#3D4727;
+  --sage:#E7EAD8; --terra:#B4532F; --terra-d:#97401F; --terra-l:#E3936B; --peach:#F2DCCB;
+  --line:rgba(43,39,34,.13);
+  --page-bg:#F6EFE3;
+  --r-lg:32px; --r-md:24px;
+  --shadow:0 1px 2px rgba(60,45,30,.05), 0 14px 34px -16px rgba(60,45,30,.22);
+  --shadow-lg:0 2px 4px rgba(60,45,30,.05), 0 34px 70px -28px rgba(60,45,30,.36);
+  --ease:cubic-bezier(.22,.7,.2,1);
+  --gutter:clamp(16px, 4vw, 40px);
+  --maxw:1240px;
+  --serif:'Literata', Georgia, 'Times New Roman', serif;
+  --sans:'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:96px; -webkit-text-size-adjust:100%; text-size-adjust:100%}
+html.lenis, html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+body{margin:0; background:var(--page-bg); transition:background-color .9s var(--ease); color:var(--ink); font-family:var(--sans); font-size:1.1875rem; line-height:1.62; overflow-x:clip; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility}
+img{display:block; max-width:100%; height:auto}
+a{color:inherit}
+button,input{font:inherit; color:inherit}
+p{margin:0 0 1em}
+h1,h2,h3{font-family:var(--serif); font-weight:500; letter-spacing:-.015em; line-height:1.1; margin:0; color:inherit; font-optical-sizing:auto}
+h2{font-size:clamp(2.05rem, 4.1vw, 3.4rem)}
+h3{font-size:clamp(1.3rem, 1.9vw, 1.55rem); line-height:1.22}
+h2 em, h1 em, .accent{font-style:italic; color:var(--terra); font-weight:500}
+.sr-only{position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gutter)}
+.section{position:relative; padding-block:clamp(84px, 11vw, 150px)}
+.section-head{max-width:780px; margin-bottom:clamp(40px, 5vw, 64px)}
+.section-head.center{margin-inline:auto; text-align:center}
+.section-head h2{margin-top:16px}
+.lead{font-size:clamp(1.12rem, 1.5vw, 1.28rem); color:var(--muted); margin-top:18px}
+.eyebrow{display:inline-flex; align-items:center; gap:.7em; margin:0; font-size:.95rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase; color:var(--olive)}
+.eyebrow::before{content:''; width:28px; height:2px; border-radius:2px; background:currentColor}
+.center .eyebrow::after{content:''; width:28px; height:2px; border-radius:2px; background:currentColor}
+.small{font-size:.95rem}
+[hidden]{display:none !important}
+svg.i{width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex:none}
+
+/* focus */
+:where(a,button,input,[tabindex]):focus-visible{outline:3px solid var(--ink); outline-offset:3px}
+[tabindex="-1"]:focus{outline:none}
+.skip{position:fixed; left:16px; top:-90px; z-index:100; background:var(--ink); color:var(--cream); padding:14px 20px; border-radius:14px; font-weight:700; text-decoration:none; transition:top .25s var(--ease)}
+.skip:focus{top:16px}
+
+/* buttons */
+.btn{--h:58px; display:inline-flex; align-items:center; justify-content:center; gap:.6em; min-height:var(--h); padding:0 1.6em; border-radius:999px; border:2px solid transparent; font:700 1.05rem/1.2 var(--sans); text-decoration:none; text-align:center; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:background-color .3s, color .3s, border-color .3s, box-shadow .4s var(--ease), translate .4s var(--ease)}
+.btn .i{width:22px; height:22px; stroke-width:2.1; transition:transform .4s var(--ease)}
+.btn:hover .i{transform:translateX(4px)}
+.btn--lg{--h:64px; font-size:1.1rem; padding:0 1.8em}
+.btn--primary{background:var(--terra); color:#fff; box-shadow:0 12px 26px -12px rgba(180,83,47,.75)}
+.btn--primary:hover{background:var(--terra-d); translate:0 -2px; box-shadow:0 18px 32px -14px rgba(151,64,31,.8)}
+.btn--ghost{background:transparent; color:var(--olive); border-color:currentColor}
+.btn--ghost:hover{background:var(--olive); color:var(--cream); border-color:var(--olive)}
+.btn--link{background:none; border:0; padding:0 .4em; color:var(--terra-d); text-decoration:underline; text-underline-offset:4px; min-height:48px}
+.btn[aria-disabled="true"]{opacity:.55; box-shadow:none}
+.btn[aria-disabled="true"]:hover{translate:none; background:var(--terra)}
+
+/* header */
+.header{position:fixed; inset:0 0 auto; z-index:50; transition:background-color .4s, box-shadow .4s}
+.header.is-scrolled{background:color-mix(in srgb, var(--page-bg) 97%, transparent); box-shadow:0 1px 0 var(--line)}
+.header__in{max-width:var(--maxw); margin:auto; padding:14px var(--gutter); display:flex; align-items:center; gap:20px}
+.logo{display:inline-flex; align-items:center; gap:12px; font:600 1.4rem/1 var(--serif); letter-spacing:-.01em; color:var(--ink); text-decoration:none; min-height:48px}
+.logo svg{width:42px; height:42px; flex:none}
+.nav{margin-left:auto}
+.nav ul{list-style:none; display:flex; gap:4px; margin:0; padding:0}
+.nav a{display:inline-flex; align-items:center; min-height:48px; padding:0 14px; border-radius:999px; font-weight:600; font-size:1rem; text-decoration:none; transition:background-color .25s}
+.nav a:hover{background:rgba(78,90,46,.1)}
+.header .btn{--h:50px; font-size:1rem; padding:0 1.3em}
+.burger{display:none; margin-left:auto; width:52px; height:52px; border:0; border-radius:50%; background:var(--paper); box-shadow:0 0 0 1px var(--line); flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer}
+.burger span{width:20px; height:2px; border-radius:2px; background:var(--ink); transition:transform .4s var(--ease)}
+.burger[aria-expanded="true"] span:first-child{transform:translateY(4px) rotate(45deg)}
+.burger[aria-expanded="true"] span:last-child{transform:translateY(-4px) rotate(-45deg)}
+.menu{position:fixed; inset:0; z-index:45; background:var(--cream); padding:104px var(--gutter) 40px; display:flex; flex-direction:column; overflow:auto; animation:menuIn .45s var(--ease)}
+.menu[hidden]{display:none}
+.menu nav{display:flex; flex-direction:column}
+.menu a:not(.btn){display:block; font:500 1.9rem/1.2 var(--serif); text-decoration:none; padding:16px 0; border-bottom:1px solid var(--line)}
+.menu .btn{margin-top:28px}
+@keyframes menuIn{from{opacity:0; transform:translateY(-14px)}}
+@media (max-width:960px){ .nav, .header .btn{display:none} .burger{display:inline-flex} }
+
+/* hero */
+.hero{position:relative; isolation:isolate; min-height:min(100svh, 980px); display:flex; align-items:center; padding:clamp(118px, 15vh, 150px) 0 clamp(56px, 7vw, 96px)}
+.hero__bg{position:absolute; inset:0; z-index:-1; overflow:hidden; pointer-events:none}
+.hero__bg::before,.hero__bg::after{content:''; position:absolute; border-radius:50%}
+.hero__bg::before{width:min(62vw, 860px); aspect-ratio:1; right:-14vw; top:-22vw; background:radial-gradient(closest-side, rgba(227,147,107,.30), rgba(227,147,107,0))}
+.hero__bg::after{width:min(56vw, 760px); aspect-ratio:1; left:-18vw; bottom:-26vw; background:radial-gradient(closest-side, rgba(110,123,69,.20), rgba(110,123,69,0))}
+.hero__grid{width:100%; display:grid; grid-template-columns:1.12fr .88fr; gap:clamp(32px, 5vw, 72px); align-items:center}
+.chip{display:inline-flex; align-items:center; gap:10px; margin:0 0 26px; padding:7px 18px 7px 8px; border-radius:999px; background:rgba(255,252,246,.85); box-shadow:0 0 0 1px var(--line); font-weight:700; font-size:.98rem; color:var(--olive)}
+.chip__dot{width:30px; height:30px; border-radius:50%; background:var(--olive-l); display:grid; place-items:center}
+.chip__dot svg{width:16px; height:16px; color:var(--olive)}
+.hero__title{font-size:clamp(2.25rem, 4.6vw, 4.15rem); line-height:1.05; letter-spacing:-.022em}
+.hero__title .line{display:block; overflow:hidden; padding-bottom:.16em; margin-bottom:-.16em}
+.hero__title .line > span{display:block}
+.hero__title em{position:relative; display:inline-block}
+.u__svg{position:absolute; left:-1%; bottom:-.06em; width:102%; height:.26em; overflow:visible; pointer-events:none}
+.u__svg path{fill:none; stroke:var(--terra-l); stroke-width:3.2; stroke-linecap:round}
+.hero__lead{font-size:clamp(1.12rem, 1.45vw, 1.28rem); color:var(--muted); max-width:34em; margin:30px 0 36px}
+.hero__cta{display:flex; flex-wrap:wrap; gap:14px}
+.hero__facts{list-style:none; margin:46px 0 0; padding:0; display:grid; grid-template-columns:repeat(3, max-content); gap:16px clamp(18px, 3vw, 40px)}
+.hero__facts li{display:flex; flex-direction:column; padding-left:14px; border-left:2px solid var(--terra-l); line-height:1.3}
+.hero__facts b{font:600 clamp(1.2rem, 2vw, 1.55rem)/1.15 var(--serif); white-space:nowrap}
+.hero__facts span{font-size:.98rem; color:var(--muted)}
+.hero__media{position:relative; padding:20px 0}
+.blob-wrap{position:relative; width:min(100%, 520px); margin-left:auto}
+.blob-back{position:absolute; inset:7% -5% -4% 8%; z-index:-1; background:var(--olive-l); border-radius:46% 54% 58% 42% / 44% 58% 42% 56%; animation:breathe2 17s ease-in-out infinite; will-change:transform}
+.blob{position:relative; aspect-ratio:4/5; overflow:hidden; border-radius:58% 42% 46% 54% / 52% 44% 56% 48%; box-shadow:var(--shadow-lg); animation:breathe 14s ease-in-out infinite; isolation:isolate; will-change:transform}
+.blob img{width:100%; height:100%; object-fit:cover; object-position:50% 56%}
+@keyframes breathe{0%,100%{transform:translate3d(0,0,0) scale(1)} 50%{transform:translate3d(0,-6px,0) scale(1.012)}}
+@keyframes breathe2{0%,100%{transform:rotate(0deg) scale(1)} 50%{transform:rotate(5deg) scale(1.04)}}
+.float{position:absolute; z-index:2}
+.float__card{display:flex; align-items:center; gap:12px; padding:14px 18px; border-radius:20px; background:var(--paper); box-shadow:var(--shadow-lg); animation:floaty 7s ease-in-out infinite; will-change:transform}
+.float--lesson{left:-9%; top:12%}
+.float--note{right:-7%; bottom:8%; width:300px}
+.float--note .float__card{align-items:flex-start; animation-delay:-3.5s; animation-duration:8s}
+.float small{display:block; font-size:.85rem; font-weight:700; color:var(--muted); letter-spacing:.02em}
+.float strong{display:block; font:600 1.08rem/1.25 var(--serif)}
+.float p{margin:4px 0 0; font-size:.98rem; line-height:1.45}
+.play{width:46px; height:46px; flex:none; border-radius:50%; background:var(--terra); color:#fff; display:grid; place-items:center}
+.play svg{width:18px; height:18px; fill:currentColor; margin-left:3px}
+.mini{display:flex; gap:4px; margin-top:7px}
+.mini i{width:18px; height:5px; border-radius:3px; background:var(--olive-l)}
+.mini i.on{background:var(--olive)}
+.avatar{width:42px; height:42px; flex:none; border-radius:50%; display:grid; place-items:center; background:var(--olive); color:var(--cream); font:600 1.1rem/1 var(--serif)}
+@keyframes floaty{0%,100%{transform:translate3d(0,0,0)} 50%{transform:translate3d(0,-9px,0)}}
+@media (max-width:960px){
+  .hero{min-height:0; padding-top:112px}
+  .hero__grid{grid-template-columns:1fr}
+  .blob-wrap{margin:0 auto; width:min(86%, 440px)}
+  .float--lesson{left:0; top:4%}
+  .float--note{right:0; bottom:2%; width:min(270px, 74%)}
+  .float__card{padding:11px 14px; gap:10px}
+  .play{width:40px; height:40px}
+  .float--note{width:min(240px, 66%)}
+  .float p{font-size:.92rem}
+}
+@media (max-width:560px){
+  .hero__cta .btn{flex:1 1 100%}
+  .hero__facts{grid-template-columns:repeat(3, 1fr); margin-top:36px}
+  .hero__facts span{font-size:.9rem}
+  .chip{font-size:.92rem}
+}
+
+/* marquee */
+.marquee{overflow:hidden; padding:24px 0; border-block:1px solid var(--line); background:rgba(255,252,246,.45)}
+.marquee__track{display:flex; width:max-content; animation:marquee 52s linear infinite; will-change:transform}
+.marquee__group{display:flex; align-items:center; gap:34px; padding-right:34px; white-space:nowrap; font:italic 400 clamp(1.45rem, 2.7vw, 2.2rem)/1.1 var(--serif); color:var(--olive)}
+.marquee__group svg{width:18px; height:18px; color:var(--terra-l)}
+@keyframes marquee{to{transform:translate3d(-50%,0,0)}}
+
+/* pains */
+.pains__grid{display:grid; grid-template-columns:.92fr 1.08fr; gap:clamp(40px, 6vw, 96px); align-items:center}
+.pains__media{position:relative; margin:0}
+.pains__img{position:relative; aspect-ratio:4/5; overflow:hidden; border-radius:var(--r-lg); box-shadow:var(--shadow-lg)}
+.pains__img img{position:absolute; left:0; top:-7%; width:100%; height:114%; object-fit:cover; object-position:64% 50%}
+.sticker{position:absolute; left:-26px; bottom:34px; max-width:300px; margin:0; padding:18px 20px; border-radius:20px; background:var(--paper); box-shadow:var(--shadow-lg); font-size:1rem; line-height:1.45; rotate:-2deg}
+.sticker b{display:block; font:600 1.15rem/1.25 var(--serif); margin-bottom:4px}
+.pains__list{list-style:none; margin:36px 0 0; padding:0; display:grid; gap:14px}
+.pains__list li{display:grid; grid-template-columns:52px 1fr; gap:18px; padding:20px 22px; border-radius:var(--r-md); background:rgba(255,252,246,.78); box-shadow:0 0 0 1px var(--line)}
+.ic{width:52px; height:52px; border-radius:16px; display:grid; place-items:center; background:var(--peach); color:var(--terra-d)}
+.pains__list h3{font-size:1.25rem; margin-bottom:4px}
+.pains__list p{margin:0; color:var(--muted); font-size:1.05rem}
+.pains__outro{margin:30px 0 0; font:italic 500 1.3rem/1.45 var(--serif); color:var(--olive)}
+@media (max-width:900px){
+  .pains__grid{grid-template-columns:1fr}
+  .pains__media{max-width:520px}
+  .sticker{left:12px; right:12px; bottom:14px; max-width:none}
+}
+
+/* statement */
+.statement{padding-block:clamp(70px, 10vw, 150px)}
+.statement__text{max-width:21em; margin:0 auto; text-align:center; font:400 clamp(1.7rem, 3.7vw, 3.15rem)/1.24 var(--serif); letter-spacing:-.015em}
+.statement__text em{font-style:italic; color:var(--terra)}
+
+/* courses */
+.courses__grid{display:grid; grid-template-columns:1fr 1fr; gap:34px clamp(24px, 3vw, 40px); padding-bottom:96px}
+.course{position:relative; display:flex; flex-direction:column; padding:14px 14px 30px; border-radius:var(--r-lg); background:var(--paper); box-shadow:var(--shadow); transition:box-shadow .5s var(--ease), translate .5s var(--ease)}
+.course:nth-child(even){top:96px}
+.course:hover{box-shadow:var(--shadow-lg); translate:0 -4px}
+.course__media{position:relative; aspect-ratio:4/3; overflow:hidden; border-radius:22px}
+.course__media img{width:100%; height:100%; object-fit:cover; transition:scale 1.2s var(--ease)}
+.course:hover .course__media img{scale:1.04}
+.course__tag{position:absolute; left:14px; top:14px; padding:7px 15px; border-radius:999px; background:rgba(255,252,246,.94); font-weight:700; font-size:.92rem; color:var(--olive)}
+.course__body{padding:24px 14px 0; display:flex; flex-direction:column; flex:1}
+.course__meta{display:flex; flex-wrap:wrap; gap:6px 14px; margin:0 0 10px; font-weight:700; font-size:.95rem; color:var(--terra-d)}
+.course__meta span+span::before{content:'·'; margin-right:14px; color:var(--muted)}
+.course h3{font-size:clamp(1.55rem, 2.2vw, 1.95rem)}
+.course p{margin:10px 0 0; color:var(--muted)}
+.course__link{align-self:flex-start; display:inline-flex; align-items:center; gap:8px; min-height:48px; margin-top:12px; font-weight:700; color:var(--olive); text-decoration:none; background:linear-gradient(currentColor,currentColor) 0 calc(100% - 8px)/0 2px no-repeat; transition:background-size .45s var(--ease)}
+.course__link:hover{background-size:100% 2px}
+@media (max-width:760px){ .courses__grid{grid-template-columns:1fr; padding-bottom:0} .course:nth-child(even){top:0} }
+
+/* quiz */
+.quiz-sec__grid{display:grid; grid-template-columns:.82fr 1.18fr; gap:clamp(32px, 5vw, 80px); align-items:center}
+.quiz-sec .section-head{margin-bottom:0}
+.quiz-sec__note{display:flex; gap:12px; align-items:flex-start; margin-top:26px; color:var(--muted); font-size:1rem}
+.quiz-sec__note svg{color:var(--olive); margin-top:2px}
+.quiz{padding:clamp(22px, 3.4vw, 44px); border-radius:var(--r-lg); background:var(--paper); box-shadow:var(--shadow-lg)}
+.quiz__top{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:22px}
+.quiz__count{margin:0; font-weight:800; font-size:1rem; color:var(--olive)}
+.quiz__bar{flex:1; max-width:220px; height:8px; border-radius:8px; background:var(--sage); overflow:hidden}
+.quiz__bar span{display:block; width:33.34%; height:100%; border-radius:inherit; background:linear-gradient(90deg, var(--olive-2), var(--olive)); transition:width .7s var(--ease)}
+.quiz__stage{display:grid; overflow:hidden; padding:8px; margin:-8px; transition:height .65s var(--ease)}
+.q-step,.q-result{grid-area:1/1; align-self:start; min-width:0; margin:0; padding:0; border:0; opacity:0; visibility:hidden; transform:translateX(44px); transition:opacity .35s var(--ease), transform .6s var(--ease), visibility 0s linear .6s}
+.q-step.is-past,.q-result.is-past{transform:translateX(-44px)}
+.q-step.is-active,.q-result.is-active{opacity:1; visibility:visible; transform:none; transition:opacity .5s var(--ease) .2s, transform .75s var(--ease) .2s, visibility 0s}
+.q-title{float:left; width:100%; padding:0; margin:0 0 22px; font:500 clamp(1.45rem, 2.3vw, 1.95rem)/1.2 var(--serif)}
+.q-options{clear:both; display:grid; grid-template-columns:1fr 1fr; gap:12px}
+.q-opt{position:relative; display:block; cursor:pointer}
+.q-opt input{position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:pointer}
+.q-opt__box{display:flex; align-items:center; gap:14px; height:100%; min-height:78px; padding:14px 16px; border-radius:18px; background:var(--cream); box-shadow:inset 0 0 0 2px transparent; font-weight:650; font-size:1.06rem; line-height:1.3; transition:background-color .25s, box-shadow .25s}
+.q-opt:hover .q-opt__box{background:#F0E5D3}
+.q-opt input:checked + .q-opt__box{background:#EEF1E1; box-shadow:inset 0 0 0 2px var(--olive)}
+.q-opt input:focus-visible + .q-opt__box{outline:3px solid var(--ink); outline-offset:3px}
+.q-opt__ic{width:46px; height:46px; flex:none; border-radius:14px; display:grid; place-items:center; background:var(--paper); color:var(--olive)}
+.q-opt__check{width:28px; height:28px; flex:none; margin-left:auto; border-radius:50%; display:grid; place-items:center; border:2px solid rgba(43,39,34,.28); color:#fff; transition:background-color .25s, border-color .25s}
+.q-opt__check svg{width:16px; height:16px; opacity:0; transform:scale(.4); transition:opacity .25s, transform .35s var(--ease)}
+.q-opt input:checked + .q-opt__box .q-opt__check{background:var(--olive); border-color:var(--olive)}
+.q-opt input:checked + .q-opt__box .q-opt__check svg{opacity:1; transform:none}
+.bars{display:flex; align-items:flex-end; gap:3px; height:22px}
+.bars i{width:5px; border-radius:2px; background:var(--olive-l)}
+.bars i:nth-child(1){height:30%} .bars i:nth-child(2){height:55%} .bars i:nth-child(3){height:78%} .bars i:nth-child(4){height:100%}
+.bars i.on{background:var(--olive)}
+.quiz__nav{display:flex; align-items:center; gap:12px; margin-top:24px}
+.quiz__nav[hidden]{display:none}
+.quiz__nav .q-next{margin-left:auto}
+.q-hint{min-height:1.5em; margin:12px 0 0; font-weight:700; font-size:1rem; color:var(--terra-d)}
+.q-result__head{display:flex; align-items:center; gap:16px}
+.q-result__img{width:84px; height:84px; flex:none; border-radius:50%; object-fit:cover; box-shadow:0 0 0 4px var(--paper), 0 0 0 6px var(--olive-l)}
+.q-result__title{margin:6px 0 0; font:500 clamp(1.75rem, 3vw, 2.4rem)/1.1 var(--serif)}
+.q-result p{margin:16px 0 0; color:var(--muted)}
+.q-result__tags{list-style:none; display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 0; padding:0}
+.q-result__tags li{padding:8px 14px; border-radius:999px; background:var(--sage); color:var(--olive); font-weight:700; font-size:.95rem}
+.q-result__cta{display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px; margin-top:24px}
+.q-result .small{margin-top:16px; font-size:.95rem}
+@media (max-width:960px){ .quiz-sec__grid{grid-template-columns:1fr} }
+@media (max-width:560px){ .q-options{grid-template-columns:1fr} .q-opt__box{min-height:68px} .quiz__nav .btn{padding:0 1.2em} }
+
+/* how — the path */
+.how__steps{position:relative}
+.how__svg{position:absolute; left:0; top:0; z-index:0; overflow:visible; pointer-events:none}
+.how__guide{fill:none; stroke:rgba(78,90,46,.3); stroke-width:2; stroke-dasharray:1 11; stroke-linecap:round}
+.how__line{fill:none; stroke:var(--terra); stroke-width:4; stroke-linecap:round}
+.how__list{position:relative; z-index:1; list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4, 1fr); gap:26px}
+.step:nth-child(even){margin-top:128px}
+.step__dot{position:relative; width:66px; height:66px; margin:0 auto 22px; border-radius:50%; display:grid; place-items:center; background:var(--page-bg); color:var(--olive); box-shadow:inset 0 0 0 2px var(--olive-2); font:600 1.5rem/1 var(--serif); transition:background-color .9s, color .5s, box-shadow .6s var(--ease), scale .6s var(--ease)}
+.step.is-on .step__dot{background:var(--terra); color:#fff; box-shadow:inset 0 0 0 2px var(--terra), 0 0 0 9px rgba(180,83,47,.14); scale:1.06}
+.step__card{height:auto; padding:26px 24px; border-radius:var(--r-md); background:var(--paper); box-shadow:var(--shadow); transition:translate .7s var(--ease), box-shadow .7s var(--ease)}
+.step.is-on .step__card{translate:0 -5px; box-shadow:var(--shadow-lg)}
+.step__time{display:block; margin-bottom:8px; font-weight:800; font-size:.88rem; letter-spacing:.06em; text-transform:uppercase; color:var(--terra-d)}
+.step h3{margin-bottom:8px}
+.step p{margin:0; color:var(--muted); font-size:1.05rem}
+.how__note{display:flex; align-items:flex-start; gap:14px; max-width:760px; margin:clamp(48px, 6vw, 72px) auto 0; padding:20px 24px; border-radius:var(--r-md); background:rgba(255,252,246,.8); box-shadow:0 0 0 1px var(--line); font-size:1.05rem}
+.how__note svg{color:var(--olive); margin-top:3px}
+.how__note p{margin:0}
+@media (max-width:959px){
+  .how__list{grid-template-columns:1fr; gap:24px}
+  .step{display:grid; grid-template-columns:56px 1fr; gap:16px; align-items:start}
+  .step:nth-child(even){margin-top:0}
+  .step__dot{width:56px; height:56px; margin:0; font-size:1.3rem}
+  .step.is-on .step__dot{box-shadow:inset 0 0 0 2px var(--terra), 0 0 0 6px rgba(180,83,47,.14)}
+}
+
+/* why (bento) */
+.bento{display:grid; grid-template-columns:1.15fr 1fr 1fr; gap:20px}
+.bento__photo{position:relative; grid-row:span 2; min-height:520px; margin:0; overflow:hidden; border-radius:var(--r-lg)}
+.bento__photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:52% 40%}
+.bento__photo figcaption{position:absolute; left:16px; right:16px; bottom:16px; padding:18px 20px; border-radius:20px; background:rgba(255,252,246,.95); box-shadow:var(--shadow)}
+.bento__photo figcaption p{margin:8px 0 6px; font:italic 500 1.12rem/1.45 var(--serif)}
+.badge{display:inline-flex; align-items:center; gap:8px; font-weight:800; font-size:.9rem; letter-spacing:.04em; text-transform:uppercase; color:var(--olive)}
+.badge::before{content:''; width:9px; height:9px; border-radius:50%; background:#5FA35A; box-shadow:0 0 0 4px rgba(95,163,90,.2)}
+.who{font-weight:700; font-size:.98rem; color:var(--muted)}
+.tile{display:flex; flex-direction:column; gap:12px; padding:28px; border-radius:var(--r-lg); background:var(--paper); box-shadow:0 0 0 1px var(--line)}
+.tile p{margin:0; color:var(--muted); font-size:1.05rem}
+.tile .ic{background:var(--sage); color:var(--olive)}
+.tile--accent{background:var(--olive); color:var(--cream); box-shadow:none}
+.tile--accent p{color:rgba(246,239,227,.88)}
+.tile--accent .ic{background:rgba(246,239,227,.14); color:var(--cream)}
+@media (max-width:960px){ .bento{grid-template-columns:1fr 1fr} .bento__photo{grid-column:1 / -1; grid-row:auto; min-height:440px} }
+@media (max-width:600px){ .bento{grid-template-columns:1fr} .bento__photo{min-height:420px} }
+
+/* reviews */
+.reviews__head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:36px}
+.reviews__head .section-head{margin-bottom:0}
+.carousel__ctrl{display:flex; gap:12px; flex:none}
+.round-btn{width:60px; height:60px; border-radius:50%; border:2px solid var(--ink); background:transparent; display:grid; place-items:center; cursor:pointer; transition:background-color .3s, color .3s, opacity .3s}
+.round-btn .i{width:24px; height:24px; stroke-width:2}
+.round-btn:hover:not([aria-disabled="true"]){background:var(--ink); color:var(--cream)}
+.round-btn[aria-disabled="true"]{opacity:.32; cursor:default}
+.carousel__track{--pad:max(var(--gutter), calc((100% - var(--maxw)) / 2 + var(--gutter))); position:relative; list-style:none; margin:0; display:flex; gap:22px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scroll-padding-inline:var(--pad); padding:10px var(--pad) 30px; scrollbar-width:none}
+.carousel__track::-webkit-scrollbar{display:none}
+.carousel__track:focus-visible{outline-offset:-4px; border-radius:16px}
+.review{flex:0 0 min(86%, 410px); scroll-snap-align:start; display:flex; flex-direction:column; padding:32px 30px 28px; border-radius:var(--r-lg); background:var(--paper); box-shadow:var(--shadow)}
+.stars{display:flex; gap:3px; color:#C9822F}
+.stars svg{width:20px; height:20px; fill:currentColor}
+.review blockquote{flex:1; margin:18px 0 24px; font:400 1.16rem/1.58 var(--serif)}
+.review blockquote p{margin:0}
+.review__who{display:flex; align-items:center; gap:14px; padding-top:20px; border-top:1px solid var(--line); line-height:1.35}
+.review__who .avatar{width:52px; height:52px; font-size:1.25rem}
+.review:nth-child(3n+2) .avatar{background:var(--terra)}
+.review:nth-child(3n+3) .avatar{background:#8A6A3E}
+.review__who b{display:block; font-size:1.05rem}
+.review__who span span{font-size:.95rem; color:var(--muted)}
+.carousel__dots{display:flex; justify-content:center; gap:2px}
+.carousel__dots button{width:44px; height:44px; padding:0; border:0; background:none; display:grid; place-items:center; cursor:pointer}
+.carousel__dots button span{width:10px; height:10px; border-radius:6px; background:rgba(43,39,34,.28); transition:width .45s var(--ease), background-color .3s}
+.carousel__dots button[aria-current="true"] span{width:30px; background:var(--terra)}
+.reviews .note{margin:12px auto 0; text-align:center; color:var(--muted); font-size:.95rem; max-width:40em; padding-inline:var(--gutter)}
+@media (max-width:700px){ .reviews__head{flex-direction:column; align-items:flex-start} }
+
+/* pricing */
+.period{position:relative; display:inline-flex; margin-top:30px; padding:6px; border-radius:999px; background:var(--paper); box-shadow:0 0 0 1px var(--line), var(--shadow)}
+.period button{position:relative; z-index:1; display:inline-flex; align-items:center; gap:8px; min-height:52px; padding:0 24px; border:0; border-radius:999px; background:transparent; font-weight:700; font-size:1.05rem; cursor:pointer; transition:color .4s}
+.period button[aria-checked="true"]{color:var(--cream)}
+.period__pill{position:absolute; z-index:0; top:6px; bottom:6px; left:0; width:0; border-radius:999px; background:var(--olive); transition:transform .6s var(--ease), width .6s var(--ease)}
+.save{padding:3px 9px; border-radius:999px; background:var(--peach); color:var(--terra-d); font-size:.85rem; font-weight:800}
+.plans{display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; align-items:stretch}
+.plan{position:relative; display:flex; flex-direction:column; padding:38px 30px 30px; border-radius:var(--r-lg); background:var(--paper); box-shadow:0 0 0 1px var(--line); transition:translate .5s var(--ease), box-shadow .5s var(--ease)}
+.plan:hover{translate:0 -6px; box-shadow:var(--shadow-lg)}
+.plan--featured{background:var(--olive); color:var(--cream); box-shadow:var(--shadow-lg)}
+.plan__badge{position:absolute; top:-16px; left:30px; padding:7px 15px; border-radius:999px; background:var(--terra); color:#fff; font-weight:800; font-size:.9rem}
+.plan h3{font-size:1.75rem}
+.plan__desc{margin:8px 0 22px; color:var(--muted); min-height:3.2em}
+.plan__price{display:flex; align-items:baseline; flex-wrap:wrap; gap:8px; margin:0}
+.plan__price .num{font:500 clamp(2.6rem, 4vw, 3.3rem)/1 var(--serif); letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.plan__price .cur{font-weight:700; font-size:1.05rem}
+.plan__bill{min-height:1.6em; margin:10px 0 24px; color:var(--muted); font-size:.98rem; transition:opacity .3s}
+.plan__list{flex:1; list-style:none; display:grid; align-content:start; gap:12px; margin:0 0 30px; padding:0}
+.plan__list li{display:grid; grid-template-columns:24px 1fr; gap:10px; font-size:1.05rem; line-height:1.45}
+.plan__list svg{width:22px; height:22px; margin-top:2px; color:var(--olive-2); stroke-width:2.4}
+.plan .btn{width:100%}
+.plan--featured .plan__desc,.plan--featured .plan__bill,.plan--featured .plan__list li{color:rgba(246,239,227,.9)}
+.plan--featured .plan__list svg{color:var(--terra-l)}
+.plan--featured :focus-visible{outline-color:var(--cream)}
+.pricing__fine{margin:30px auto 0; text-align:center; color:var(--muted); font-size:.98rem}
+@media (max-width:960px){ .plans{grid-template-columns:1fr; max-width:540px; margin-inline:auto; gap:34px} .plan__desc{min-height:0} }
+@media (max-width:420px){ .period button{padding:0 16px} }
+
+/* faq */
+.faq-sec__grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(32px, 6vw, 96px); align-items:start}
+.faq-aside{position:sticky; top:120px}
+.faq-aside .section-head{margin-bottom:0}
+.help-card{margin-top:30px; padding:26px; border-radius:var(--r-lg); background:var(--paper); box-shadow:0 0 0 1px var(--line)}
+.help-card p{color:var(--muted); margin:8px 0 18px}
+.help-card h3{font-size:1.3rem}
+.faq__item{border-bottom:1px solid rgba(43,39,34,.16)}
+.faq__item:first-child{border-top:1px solid rgba(43,39,34,.16)}
+.faq__h{margin:0; font-size:inherit}
+.faq__btn{width:100%; min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:24px 4px; border:0; background:none; text-align:left; cursor:pointer; font:500 clamp(1.18rem, 1.8vw, 1.38rem)/1.35 var(--serif); letter-spacing:-.01em}
+.faq__icon{position:relative; width:46px; height:46px; flex:none; border-radius:50%; background:var(--paper); box-shadow:0 0 0 1px var(--line); transition:background-color .35s}
+.faq__icon::before,.faq__icon::after{content:''; position:absolute; left:50%; top:50%; width:16px; height:2px; margin:-1px 0 0 -8px; border-radius:2px; background:var(--ink); transition:transform .5s var(--ease), background-color .35s}
+.faq__icon::after{transform:rotate(90deg)}
+.faq__btn[aria-expanded="true"] .faq__icon{background:var(--olive)}
+.faq__btn[aria-expanded="true"] .faq__icon::before,.faq__btn[aria-expanded="true"] .faq__icon::after{background:var(--cream)}
+.faq__btn[aria-expanded="true"] .faq__icon::after{transform:rotate(0deg)}
+.faq__panel{display:grid; grid-template-rows:0fr; transition:grid-template-rows .55s var(--ease)}
+.faq__item.is-open .faq__panel{grid-template-rows:1fr}
+.faq__inner{min-height:0; overflow:hidden; visibility:hidden; transition:visibility 0s linear .55s}
+.faq__item.is-open .faq__inner{visibility:visible; transition-delay:0s}
+.faq__inner p{margin:0; padding:0 64px 26px 4px; color:var(--muted); font-size:1.07rem; opacity:0; transform:translateY(-6px); transition:opacity .4s var(--ease), transform .55s var(--ease)}
+.faq__item.is-open .faq__inner p{opacity:1; transform:none; transition-delay:.08s}
+@media (max-width:900px){ .faq-sec__grid{grid-template-columns:1fr} .faq-aside{position:static} .faq__inner p{padding-right:4px} }
+
+/* cta */
+.cta__card{position:relative; isolation:isolate; overflow:hidden; display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(28px, 5vw, 72px); align-items:center; padding:clamp(24px, 5vw, 72px); border-radius:clamp(28px, 4vw, 48px); background:var(--olive-d); color:var(--cream)}
+.cta__card::before{content:''; position:absolute; z-index:-1; width:560px; height:560px; right:-170px; top:-220px; border-radius:50%; background:radial-gradient(closest-side, rgba(227,147,107,.32), rgba(227,147,107,0))}
+.cta__card::after{content:''; position:absolute; z-index:-1; width:420px; height:420px; left:-140px; bottom:-200px; border-radius:50%; background:radial-gradient(closest-side, rgba(220,226,199,.16), rgba(220,226,199,0))}
+.cta .eyebrow{color:var(--olive-l)}
+.cta h2{margin-top:16px; font-size:clamp(2rem, 3.5vw, 3rem)}
+.cta h2 em{color:var(--terra-l)}
+.cta__lead{margin:18px 0 0; color:rgba(246,239,227,.88)}
+.cta__media .blob{max-width:430px; margin:0 auto; box-shadow:0 40px 80px -30px rgba(0,0,0,.5)}
+.cta__media .blob img{object-position:58% 40%}
+.cta :focus-visible{outline-color:var(--cream)}
+.form{display:grid; gap:16px; margin-top:28px}
+.form__row{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.field label{display:block; margin-bottom:8px; font-weight:700; font-size:1rem}
+.field input{width:100%; min-height:60px; padding:0 18px; border-radius:16px; border:2px solid transparent; background:var(--paper); color:var(--ink); font-size:1.1rem; font-weight:500; transition:border-color .25s, box-shadow .25s}
+.field input::placeholder{color:#8A8174}
+.field input:focus{outline:none; border-color:var(--terra-l); box-shadow:0 0 0 4px rgba(227,147,107,.4)}
+.field input[aria-invalid="true"]{border-color:#F3A58B}
+.field__err{display:block; min-height:0; margin-top:6px; color:#FFD7C7; font-weight:700; font-size:.98rem}
+.field__err:empty{display:none}
+.form .btn{margin-top:4px}
+.form__note{margin:0; color:rgba(246,239,227,.78); font-size:.98rem}
+.form__done{display:none; gap:14px; align-items:flex-start; margin-top:28px; padding:24px; border-radius:22px; background:rgba(246,239,227,.1)}
+.form__done svg{width:30px; height:30px; flex:none; padding:5px; border-radius:50%; background:var(--terra-l); color:var(--olive-d); stroke-width:2.6}
+.form__done p{margin:0}
+.is-sent .form{display:none}
+.is-sent .form__done{display:flex; animation:doneIn .7s var(--ease)}
+@keyframes doneIn{from{opacity:0; transform:translateY(14px)}}
+@media (max-width:900px){ .cta__card{grid-template-columns:1fr} .cta__media{width:100%; max-width:360px; margin:0 auto} .form__row{grid-template-columns:1fr} }
+
+/* footer */
+.footer{padding:72px 0 calc(40px + env(safe-area-inset-bottom)); background:#2C3120; color:rgba(246,239,227,.86); font-size:1.02rem}
+.footer a{color:var(--cream)}
+.footer .logo{color:var(--cream)}
+.footer :focus-visible{outline-color:var(--cream)}
+.footer__grid{display:grid; grid-template-columns:1.1fr .7fr 1.4fr; gap:40px}
+.footer__about{margin:16px 0 0; max-width:24em}
+.footer nav ul{list-style:none; display:grid; gap:2px; margin:0; padding:0}
+.footer nav a{display:inline-flex; align-items:center; min-height:44px; text-decoration:none}
+.footer nav a:hover{text-decoration:underline; text-underline-offset:4px}
+.concept{padding:24px 26px; border-radius:22px; background:rgba(246,239,227,.07); box-shadow:inset 0 0 0 1px rgba(246,239,227,.12)}
+.concept p{margin:0}
+.concept p+p{margin-top:12px}
+.concept .small{color:rgba(246,239,227,.75)}
+.footer__credits{margin-top:48px; padding-top:24px; border-top:1px solid rgba(246,239,227,.14); color:rgba(246,239,227,.72); font-size:.92rem; line-height:1.6}
+.footer__credits p{margin:0}
+@media (max-width:860px){ .footer__grid{grid-template-columns:1fr; gap:32px} .footer nav ul{display:flex; flex-wrap:wrap; gap:0 24px} }
+.cta{padding-bottom:clamp(64px, 8vw, 110px)}
+
+/* sticky mobile cta */
+.sticky-cta{position:fixed; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom)); z-index:40; display:none; visibility:hidden; transform:translateY(calc(100% + 30px)); transition:transform .5s var(--ease), visibility 0s linear .5s}
+.sticky-cta.is-visible{visibility:visible; transform:none; transition:transform .6s var(--ease), visibility 0s}
+.sticky-cta .btn{width:100%; --h:60px; box-shadow:0 16px 34px -12px rgba(60,40,20,.55)}
+@media (max-width:860px){ .sticky-cta{display:block} }
+
+/* initial animation states (only when JS + motion allowed) */
+.js:not(.reduce):not(.no-anim) [data-reveal],
+.js:not(.reduce):not(.no-anim) [data-intro]{opacity:0}
+.js:not(.reduce):not(.no-anim) .hero__title{visibility:hidden}
+.js:not(.reduce):not(.no-anim) .u__svg path{stroke-dasharray:1; stroke-dashoffset:1}
+
+@media (prefers-reduced-motion: reduce){
+  html{transition:none}
+  *,*::before,*::after{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; transition-delay:0s !important; scroll-behavior:auto !important}
+  .marquee__track{animation:none}
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19.5c1-8.5 6.2-13.6 15-14.5-.8 9-6.2 14.2-14.4 15.2" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2 6.3 20.3l1.2-6.4L2.8 9.5l6.4-.8z"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></symbol>
+  <symbol id="i-sunrise" viewBox="0 0 24 24"><path d="M3 18h18M6.5 18a5.5 5.5 0 0 1 11 0M12 6V3M5.2 10.2 3.8 8.8M18.8 10.2l1.4-1.4M8.5 21h7"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="4" y="4.5" width="16" height="11" rx="1.6"/><path d="M2 19.5h20M10 15.5l-.6 4M14 15.5l.6 4"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9H4z"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.4-7.5-10.2A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.5C19.5 15.6 12 20 12 20z"/></symbol>
+  <symbol id="i-spine" viewBox="0 0 24 24"><path d="M12 2.5v19"/><rect x="8.5" y="4" width="7" height="3" rx="1.5"/><rect x="8" y="9" width="8" height="3" rx="1.5"/><rect x="8.5" y="14" width="7" height="3" rx="1.5"/><path d="M10 20h4"/></symbol>
+  <symbol id="i-bust" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.5"/><path d="M4.5 20.5c0-4.2 3.4-7 7.5-7s7.5 2.8 7.5 7"/></symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13.5" cy="4" r="2"/><path d="M9.5 21l2.2-6.2-2.2-3 1.3-4.3 3.7 3 3 .8M7.5 12.5l2.5-4.5M14 15l1.5 6"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+  <symbol id="i-feather" viewBox="0 0 24 24"><path d="M20 4c-7 0-12 5-12 12v4M8 16h6M10.5 12.5H16"/><path d="M8 16c4.5 0 9-2.5 10.6-8"/></symbol>
+  <symbol id="i-subs" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.2"/><path d="M7 15h4M13.5 15H17M7 11.5h10"/></symbol>
+  <symbol id="i-chair" viewBox="0 0 24 24"><path d="M7 3.5v9h10v-9M6 12.5h12M7 12.5V21M17 12.5V21M7 17h10"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.6-3 7.8-7 9.5-4-1.7-7-4.9-7-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5c0 4-3.6 7-8 7-1.2 0-2.3-.2-3.3-.6L4 19.5l1.4-3.6A6.7 6.7 0 0 1 4 11.5c0-4 3.6-7 8-7s8 3 8 7z"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="header" id="header">
+  <div class="header__in">
+    <a class="logo" href="#top" aria-label="Лёгкий шаг — в начало страницы">
+      <svg viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="13" fill="#4E5A2E"/><path d="M12.5 29.5c2-9.8 8.6-15.8 17.8-17-1.3 9.2-7.2 15.6-16.4 17.6" fill="#F6EFE3"/><circle cx="13.8" cy="30" r="3" fill="#E3936B"/></svg>
+      <span>Лёгкий шаг</span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <ul>
+        <li><a href="#courses">Курсы</a></li>
+        <li><a href="#how">Как проходит</a></li>
+        <li><a href="#pricing">Тарифы</a></li>
+        <li><a href="#faq">Вопросы</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary" href="#cta">Записаться</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Открыть меню"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Меню">
+    <a href="#courses">Курсы</a>
+    <a href="#quiz">Подбор курса</a>
+    <a href="#how">Как проходит обучение</a>
+    <a href="#pricing">Тарифы</a>
+    <a href="#faq">Вопросы</a>
+  </nav>
+  <a class="btn btn--primary btn--lg" href="#cta">Пройти бесплатный урок</a>
+</div>
+
+<main id="main" tabindex="-1">
+
+  <!-- HERO -->
+  <section class="hero" id="top" data-bg="#F6EFE3" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="chip" data-intro><span class="chip__dot" aria-hidden="true"><svg><use href="#i-leaf"/></svg></span>Школа движения для тех, кому 45+</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="line"><span>Мягкое движение</span></span>
+          <span class="line"><span>для спины</span></span>
+          <span class="line"><span>и&nbsp;суставов —</span></span>
+          <span class="line"><span><em>по 20 минут дома<svg class="u__svg" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 9.5C52 4 96 12 148 7.5S246 3.5 297 8.5"/></svg></em></span></span>
+        </h1>
+        <p class="hero__lead" data-intro>«Лёгкий шаг» помогает вернуть лёгкость движения без спортзала и спешки. Короткие понятные уроки и&nbsp;куратор, который всегда на связи.</p>
+        <div class="hero__cta" data-intro>
+          <a class="btn btn--primary btn--lg" href="#cta">Пройти бесплатный урок <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost btn--lg" href="#quiz">Подобрать курс</a>
+        </div>
+        <ul class="hero__facts" data-intro>
+          <li><b>20 минут</b><span>один урок</span></li>
+          <li><b>3 раза</b><span>в неделю</span></li>
+          <li><b>1 куратор</b><span>на группу</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__media">
+        <div class="blob-wrap" data-intro>
+          <div class="blob-back" aria-hidden="true"></div>
+          <div class="blob">
+            <img src="assets/hero-sm.jpg" srcset="assets/hero-sm.jpg 820w, assets/hero.jpg 1066w" sizes="(max-width: 960px) 88vw, 520px" width="1066" height="1600" fetchpriority="high" alt="Женщина с седыми волосами сидит на полу у окна и мягко потягивается, опираясь спиной на диван">
+          </div>
+        </div>
+        <div class="float float--lesson" data-intro aria-hidden="true">
+          <div class="float__card">
+            <span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+            <span><small>Урок 3 из 18</small><strong>«Мягкая спина»</strong><span class="mini"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span>
+          </div>
+        </div>
+        <div class="float float--note" data-intro aria-hidden="true">
+          <div class="float__card">
+            <span class="avatar">О</span>
+            <span><small>Ольга, куратор · 10:24</small><p>Как самочувствие после урока? Завтра добавим упражнение на равновесие.</p></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group"><span>Спина</span><svg><use href="#i-leaf"/></svg><span>Шея и плечи</span><svg><use href="#i-leaf"/></svg><span>Колени</span><svg><use href="#i-leaf"/></svg><span>Осанка</span><svg><use href="#i-leaf"/></svg><span>Дыхание</span><svg><use href="#i-leaf"/></svg><span>Равновесие</span><svg><use href="#i-leaf"/></svg><span>Хорошее настроение</span><svg><use href="#i-leaf"/></svg></div>
+      <div class="marquee__group"><span>Спина</span><svg><use href="#i-leaf"/></svg><span>Шея и плечи</span><svg><use href="#i-leaf"/></svg><span>Колени</span><svg><use href="#i-leaf"/></svg><span>Осанка</span><svg><use href="#i-leaf"/></svg><span>Дыхание</span><svg><use href="#i-leaf"/></svg><span>Равновесие</span><svg><use href="#i-leaf"/></svg><span>Хорошее настроение</span><svg><use href="#i-leaf"/></svg></div>
+    </div>
+  </div>
+
+  <!-- PAINS -->
+  <section class="section pains" id="pains" data-bg="#F4E6D8" aria-labelledby="pains-title">
+    <div class="wrap pains__grid">
+      <figure class="pains__media" data-reveal>
+        <div class="pains__img">
+          <img src="assets/neck-sm.jpg" srcset="assets/neck-sm.jpg 820w, assets/neck.jpg 1600w" sizes="(max-width: 900px) 92vw, 520px" width="1600" height="1064" decoding="async" alt="Женщина за ноутбуком на кухне держится за плечо — к вечеру устала спина">
+        </div>
+        <figcaption class="sticker"><b>Вы не одна</b>Так чувствуют себя многие после долгого дня за столом или у плиты.</figcaption>
+      </figure>
+      <div>
+        <div data-reveal>
+          <p class="eyebrow">Знакомо?</p>
+          <h2 id="pains-title" style="margin-top:16px">Тело просит <em>бережного</em> внимания</h2>
+        </div>
+        <ul class="pains__list">
+          <li data-reveal><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-sunrise"/></svg></span><div><h3>Утром нужно время, чтобы «расходиться»</h3><p>Первые шаги после сна даются тяжелее, чем хотелось бы.</p></div></li>
+          <li data-reveal><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-desk"/></svg></span><div><h3>К вечеру устают спина и плечи</h3><p>Особенно после пары часов за компьютером или домашних дел.</p></div></li>
+          <li data-reveal><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-home"/></svg></span><div><h3>В зал&nbsp;— неловко, дома&nbsp;— непонятно</h3><p>Хочется двигаться, но не ясно, с чего начать и что подойдёт именно вам.</p></div></li>
+          <li data-reveal><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-heart"/></svg></span><div><h3>Страшно сделать хуже</h3><p>Поэтому движение откладывается «на потом»&nbsp;— и копится усталость.</p></div></li>
+        </ul>
+        <p class="pains__outro" data-reveal>Это не про возраст. Телу просто не хватает мягкого, регулярного движения&nbsp;— и мы поможем его вернуть.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement" data-bg="#FBF7EF" aria-label="Наш подход">
+    <div class="wrap">
+      <p class="statement__text" data-words>Мы не гонимся за рекордами. Мы помогаем снова радоваться простым движениям: <em>наклониться к&nbsp;внукам</em>, подняться по лестнице без остановки и&nbsp;гулять столько, сколько хочется.</p>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="section courses" id="courses" data-bg="#FBF7EF" aria-labelledby="courses-title">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Курсы</p>
+        <h2 id="courses-title">Четыре мягкие программы&nbsp;— <em>начните с любой</em></h2>
+        <p class="lead">В каждом уроке есть упрощённый вариант на стуле, а темп можно выбрать свой. Не уверены, что подойдёт? Пройдите подбор в три вопроса.</p>
+      </div>
+      <div class="courses__grid">
+        <article class="course">
+          <div class="course__media">
+            <img src="assets/back-sm.jpg" srcset="assets/back-sm.jpg 820w, assets/back.jpg 1600w" sizes="(max-width: 760px) 92vw, 580px" width="1600" height="1066" decoding="async" alt="Женщина с седыми волосами лежит на диване и с улыбкой потягивается">
+            <span class="course__tag">Лёжа и сидя</span>
+          </div>
+          <div class="course__body">
+            <p class="course__meta"><span>6 недель</span><span>18 уроков</span></p>
+            <h3>Здоровая спина</h3>
+            <p>Мягкая подвижность позвоночника, укрепление мышц корпуса и расслабление поясницы.</p>
+            <a class="course__link" href="#quiz">Подходит ли мне? <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="course">
+          <div class="course__media">
+            <img src="assets/neckmat-sm.jpg" srcset="assets/neckmat-sm.jpg 820w, assets/neckmat.jpg 1068w" sizes="(max-width: 760px) 92vw, 580px" width="1068" height="1600" decoding="async" style="object-position:50% 28%" alt="Женщина с кудрявыми волосами сидит на коврике и мягко разминает шею">
+            <span class="course__tag">Для работы за столом</span>
+          </div>
+          <div class="course__body">
+            <p class="course__meta"><span>4 недели</span><span>12 уроков</span></p>
+            <h3>Свободная шея и плечи</h3>
+            <p>Снимаем напряжение после дня за столом и учимся держать осанку без усилий.</p>
+            <a class="course__link" href="#quiz">Подходит ли мне? <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="course">
+          <div class="course__media">
+            <img src="assets/park-sm.jpg" srcset="assets/park-sm.jpg 820w, assets/park.jpg 1600w" sizes="(max-width: 760px) 92vw, 580px" width="1600" height="1066" decoding="async" alt="Улыбающаяся женщина в парке делает растяжку ног">
+            <span class="course__tag">У опоры и на прогулке</span>
+          </div>
+          <div class="course__body">
+            <p class="course__meta"><span>6 недель</span><span>18 уроков</span></p>
+            <h3>Лёгкие колени и баланс</h3>
+            <p>Бережные упражнения для суставов ног и равновесия&nbsp;— сидя, стоя у опоры и на прогулке.</p>
+            <a class="course__link" href="#quiz">Подходит ли мне? <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="course">
+          <div class="course__media">
+            <img src="assets/calm-sm.jpg" srcset="assets/calm-sm.jpg 820w, assets/calm.jpg 1066w" sizes="(max-width: 760px) 92vw, 580px" width="1066" height="1600" decoding="async" style="object-position:50% 60%" alt="Женщина сидит на полу у большого окна, подняв лицо к свету">
+            <span class="course__tag">10 минут утром</span>
+          </div>
+          <div class="course__body">
+            <p class="course__meta"><span>3 недели</span><span>15 коротких уроков</span></p>
+            <h3>Утро без скованности</h3>
+            <p>Короткая зарядка и дыхание, чтобы тело просыпалось мягко, а день начинался бодрее.</p>
+            <a class="course__link" href="#quiz">Подходит ли мне? <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="section quiz-sec" id="quiz" data-bg="#EDEFE0" aria-labelledby="quiz-title">
+    <div class="wrap quiz-sec__grid">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Подбор курса</p>
+        <h2 id="quiz-title">Три вопроса&nbsp;— <em>и&nbsp;мы подскажем</em>, с&nbsp;чего начать</h2>
+        <p class="lead">Ответьте честно, правильных и неправильных ответов нет. Займёт меньше минуты.</p>
+        <p class="quiz-sec__note"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg><span>Ответы никуда не отправляются&nbsp;— подбор работает прямо на этой странице.</span></p>
+      </div>
+
+      <div class="quiz" id="quiz-card" data-reveal>
+        <div class="quiz__top">
+          <p class="quiz__count" id="quiz-count">Вопрос 1 из 3</p>
+          <div class="quiz__bar" role="progressbar" aria-labelledby="quiz-count" aria-valuemin="0" aria-valuemax="3" aria-valuenow="1"><span></span></div>
+        </div>
+        <form class="quiz__stage" id="quiz-form" novalidate>
+          <fieldset class="q-step is-active" data-key="focus">
+            <legend class="q-title" tabindex="-1">Что беспокоит больше всего?</legend>
+            <div class="q-options">
+              <label class="q-opt"><input type="radio" name="focus" value="back"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><svg class="i"><use href="#i-spine"/></svg></span><span>Спина и поясница</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+              <label class="q-opt"><input type="radio" name="focus" value="neck"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><svg class="i"><use href="#i-bust"/></svg></span><span>Шея и плечи</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+              <label class="q-opt"><input type="radio" name="focus" value="knees"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><svg class="i"><use href="#i-walk"/></svg></span><span>Колени и&nbsp;устойчивость</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+              <label class="q-opt"><input type="radio" name="focus" value="morning"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><svg class="i"><use href="#i-sun"/></svg></span><span>Скованность по&nbsp;утрам</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="q-step" data-key="activity">
+            <legend class="q-title" tabindex="-1">Как часто вы двигаетесь сейчас?</legend>
+            <div class="q-options">
+              <label class="q-opt"><input type="radio" name="activity" value="1"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><span class="bars"><i class="on"></i><i></i><i></i><i></i></span></span><span>Почти не двигаюсь</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+              <label class="q-opt"><input type="radio" name="activity" value="2"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><span class="bars"><i class="on"></i><i class="on"></i><i></i><i></i></span></span><span>Иногда гуляю</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+              <label class="q-opt"><input type="radio" name="activity" value="3"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span><span>Занимаюсь 1–2 раза в&nbsp;неделю</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+              <label class="q-opt"><input type="radio" name="activity" value="4"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></span><span>Двигаюсь почти каждый день</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="q-step" data-key="time">
+            <legend class="q-title" tabindex="-1">Сколько времени готовы уделять занятию?</legend>
+            <div class="q-options">
+              <label class="q-opt"><input type="radio" name="time" value="short"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><svg class="i"><use href="#i-clock"/></svg></span><span>10–15 минут</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+              <label class="q-opt"><input type="radio" name="time" value="mid"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><svg class="i"><use href="#i-clock"/></svg></span><span>Около 20 минут</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+              <label class="q-opt"><input type="radio" name="time" value="long"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><svg class="i"><use href="#i-clock"/></svg></span><span>30 минут и больше</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+              <label class="q-opt"><input type="radio" name="time" value="unsure"><span class="q-opt__box"><span class="q-opt__ic" aria-hidden="true"><svg class="i"><use href="#i-chat"/></svg></span><span>Пока не знаю</span><span class="q-opt__check" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span></span></label>
+            </div>
+          </fieldset>
+
+          <div class="q-result" tabindex="-1" aria-labelledby="r-title">
+            <div class="q-result__head">
+              <img class="q-result__img" id="r-img" src="assets/back-sm.jpg" width="84" height="84" alt="">
+              <div>
+                <p class="eyebrow">Вам подойдёт</p>
+                <h3 class="q-result__title" id="r-title">Здоровая спина</h3>
+              </div>
+            </div>
+            <p id="r-text">Мягкая подвижность позвоночника и расслабление поясницы.</p>
+            <ul class="q-result__tags" id="r-tags"></ul>
+            <div class="q-result__cta">
+              <a class="btn btn--primary" href="#cta">Попробовать бесплатно <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <button class="btn btn--link q-restart" type="button">Пройти заново</button>
+            </div>
+            <p class="small">Это рекомендация, а не медицинское заключение. При диагнозах&nbsp;— по&nbsp;согласованию с&nbsp;врачом.</p>
+          </div>
+        </form>
+        <p class="q-hint" id="q-hint" aria-live="polite"></p>
+        <div class="quiz__nav">
+          <button class="btn btn--ghost q-back" type="button" hidden><svg class="i" aria-hidden="true"><use href="#i-left"/></svg> Назад</button>
+          <button class="btn btn--primary q-next" type="button" aria-disabled="true" aria-describedby="q-hint"><span class="q-next__label">Далее</span> <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+        <p class="sr-only" id="quiz-live" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="section how" id="how" data-bg="#F6EFE3" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head center" data-reveal>
+        <p class="eyebrow">Как проходит обучение</p>
+        <h2 id="how-title">Четыре спокойных шага&nbsp;— <em>от анкеты до привычки</em></h2>
+      </div>
+      <div class="how__steps">
+        <svg class="how__svg" aria-hidden="true" focusable="false"><path class="how__guide" d=""/><path class="how__line" d=""/></svg>
+        <ol class="how__list">
+          <li class="step"><span class="step__dot" aria-hidden="true">1</span><div class="step__card"><span class="step__time">5 минут</span><h3>Короткая анкета</h3><p>Расскажете о самочувствии и привычках. Если есть диагнозы&nbsp;— подскажем, что обсудить с врачом.</p></div></li>
+          <li class="step"><span class="step__dot" aria-hidden="true">2</span><div class="step__card"><span class="step__time">1 день</span><h3>Ваша программа</h3><p>Куратор подбирает курс и темп. Начинаем с самого щадящего уровня.</p></div></li>
+          <li class="step"><span class="step__dot" aria-hidden="true">3</span><div class="step__card"><span class="step__time">20 минут</span><h3>Занятия дома</h3><p>Видеоуроки в удобное время. Нужны только коврик и устойчивый стул.</p></div></li>
+          <li class="step"><span class="step__dot" aria-hidden="true">4</span><div class="step__card"><span class="step__time">Каждую неделю</span><h3>Куратор рядом</h3><p>Отвечает в чате, смотрит технику по видео и мягко поддерживает ритм.</p></div></li>
+        </ol>
+      </div>
+      <div class="how__note" data-reveal><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><p>Наши занятия&nbsp;— это бережное движение, а не лечение. При диагнозах, после операций и травм начинайте только по согласованию с&nbsp;врачом.</p></div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="section why" id="why" data-bg="#FBF7EF" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Почему с нами спокойно</p>
+        <h2 id="why-title">Забота&nbsp;— <em>в каждой мелочи</em></h2>
+      </div>
+      <div class="bento">
+        <figure class="bento__photo" data-reveal>
+          <img src="assets/call-sm.jpg" srcset="assets/call-sm.jpg 820w, assets/call.jpg 1600w" sizes="(max-width: 960px) 92vw, 460px" width="1600" height="1064" decoding="async" alt="Улыбающаяся женщина в очках разговаривает по видеосвязи через ноутбук">
+          <figcaption>
+            <span class="badge">Куратор на связи</span>
+            <p>«Вижу, наклоны даются легче! На следующей неделе попробуем вариант без опоры».</p>
+            <span class="who">Ольга, куратор группы</span>
+          </figcaption>
+        </figure>
+        <div class="tile" data-reveal><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-feather"/></svg></span><h3>Без перегрузок</h3><p>Уроки собраны так, чтобы после них хотелось ещё, а не прилечь.</p></div>
+        <div class="tile" data-reveal><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-subs"/></svg></span><h3>Видно и слышно</h3><p>Крупный план, субтитры и спокойный темп объяснений.</p></div>
+        <div class="tile" data-reveal><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-chair"/></svg></span><h3>Всегда есть вариант попроще</h3><p>Каждое упражнение можно выполнить сидя на стуле.</p></div>
+        <div class="tile tile--accent" data-reveal><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-shield"/></svg></span><h3>Безопасность прежде всего</h3><p>Мы не ставим диагнозов и не обещаем вылечить. При заболеваниях&nbsp;— по согласованию с врачом.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section reviews" id="reviews" data-bg="#F4E3D5" aria-labelledby="reviews-title">
+    <div class="wrap reviews__head">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Отзывы</p>
+        <h2 id="reviews-title">Что говорят <em>ученицы</em></h2>
+      </div>
+      <div class="carousel__ctrl">
+        <button class="round-btn" type="button" data-dir="-1" aria-controls="reviews-track" aria-label="Предыдущий отзыв"><svg class="i" aria-hidden="true"><use href="#i-left"/></svg></button>
+        <button class="round-btn" type="button" data-dir="1" aria-controls="reviews-track" aria-label="Следующий отзыв"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+    <div class="carousel" role="region" aria-roledescription="карусель" aria-label="Отзывы учениц" data-reveal>
+      <ul class="carousel__track" id="reviews-track" tabindex="0" aria-label="Отзывы: листайте стрелками влево и вправо">
+        <li class="review" role="group" aria-roledescription="слайд" aria-label="1 из 6">
+          <div class="stars" role="img" aria-label="Оценка 5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote><p>«Боялась, что не справлюсь: двадцать лет ничем не занималась. Всё объясняют медленно и по-человечески. Через месяц заметила, что утром встаю легче&nbsp;— и настроение другое».</p></blockquote>
+          <div class="review__who"><span class="avatar" aria-hidden="true">Г</span><span><b>Галина, 58 лет</b><span>Минск · «Здоровая спина»</span></span></div>
+        </li>
+        <li class="review" role="group" aria-roledescription="слайд" aria-label="2 из 6">
+          <div class="stars" role="img" aria-label="Оценка 5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote><p>«Работаю за компьютером, к вечеру плечи были как каменные. Теперь делаю короткую разминку в обед, а куратор подсказала, как удобнее сидеть».</p></blockquote>
+          <div class="review__who"><span class="avatar" aria-hidden="true">И</span><span><b>Ирина, 51 год</b><span>Москва · «Свободная шея и плечи»</span></span></div>
+        </li>
+        <li class="review" role="group" aria-roledescription="слайд" aria-label="3 из 6">
+          <div class="stars" role="img" aria-label="Оценка 5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote><p>«Внучка помогла зарегистрироваться, дальше всё сама&nbsp;— кнопки крупные, понятные. Занимаюсь утром, пока заваривается чай. Это стало моим маленьким ритуалом».</p></blockquote>
+          <div class="review__who"><span class="avatar" aria-hidden="true">В</span><span><b>Валентина, 64 года</b><span>Брест · «Утро без скованности»</span></span></div>
+        </li>
+        <li class="review" role="group" aria-roledescription="слайд" aria-label="4 из 6">
+          <div class="stars" role="img" aria-label="Оценка 5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote><p>«Понравилось, что ничего не обещают „за неделю“. Всё бережно, с вариантами попроще. Я показала программу своему врачу, и куратор учла его рекомендации».</p></blockquote>
+          <div class="review__who"><span class="avatar" aria-hidden="true">Н</span><span><b>Наталья, 47 лет</b><span>Казань · «Лёгкие колени и баланс»</span></span></div>
+        </li>
+        <li class="review" role="group" aria-roledescription="слайд" aria-label="5 из 6">
+          <div class="stars" role="img" aria-label="Оценка 5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote><p>«Главное&nbsp;— меня не бросили. Пропустила неделю из-за дачи, куратор написала и мягко вернула в ритм. Без упрёков, как подруга».</p></blockquote>
+          <div class="review__who"><span class="avatar" aria-hidden="true">Л</span><span><b>Людмила, 60 лет</b><span>Самара · тариф «С куратором»</span></span></div>
+        </li>
+        <li class="review" role="group" aria-roledescription="слайд" aria-label="6 из 6">
+          <div class="stars" role="img" aria-label="Оценка 5 из 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <blockquote><p>«Начали гулять с мужем по вечерам&nbsp;— теперь это удовольствие, а не испытание. Он тоже делает со мной разминку, хотя сначала посмеивался».</p></blockquote>
+          <div class="review__who"><span class="avatar" aria-hidden="true">Е</span><span><b>Елена, 55 лет</b><span>Гомель · «Лёгкие колени и баланс»</span></span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="carousel__dots" role="group" aria-label="Выбор отзыва"></div>
+    <p class="note">Концепт: имена и истории придуманы для демонстрации дизайна.</p>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section pricing" id="pricing" data-bg="#F6EFE3" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="section-head center" data-reveal>
+        <p class="eyebrow">Тарифы</p>
+        <h2 id="pricing-title">Выберите <em>свой формат</em></h2>
+        <p class="lead">Первый урок&nbsp;— бесплатно. Если в течение 14 дней поймёте, что формат не ваш, вернём оплату.</p>
+        <div class="period" role="radiogroup" aria-label="Период оплаты">
+          <button type="button" role="radio" aria-checked="true" tabindex="0" data-period="m">Месяц</button>
+          <button type="button" role="radio" aria-checked="false" tabindex="-1" data-period="q">3 месяца <span class="save">−20%</span></button>
+          <span class="period__pill" aria-hidden="true"></span>
+        </div>
+        <p class="sr-only" id="period-live" aria-live="polite"></p>
+      </div>
+      <div class="plans">
+        <article class="plan" data-reveal>
+          <h3>Сама</h3>
+          <p class="plan__desc">Для тех, кто любит заниматься в&nbsp;своём ритме.</p>
+          <p class="plan__price"><span class="num" data-m="990" data-q="790" aria-hidden="true">990</span><span class="cur" aria-hidden="true">₽ / мес</span><span class="sr-only" data-sr>990 рублей в месяц</span></p>
+          <p class="plan__bill" data-m="Оплата помесячно" data-q="2 370 ₽ за 3 месяца">Оплата помесячно</p>
+          <ul class="plan__list">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Все видеоуроки выбранного курса</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Расписание и напоминания</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Общий чат учениц</li>
+          </ul>
+          <a class="btn btn--ghost" href="#cta">Начать бесплатно</a>
+        </article>
+        <article class="plan plan--featured" data-reveal>
+          <span class="plan__badge">Чаще всего выбирают</span>
+          <h3>С куратором</h3>
+          <p class="plan__desc">Когда хочется, чтобы кто-то подсказал и поддержал.</p>
+          <p class="plan__price"><span class="num" data-m="2490" data-q="1990" aria-hidden="true">2&nbsp;490</span><span class="cur" aria-hidden="true">₽ / мес</span><span class="sr-only" data-sr>2 490 рублей в месяц</span></p>
+          <p class="plan__bill" data-m="Оплата помесячно" data-q="5 970 ₽ за 3 месяца">Оплата помесячно</p>
+          <ul class="plan__list">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Всё из тарифа «Сама»</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Личный куратор в чате</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Разбор техники по видео</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Групповой созвон раз в неделю</li>
+          </ul>
+          <a class="btn btn--primary" href="#cta">Начать бесплатно</a>
+        </article>
+        <article class="plan" data-reveal>
+          <h3>Лично</h3>
+          <p class="plan__desc">Индивидуальная программа и внимание каждый день.</p>
+          <p class="plan__price"><span class="num" data-m="5900" data-q="4720" aria-hidden="true">5&nbsp;900</span><span class="cur" aria-hidden="true">₽ / мес</span><span class="sr-only" data-sr>5 900 рублей в месяц</span></p>
+          <p class="plan__bill" data-m="Оплата помесячно" data-q="14 160 ₽ за 3 месяца">Оплата помесячно</p>
+          <ul class="plan__list">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Всё из тарифа «С куратором»</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Персональная программа</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>4 личных созвона в месяц</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Связь с куратором каждый день</li>
+          </ul>
+          <a class="btn btn--ghost" href="#cta">Начать бесплатно</a>
+        </article>
+      </div>
+      <p class="pricing__fine">Цены&nbsp;— для примера: это концепт, оплата на сайте не принимается.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-sec" id="faq" data-bg="#EDEFE0" aria-labelledby="faq-title">
+    <div class="wrap faq-sec__grid">
+      <div class="faq-aside">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Вопросы</p>
+          <h2 id="faq-title">Отвечаем <em>честно</em></h2>
+        </div>
+        <div class="help-card" data-reveal>
+          <h3>Не нашли ответ?</h3>
+          <p>Оставьте телефон&nbsp;— куратор перезвонит и спокойно всё объяснит. Без навязчивых продаж.</p>
+          <a class="btn btn--ghost" href="#cta">Задать вопрос</a>
+        </div>
+      </div>
+      <div class="faq" data-reveal>
+        <div class="faq__item is-open">
+          <h3 class="faq__h"><button class="faq__btn" type="button" id="faq-b1" aria-expanded="true" aria-controls="faq-p1"><span>Мне за 60, и я давно не занималась. Подойдёт?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__panel" id="faq-p1" role="region" aria-labelledby="faq-b1"><div class="faq__inner"><p>Да. Большинство учениц начинают с самого мягкого уровня: многие упражнения делаются сидя на стуле, темп спокойный, а каждое движение показано с упрощённым вариантом.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__btn" type="button" id="faq-b2" aria-expanded="false" aria-controls="faq-p2"><span>У меня есть диагноз. Можно заниматься?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__panel" id="faq-p2" role="region" aria-labelledby="faq-b2"><div class="faq__inner"><p>Наши курсы&nbsp;— это бережное движение, а не лечение. При диагнозах, после операций и травм начинайте занятия только по согласованию с врачом. Куратор учтёт его рекомендации и подберёт щадящий вариант.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__btn" type="button" id="faq-b3" aria-expanded="false" aria-controls="faq-p3"><span>Что нужно для занятий?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__panel" id="faq-p3" role="region" aria-labelledby="faq-b3"><div class="faq__inner"><p>Телефон, планшет или компьютер, коврик или плед и устойчивый стул. Никаких тренажёров и специальной формы&nbsp;— удобной домашней одежды достаточно.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__btn" type="button" id="faq-b4" aria-expanded="false" aria-controls="faq-p4"><span>Сложно ли разобраться с платформой?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__panel" id="faq-p4" role="region" aria-labelledby="faq-b4"><div class="faq__inner"><p>Урок открывается одной кнопкой по ссылке из сообщения. Видео с крупными подписями и субтитрами, а если что-то не получается&nbsp;— поддержка поможет по телефону, шаг за шагом.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__btn" type="button" id="faq-b5" aria-expanded="false" aria-controls="faq-p5"><span>Что, если я пропущу занятие?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__panel" id="faq-p5" role="region" aria-labelledby="faq-b5"><div class="faq__inner"><p>Ничего страшного: уроки остаются в вашем кабинете, к ним можно вернуться в любое время. Куратор поможет мягко вернуться в ритм&nbsp;— без упрёков.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3 class="faq__h"><button class="faq__btn" type="button" id="faq-b6" aria-expanded="false" aria-controls="faq-p6"><span>Можно ли вернуть деньги?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__panel" id="faq-p6" role="region" aria-labelledby="faq-b6"><div class="faq__inner"><p>Да. Если в течение 14 дней поймёте, что формат не ваш, вернём оплату полностью&nbsp;— достаточно написать куратору.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta" id="cta" data-bg="#F6EFE3" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="cta__card" data-reveal>
+        <div class="cta__media">
+          <div class="blob">
+            <img src="assets/yoga-sm.jpg" srcset="assets/yoga-sm.jpg 820w, assets/yoga.jpg 1600w" sizes="(max-width: 900px) 360px, 430px" width="1600" height="1068" decoding="async" alt="Женщина с кудрявыми волосами делает наклон в сторону на коврике в светлой гостиной">
+          </div>
+        </div>
+        <div class="cta__body">
+          <p class="eyebrow">Бесплатный урок</p>
+          <h2 id="cta-title">Попробуйте первый урок&nbsp;— <em>это 20&nbsp;минут для себя</em></h2>
+          <p class="cta__lead">Оставьте имя и телефон: куратор позвонит, ответит на вопросы и пришлёт ссылку на урок. Без обязательств.</p>
+          <form class="form" id="lead-form" novalidate>
+            <div class="form__row">
+              <div class="field">
+                <label for="f-name">Как к вам обращаться</label>
+                <input id="f-name" name="person" type="text" autocomplete="given-name" required aria-describedby="e-name" placeholder="Например, Галина">
+                <span class="field__err" id="e-name"></span>
+              </div>
+              <div class="field">
+                <label for="f-phone">Телефон</label>
+                <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="e-phone" placeholder="+7 900 000-00-00">
+                <span class="field__err" id="e-phone"></span>
+              </div>
+            </div>
+            <button class="btn btn--primary btn--lg" type="submit">Записаться на бесплатный урок <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="form__note">Это концепт-проект: заявка никуда не отправляется.</p>
+          </form>
+          <div class="form__done" role="status" aria-live="polite"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><p id="done-text"></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <a class="logo" href="#top" aria-label="Лёгкий шаг — в начало страницы">
+        <svg viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="13" fill="#F6EFE3"/><path d="M12.5 29.5c2-9.8 8.6-15.8 17.8-17-1.3 9.2-7.2 15.6-16.4 17.6" fill="#4E5A2E"/><circle cx="13.8" cy="30" r="3" fill="#E3936B"/></svg>
+        <span>Лёгкий шаг</span>
+      </a>
+      <p class="footer__about">Онлайн-школа здорового движения для тех, кому 45+. Мягко, понятно, с заботой.</p>
+    </div>
+    <nav aria-label="Разделы сайта">
+      <ul>
+        <li><a href="#courses">Курсы</a></li>
+        <li><a href="#quiz">Подбор курса</a></li>
+        <li><a href="#how">Как проходит</a></li>
+        <li><a href="#pricing">Тарифы</a></li>
+        <li><a href="#faq">Вопросы</a></li>
+      </ul>
+    </nav>
+    <div class="concept">
+      <p><b>Концепт-проект.</b> Дизайн и&nbsp;разработка&nbsp;— <a href="https://nikich196.github.io/portfolio/">Никита Сацюк</a></p>
+      <p class="small">«Лёгкий шаг»&nbsp;— вымышленная школа, не реальный сервис. Тексты, цены и&nbsp;отзывы&nbsp;— примеры. Материалы сайта не являются медицинской рекомендацией.</p>
+    </div>
+  </div>
+  <div class="wrap">
+   <div class="footer__credits">
+    <p>Фото: Shixart1985, Wikimedia Commons, лицензия <a href="https://creativecommons.org/licenses/by/2.0/deed.ru" rel="license noopener" target="_blank">CC&nbsp;BY&nbsp;2.0</a>; кадрированы и сжаты.
+      <a href="https://commons.wikimedia.org/wiki/File:Middler-aged_woman_stretches_and_relaxes_at_home_in_morning_light.jpg" target="_blank" rel="noopener">Растяжка у окна</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Senior_woman_practicing_self-care_and_stretching_in_home_office_while_working_on_laptop.jpg" target="_blank" rel="noopener">за ноутбуком</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Middle-aged_woman_stretches_on_a_couch_in_a_living_room.jpg" target="_blank" rel="noopener">на диване</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Woman_stretches_and_relaxes_at_home_in_living_room.jpg" target="_blank" rel="noopener">разминка шеи</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Woman_stretches_outdoors_in_a_park_during_a_sunny_day_while_preparing_for_exercise.jpg" target="_blank" rel="noopener">в парке</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Older_woman_sitting_on_floor_looking_up_by_large_window_in_a_bright_room.jpg" target="_blank" rel="noopener">у окна</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Older_woman_enjoying_a_video_call_at_home_while_smiling_and_expressing_gratitude.jpg" target="_blank" rel="noopener">видеозвонок</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Beautiful_senior_woman_with_curly_hair_doing_yoga_at_home.jpg" target="_blank" rel="noopener">наклон на коврике</a>.
+    </p>
+   </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="sticky-cta">
+  <a class="btn btn--primary" href="#cta">Записаться на бесплатный урок <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var reduce = root.classList.contains('reduce');
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var lenis = null;
+  var hasG = false;
+
+  // если анимации не стартовали — показываем всё как есть
+  var safety = setTimeout(function () { if (!root.classList.contains('anim-ready')) root.classList.add('no-anim'); }, 4000);
+
+  document.addEventListener('DOMContentLoaded', init);
+
+  function init() {
+    hasG = !!(window.gsap && window.ScrollTrigger);
+    splitWords();
+    setupMenu(); setupAnchors(); setupQuiz(); setupCarousel(); setupPricing();
+    setupFaq(); setupForm(); setupScrollUi(); setupBg();
+
+    if (!hasG || reduce) {
+      clearTimeout(safety); root.classList.add('no-anim');
+      staticPath();
+      return;
+    }
+    try {
+      gsap.registerPlugin(ScrollTrigger);
+      root.classList.add('anim-ready'); clearTimeout(safety);
+      setupLenis(); intro(); reveals(); setupPath(); statement(); mediaFx();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
+      window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+    } catch (err) {
+      root.classList.add('no-anim'); staticPath();
+      if (window.console) console.warn('Анимации отключены:', err);
+    }
+  }
+
+  /* ---------- плавный скролл ---------- */
+  function setupLenis() {
+    if (!window.Lenis) return;
+    lenis = new Lenis({ lerp: 0.1, smoothWheel: true, wheelMultiplier: 1 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  function scrollToEl(el) {
+    var off = -84;
+    if (lenis) lenis.scrollTo(el, { offset: off, duration: 1.3 });
+    else {
+      var y = el.getBoundingClientRect().top + window.pageYOffset + off;
+      window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+    }
+  }
+
+  function setupAnchors() {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!a) return;
+      var id = a.getAttribute('href');
+      if (!id || id.length < 2) return;
+      var el = document.getElementById(id.slice(1));
+      if (!el) return;
+      e.preventDefault();
+      closeMenu(false);
+      scrollToEl(el);
+      var focusTarget = el.matches('main') ? el : (el.querySelector('h1, h2') || el);
+      if (!focusTarget.hasAttribute('tabindex')) focusTarget.setAttribute('tabindex', '-1');
+      focusTarget.focus({ preventScroll: true });
+    });
+  }
+
+  /* ---------- меню ---------- */
+  var burger, menu;
+  function setupMenu() {
+    burger = $('.burger'); menu = $('#menu');
+    if (!burger || !menu) return;
+    burger.addEventListener('click', function () {
+      if (burger.getAttribute('aria-expanded') === 'true') closeMenu(true); else openMenu();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) closeMenu(true); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 960 && !menu.hidden) closeMenu(false); });
+  }
+  function openMenu() {
+    menu.hidden = false;
+    burger.setAttribute('aria-expanded', 'true'); burger.setAttribute('aria-label', 'Закрыть меню');
+    if (lenis) lenis.stop(); else document.body.style.overflow = 'hidden';
+    var first = menu.querySelector('a'); if (first) first.focus();
+  }
+  function closeMenu(returnFocus) {
+    if (!menu || menu.hidden) return;
+    menu.hidden = true;
+    burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Открыть меню');
+    if (lenis) lenis.start(); else document.body.style.overflow = '';
+    if (returnFocus) burger.focus();
+  }
+
+  /* ---------- шапка + липкая кнопка ---------- */
+  function setupScrollUi() {
+    var header = $('#header'), sticky = $('#sticky-cta'), heroCta = $('.hero__cta'), cta = $('#cta'), quiz = $('#quiz-card');
+    var ticking = false;
+    function update() {
+      ticking = false;
+      header.classList.toggle('is-scrolled', window.pageYOffset > 8);
+      if (!sticky || !heroCta || !cta) return;
+      var past = heroCta.getBoundingClientRect().bottom < 0;
+      var before = cta.getBoundingClientRect().top > window.innerHeight * 0.85;
+      var q = quiz ? quiz.getBoundingClientRect() : null;
+      var inQuiz = q ? (q.top < window.innerHeight - 40 && q.bottom > 120) : false;
+      sticky.classList.toggle('is-visible', past && before && !inQuiz);
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  /* ---------- смена фона секций ---------- */
+  function setupBg() {
+    var meta = $('meta[name="theme-color"]');
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var c = en.target.getAttribute('data-bg');
+        root.style.setProperty('--page-bg', c);
+        if (meta) meta.setAttribute('content', c);
+      });
+    }, { rootMargin: '-50% 0px -50% 0px' });
+    $$('[data-bg]').forEach(function (s) { io.observe(s); });
+  }
+
+  /* ---------- интро ---------- */
+  function intro() {
+    var tl = gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.08 });
+    gsap.set('.hero__title', { visibility: 'visible' });
+    tl.fromTo('.hero .chip', { y: 14, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7 }, 0)
+      .fromTo('.hero__title .line > span', { yPercent: 112 }, { yPercent: 0, duration: 1.2, stagger: 0.13, ease: 'expo.out' }, 0.12)
+      .fromTo('.u__svg path', { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.1, ease: 'power2.inOut' }, 0.95)
+      .fromTo('.hero__lead, .hero__cta, .hero__facts', { y: 22, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.1 }, 0.5)
+      .fromTo('.blob-wrap', { scale: 0.9, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 1.6, ease: 'expo.out' }, 0.15)
+      .fromTo('.float', { y: 28, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1, stagger: 0.18 }, 0.85);
+  }
+
+  /* ---------- появление блоков ---------- */
+  function reveals() {
+    ScrollTrigger.batch('[data-reveal]', {
+      start: 'top 90%', once: true,
+      onEnter: function (els) {
+        gsap.fromTo(els, { y: 32, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1, ease: 'power3.out', stagger: 0.09, overwrite: 'auto' });
+      }
+    });
+  }
+
+  function mediaFx() {
+    gsap.to('.hero__media', { yPercent: 7, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.fromTo('.pains__img img', { yPercent: -5 }, { yPercent: 5, ease: 'none', scrollTrigger: { trigger: '.pains__img', start: 'top bottom', end: 'bottom top', scrub: true } });
+    $$('.course__media, .bento__photo').forEach(function (m) {
+      var img = m.querySelector('img');
+      var r = m.classList.contains('bento__photo') ? '32px' : '22px';
+      var tl = gsap.timeline({ scrollTrigger: { trigger: m, start: 'top 88%', once: true } });
+      tl.fromTo(m, { clipPath: 'inset(12% 9% 12% 9% round ' + r + ')' }, { clipPath: 'inset(0% 0% 0% 0% round ' + r + ')', duration: 1.4, ease: 'expo.out' })
+        .fromTo(img, { scale: 1.18 }, { scale: 1, duration: 1.7, ease: 'expo.out', clearProps: 'transform' }, 0);
+    });
+    gsap.fromTo('.cta__media .blob', { scale: 0.86, rotate: -4 }, { scale: 1, rotate: 0, ease: 'none', scrollTrigger: { trigger: '.cta__card', start: 'top 95%', end: 'top 35%', scrub: 0.6 } });
+  }
+
+  /* ---------- текст, проявляющийся по словам ---------- */
+  function splitWords() {
+    var el = $('[data-words]');
+    if (!el) return;
+    (function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/([ \t\n]+)/).forEach(function (p) {
+            if (!p) return;
+            if (/^[ \t\n]+$/.test(p)) frag.appendChild(document.createTextNode(p));
+            else { var s = document.createElement('span'); s.className = 'w'; s.textContent = p; frag.appendChild(s); }
+          });
+          n.parentNode.replaceChild(frag, n);
+        } else if (n.nodeType === 1) walk(n);
+      });
+    })(el);
+  }
+  function statement() {
+    var words = $$('[data-words] .w');
+    if (!words.length) return;
+    gsap.fromTo(words, { opacity: 0.16 }, { opacity: 1, ease: 'none', stagger: 0.08,
+      scrollTrigger: { trigger: '[data-words]', start: 'top 82%', end: 'bottom 48%', scrub: 0.6 } });
+  }
+
+  /* ---------- линия пути через 4 шага ---------- */
+  function buildPath() {
+    var wrap = $('.how__steps'); if (!wrap) return null;
+    var svg = $('.how__svg', wrap), guide = $('.how__guide', wrap), line = $('.how__line', wrap);
+    var wr = wrap.getBoundingClientRect(), W = wr.width, H = wr.height;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('width', W); svg.setAttribute('height', H);
+    var pts = $$('.step__dot', wrap).map(function (d) {
+      var r = d.getBoundingClientRect();
+      return { x: r.left - wr.left + r.width / 2, y: r.top - wr.top + r.height / 2 };
+    });
+    var wide = window.matchMedia('(min-width: 960px)').matches;
+    var segs = [];
+    for (var i = 1; i < pts.length; i++) {
+      var a = pts[i - 1], b = pts[i];
+      if (wide) { var dx = (b.x - a.x) * 0.55; segs.push('C ' + (a.x + dx) + ' ' + a.y + ' ' + (b.x - dx) + ' ' + b.y + ' ' + b.x + ' ' + b.y); }
+      else { var dy = (b.y - a.y) * 0.5; segs.push('C ' + (a.x + 64) + ' ' + (a.y + dy) + ' ' + (b.x - 64) + ' ' + (b.y - dy) + ' ' + b.x + ' ' + b.y); }
+    }
+    var head = 'M ' + pts[0].x + ' ' + pts[0].y;
+    var d = head + ' ' + segs.join(' ');
+    guide.setAttribute('d', d); line.setAttribute('d', d);
+    var total = line.getTotalLength();
+    var marks = [0];
+    var tmp = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    svg.appendChild(tmp);
+    for (var k = 1; k <= segs.length; k++) { tmp.setAttribute('d', head + ' ' + segs.slice(0, k).join(' ')); marks.push(tmp.getTotalLength() / total); }
+    svg.removeChild(tmp);
+    line.style.strokeDasharray = total + ' ' + total;
+    return { total: total, marks: marks, line: line };
+  }
+
+  function setupPath() {
+    var wrap = $('.how__steps'); if (!wrap) return;
+    var steps = $$('.step', wrap);
+    var geo = buildPath();
+    var st = { p: 0 };
+    function render() {
+      if (!geo) return;
+      geo.line.style.strokeDashoffset = geo.total * (1 - st.p);
+      steps.forEach(function (s, i) { s.classList.toggle('is-on', st.p > Math.max(0.004, geo.marks[i] - 0.012)); });
+    }
+    ScrollTrigger.addEventListener('refreshInit', function () { geo = buildPath(); render(); });
+    gsap.to(st, { p: 1, ease: 'none', onUpdate: render,
+      scrollTrigger: { trigger: wrap, start: 'top 72%', end: 'bottom 62%', scrub: 0.8 } });
+    render();
+  }
+
+  function staticPath() {
+    if (!$('.how__steps')) return;
+    $$('.step').forEach(function (s) { s.classList.add('is-on'); });
+    function draw() { var g = buildPath(); if (g) g.line.style.strokeDashoffset = 0; }
+    draw();
+    var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(draw, 150); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+    window.addEventListener('load', draw);
+  }
+
+  /* ---------- квиз ---------- */
+  var COURSES = {
+    back: { title: 'Здоровая спина', img: 'assets/back-sm.jpg', text: 'Мягкая подвижность позвоночника, укрепление мышц корпуса и расслабление поясницы. Начнём с простых движений лёжа и сидя.' },
+    neck: { title: 'Свободная шея и плечи', img: 'assets/neckmat-sm.jpg', text: 'Короткие разминки, которые снимают напряжение после работы за столом и помогают держать осанку без усилий.' },
+    knees: { title: 'Лёгкие колени и баланс', img: 'assets/park-sm.jpg', text: 'Бережные упражнения для суставов ног и равновесия: сидя, стоя у опоры и на прогулке.' },
+    morning: { title: 'Утро без скованности', img: 'assets/calm-sm.jpg', text: 'Короткая утренняя зарядка и дыхание, чтобы тело просыпалось мягко, а день начинался бодрее.' }
+  };
+  var LEVEL = { '1': 'Мягкий старт, упражнения сидя', '2': 'Мягкий старт', '3': 'Обычный темп', '4': 'Активный темп' };
+  var TIME = { short: 'Уроки по 10–15 минут', mid: '20 минут, 3 раза в неделю', long: '20 минут + прогулка-разминка', unsure: 'Начнём с 15 минут, дальше — как удобно' };
+
+  function setupQuiz() {
+    var card = $('#quiz-card'); if (!card) return;
+    var steps = $$('.q-step', card), result = $('.q-result', card), panes = steps.concat([result]);
+    var next = $('.q-next', card), back = $('.q-back', card), label = $('.q-next__label', card);
+    var count = $('#quiz-count'), bar = $('.quiz__bar', card), fill = $('.quiz__bar span', card);
+    var hint = $('#q-hint'), live = $('#quiz-live'), nav = $('.quiz__nav', card), form = $('#quiz-form');
+    var cur = 0, answers = {};
+
+    function fit() { form.style.height = (panes[cur].offsetHeight + 16) + 'px'; }
+    function selected(i) { var c = steps[i].querySelector('input:checked'); return c ? c.value : null; }
+    function updateNav() {
+      next.setAttribute('aria-disabled', selected(cur) ? 'false' : 'true');
+      label.textContent = cur === steps.length - 1 ? 'Показать результат' : 'Далее';
+      back.hidden = cur === 0;
+    }
+    function go(to) {
+      panes.forEach(function (p, k) { p.classList.toggle('is-active', k === to); p.classList.toggle('is-past', k < to); });
+      cur = to;
+      var done = to === steps.length;
+      count.textContent = done ? 'Готово!' : 'Вопрос ' + (to + 1) + ' из ' + steps.length;
+      bar.setAttribute('aria-valuenow', done ? steps.length : to + 1);
+      fill.style.width = (done ? 100 : ((to + 1) / steps.length) * 100) + '%';
+      nav.hidden = done; hint.textContent = '';
+      if (!done) updateNav();
+      fit();
+      var target = done ? result : steps[to].querySelector('legend');
+      setTimeout(function () { target.focus({ preventScroll: true }); }, reduce ? 0 : 260);
+    }
+    function renderResult() {
+      var c = COURSES[answers.focus] || COURSES.back;
+      var low = answers.activity === '1' || answers.activity === '2';
+      $('#r-title').textContent = c.title;
+      $('#r-text').textContent = c.text;
+      $('#r-img').src = c.img;
+      var tags = [LEVEL[answers.activity] || 'Мягкий старт', TIME[answers.time] || TIME.mid, low ? 'Тариф «С куратором»' : 'Тариф «Сама» или «С куратором»'];
+      $('#r-tags').innerHTML = '';
+      tags.forEach(function (t) { var li = document.createElement('li'); li.textContent = t; $('#r-tags').appendChild(li); });
+      live.textContent = 'Результат: вам подойдёт курс «' + c.title + '». ' + tags.join('. ') + '.';
+    }
+
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    card.addEventListener('change', function (e) {
+      if (e.target.matches('input[type="radio"]')) { hint.textContent = ''; updateNav(); }
+    });
+    next.addEventListener('click', function () {
+      var v = selected(cur);
+      if (!v) {
+        hint.textContent = 'Выберите, пожалуйста, один из вариантов';
+        var opts = steps[cur].querySelector('.q-options');
+        if (!reduce && opts.animate) opts.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-7px)' }, { transform: 'translateX(7px)' }, { transform: 'translateX(0)' }], { duration: 380, easing: 'ease-in-out' });
+        return;
+      }
+      answers[steps[cur].getAttribute('data-key')] = v;
+      if (cur < steps.length - 1) go(cur + 1); else { renderResult(); go(steps.length); }
+    });
+    var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(fit, 120); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    window.addEventListener('load', fit);
+    fit();
+    back.addEventListener('click', function () { if (cur > 0) go(cur - 1); });
+    $('.q-restart', card).addEventListener('click', function () {
+      $$('input', form).forEach(function (i) { i.checked = false; });
+      answers = {}; live.textContent = ''; go(0);
+    });
+    updateNav();
+  }
+
+  /* ---------- карусель отзывов ---------- */
+  function setupCarousel() {
+    var track = $('#reviews-track'); if (!track) return;
+    var slides = $$('.review', track);
+    var prev = $('.round-btn[data-dir="-1"]'), nxt = $('.round-btn[data-dir="1"]'), dotsWrap = $('.carousel__dots');
+    var dots = slides.map(function (s, i) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.setAttribute('aria-label', 'Показать отзыв ' + (i + 1) + ' из ' + slides.length);
+      b.setAttribute('aria-controls', 'reviews-track');
+      b.innerHTML = '<span></span>';
+      b.addEventListener('click', function () { goTo(i); });
+      dotsWrap.appendChild(b); return b;
+    });
+    function maxScroll() { return track.scrollWidth - track.clientWidth - 2; }
+    function step() { return slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth; }
+    function current() { return track.scrollLeft >= maxScroll() ? slides.length - 1 : Math.round(track.scrollLeft / step()); }
+    function goTo(i) {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      track.scrollTo({ left: slides[i].offsetLeft - slides[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+    }
+    function update() {
+      var i = current();
+      prev.setAttribute('aria-disabled', track.scrollLeft <= 2 ? 'true' : 'false');
+      nxt.setAttribute('aria-disabled', track.scrollLeft >= maxScroll() ? 'true' : 'false');
+      dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+    }
+    prev.addEventListener('click', function () { if (prev.getAttribute('aria-disabled') !== 'true') goTo(Math.min(current(), Math.round(track.scrollLeft / step())) - 1); });
+    nxt.addEventListener('click', function () { if (nxt.getAttribute('aria-disabled') !== 'true') goTo(Math.round(track.scrollLeft / step()) + 1); });
+    track.addEventListener('keydown', function (e) {
+      var i = Math.round(track.scrollLeft / step());
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(i + 1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(i - 1); }
+      else if (e.key === 'Home') { e.preventDefault(); goTo(0); }
+      else if (e.key === 'End') { e.preventDefault(); goTo(slides.length - 1); }
+    });
+    var raf = 0;
+    track.addEventListener('scroll', function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(update); }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  /* ---------- тарифы ---------- */
+  function setupPricing() {
+    var group = $('.period'); if (!group) return;
+    var btns = $$('button', group), pill = $('.period__pill', group);
+    var nums = $$('.plan__price .num'), srs = $$('.plan__price [data-sr]'), bills = $$('.plan__bill');
+    var live = $('#period-live');
+    var period = 'm';
+    function fmt(n) { return Math.round(n).toLocaleString('ru-RU'); }
+    function placePill() {
+      var b = btns.filter(function (x) { return x.getAttribute('data-period') === period; })[0];
+      pill.style.width = b.offsetWidth + 'px';
+      pill.style.transform = 'translateX(' + b.offsetLeft + 'px)';
+    }
+    function set(p, focus) {
+      if (p === period) return;
+      period = p;
+      btns.forEach(function (b) {
+        var on = b.getAttribute('data-period') === p;
+        b.setAttribute('aria-checked', on ? 'true' : 'false'); b.tabIndex = on ? 0 : -1;
+        if (on && focus) b.focus();
+      });
+      placePill();
+      nums.forEach(function (el, i) {
+        var to = +el.getAttribute('data-' + p), from = +(el.getAttribute('data-cur') || el.getAttribute('data-m'));
+        el.setAttribute('data-cur', to);
+        srs[i].textContent = fmt(to) + ' рублей в месяц';
+        if (hasG && !reduce) {
+          var o = { v: from };
+          gsap.to(o, { v: to, duration: 0.9, ease: 'power3.out', onUpdate: function () { el.textContent = fmt(o.v); } });
+          gsap.fromTo(el, { y: p === 'q' ? -6 : 6 }, { y: 0, duration: 0.6, ease: 'power3.out' });
+        } else el.textContent = fmt(to);
+      });
+      bills.forEach(function (b) { b.textContent = b.getAttribute('data-' + p); });
+      live.textContent = p === 'q' ? 'Цены за месяц при оплате сразу за 3 месяца, скидка 20 процентов' : 'Цены при помесячной оплате';
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.getAttribute('data-period'), false); }); });
+    group.addEventListener('keydown', function (e) {
+      if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].indexOf(e.key) > -1) { e.preventDefault(); set(period === 'm' ? 'q' : 'm', true); }
+    });
+    placePill();
+    window.addEventListener('resize', placePill);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(placePill);
+  }
+
+  /* ---------- FAQ ---------- */
+  function setupFaq() {
+    $$('.faq__btn').forEach(function (btn) {
+      var item = btn.closest('.faq__item'), panel = item.querySelector('.faq__panel'), t;
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        item.classList.toggle('is-open', open);
+      });
+      panel.addEventListener('transitionend', function (e) {
+        if (e.propertyName !== 'grid-template-rows' || !window.ScrollTrigger) return;
+        clearTimeout(t); t = setTimeout(function () { ScrollTrigger.refresh(); }, 60);
+      });
+    });
+  }
+
+  /* ---------- форма записи (только фронт) ---------- */
+  function setupForm() {
+    var form = $('#lead-form'); if (!form) return;
+    var name = $('#f-name'), phone = $('#f-phone');
+    function setErr(input, msg) {
+      var err = document.getElementById(input.getAttribute('aria-describedby'));
+      err.textContent = msg || '';
+      if (msg) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+    }
+    [name, phone].forEach(function (i) { i.addEventListener('input', function () { if (i.getAttribute('aria-invalid')) setErr(i, ''); }); });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var n = name.value.trim(), digits = phone.value.replace(/\D/g, '');
+      setErr(name, n.length < 2 ? 'Напишите, пожалуйста, как к вам обращаться' : '');
+      setErr(phone, digits.length < 7 ? 'Проверьте номер телефона — в нём не хватает цифр' : '');
+      var bad = form.querySelector('[aria-invalid="true"]');
+      if (bad) { bad.focus(); return; }
+      $('#done-text').textContent = 'Спасибо, ' + n + '! В настоящей школе куратор позвонил бы вам в течение дня. А это концепт-проект — заявка никуда не отправлена.';
+      $('.cta__body').classList.add('is-sent');
+      if (window.ScrollTrigger) ScrollTrigger.refresh();
+    });
+  }
+})();
+</script>
+</body>
+</html>

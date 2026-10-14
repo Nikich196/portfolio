@@ -1,0 +1,1390 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ЗЕРНО — кофейня и обжарка · концепт</title>
+<meta name="description" content="ЗЕРНО — концепт сайта спешелти-кофейни и обжарочной в Бресте: свежая обжарка, кофе с собой, десерты и зерно на развес. Дизайн и разработка — Никита Сацюк.">
+<meta name="theme-color" content="#2B1810">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="ЗЕРНО — кофейня и обжарка · концепт">
+<meta property="og:description" content="Концепт-сайт кофейни-обжарочной: свежая обжарка, спешелти-кофе, десерты, зерно на развес.">
+<meta property="og:image" content="https://nikich196.github.io/portfolio/works/zerno/assets/preview-desktop.png">
+<meta property="og:image:width" content="1440">
+<meta property="og:image:height" content="900">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232B1810'/%3E%3Cg transform='rotate(30 32 32)'%3E%3Cellipse cx='32' cy='32' rx='15' ry='21' fill='%23FF5A1F'/%3E%3Cpath d='M32 12C24 24 40 40 32 52' stroke='%232B1810' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/pour.jpg">
+<style>
+:root{
+  --coffee:#2B1810;
+  --coffee-2:#3D2317;
+  --coffee-3:#5B3624;
+  --cream:#F5EBDC;
+  --cream-2:#EBDCC4;
+  --paper:#FBF6EE;
+  --tomato:#FF5A1F;
+  --mustard:#EDB43C;
+  --peach:#F8B89C;
+  --cherry:#8E2B3A;
+  --gutter:clamp(16px,4vw,56px);
+  --r:28px;
+  --f-display:'Unbounded',system-ui,sans-serif;
+  --f-body:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --spring:cubic-bezier(.3,1.35,.5,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{margin:0;background:var(--cream);color:var(--coffee);font-family:var(--f-body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+main{overflow-x:clip}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--tomato);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+::selection{background:var(--tomato);color:var(--coffee)}
+
+/* grain */
+.grain{position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.07;transform:translateZ(0);background:url(assets/grain.png) repeat;background-size:180px 180px}
+
+/* type helpers */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 12px/1.2 var(--f-body);letter-spacing:.16em;text-transform:uppercase}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--tomato);flex:none}
+.h2{font-family:var(--f-display);font-weight:800;font-size:clamp(40px,7.2vw,116px);line-height:.95;letter-spacing:-.035em}
+.h2 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.16em;margin-bottom:-.16em}
+.h2 .wi{display:inline-block}
+.accent{color:var(--tomato)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;font:800 15px/1 var(--f-body);text-decoration:none;letter-spacing:.01em;transition:background-color .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px) rotate(-45deg)}
+.btn--tomato{background:var(--tomato);color:var(--coffee)}
+.btn--tomato:hover{background:var(--coffee);color:var(--cream)}
+.btn--ghost{border:2px solid currentColor}
+.btn--ghost:hover{background:var(--coffee);color:var(--cream);border-color:var(--coffee)}
+.btn--cream{background:var(--cream);color:var(--coffee)}
+.btn--cream:hover{background:var(--coffee);color:var(--cream)}
+
+/* ===== NAV ===== */
+.nav{position:fixed;z-index:120;top:12px;left:var(--gutter);right:var(--gutter);max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 8px 8px 22px;border-radius:999px;background:rgba(251,246,238,.96);border:1px solid rgba(43,24,16,.1);box-shadow:0 10px 30px -18px rgba(43,24,16,.45);transition:transform .5s var(--ease)}
+.nav.is-hidden{transform:translateY(-140%)}
+.nav__logo{font:900 19px/1 var(--f-display);letter-spacing:-.03em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav__logo i{width:12px;height:16px;border-radius:50%;background:var(--tomato);transform:rotate(30deg);display:inline-block}
+.nav__links{display:flex;gap:4px}
+.nav__links a{font:700 14px/1 var(--f-body);text-decoration:none;padding:12px 14px;border-radius:999px;transition:background-color .25s}
+.nav__links a:hover{background:var(--cream-2)}
+.nav__right{display:flex;align-items:center;gap:8px}
+.nav__cart{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 8px 0 18px;border-radius:999px;background:var(--coffee);color:var(--cream);font:700 14px/1 var(--f-body)}
+.nav__count{min-width:28px;height:28px;padding:0 8px;border-radius:999px;background:var(--tomato);color:var(--coffee);display:grid;place-items:center;font:800 13px/1 var(--f-display)}
+.nav__burger{display:none;width:44px;height:44px;border-radius:50%;background:var(--tomato);position:relative}
+.nav__burger span{position:absolute;left:13px;right:13px;height:2px;background:var(--coffee);border-radius:2px;transition:transform .4s var(--ease),top .4s var(--ease)}
+.nav__burger span:nth-child(1){top:17px}
+.nav__burger span:nth-child(2){top:25px}
+.menu-open .nav__burger{background:var(--coffee)}
+.menu-open .nav__burger span{background:var(--cream)}
+.menu-open .nav__burger span:nth-child(1){top:21px;transform:rotate(45deg)}
+.menu-open .nav__burger span:nth-child(2){top:21px;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:110;background:var(--tomato);color:var(--coffee);display:flex;flex-direction:column;justify-content:flex-end;padding:100px var(--gutter) 40px;clip-path:circle(0% at calc(100% - var(--gutter) - 22px) 34px);visibility:hidden;transition:clip-path .7s var(--ease),visibility 0s .7s}
+.menu-open .mnav{clip-path:circle(150% at calc(100% - var(--gutter) - 22px) 34px);visibility:visible;transition:clip-path .7s var(--ease),visibility 0s}
+.mnav a{font:800 clamp(36px,11vw,64px)/1.05 var(--f-display);letter-spacing:-.03em;text-decoration:none;display:block;padding:4px 0}
+.mnav p{margin-top:28px;font-weight:600}
+.mnav a,.mnav p{transform:translateY(40px);opacity:0;transition:transform .6s var(--ease),opacity .6s var(--ease)}
+.menu-open .mnav a,.menu-open .mnav p{transform:none;opacity:1}
+.menu-open .mnav a:nth-child(1){transition-delay:.12s}.menu-open .mnav a:nth-child(2){transition-delay:.17s}.menu-open .mnav a:nth-child(3){transition-delay:.22s}.menu-open .mnav a:nth-child(4){transition-delay:.27s}.menu-open .mnav a:nth-child(5){transition-delay:.32s}.menu-open .mnav p{transition-delay:.4s}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;min-height:100svh;padding:104px var(--gutter) 36px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;overflow:hidden;background:var(--cream);isolation:isolate}
+.hero__top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hero__title{font-family:var(--f-display);font-weight:900;font-size:21vw;line-height:.8;letter-spacing:-.02em;display:flex;justify-content:space-between;white-space:nowrap;margin:0;position:relative;z-index:3;padding-top:.04em}
+.hero__title .ch{display:inline-block;transform-origin:50% 100%;will-change:transform}
+.hero__title .ch--o{background:url(assets/beans.jpg) 40% 50%/cover;-webkit-background-clip:text;background-clip:text;color:transparent}
+.motion .hero__title .ch{opacity:0}
+.hero__bottom{display:grid;grid-template-columns:minmax(0,1.05fr) auto minmax(0,1fr);align-items:end;gap:32px;position:relative;z-index:3}
+.hero__left{display:flex;flex-direction:column;justify-content:space-between;align-self:stretch;gap:24px}
+.hero__today{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;border:1.5px solid rgba(43,24,16,.25);font-weight:600;font-size:14px;margin-top:40px}
+.hero__today b{font-weight:800}
+.hero__today i{position:relative;width:8px;height:8px;border-radius:50%;background:var(--tomato)}
+.hero__today i::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--tomato);animation:pulse 1.8s var(--ease) infinite}
+.hero__lead{font-size:clamp(17px,1.35vw,21px);line-height:1.45;max-width:30ch;font-weight:500}
+.hero__lead b{font-weight:800}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.hero__scroll{display:flex;flex-direction:column;align-items:center;gap:10px;font:700 12px/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;padding-bottom:8px}
+.hero__scroll i{width:2px;height:54px;background:linear-gradient(var(--coffee) 50%,transparent 50%) 0 0/100% 200%;animation:drip 1.8s var(--ease) infinite}
+@keyframes drip{from{background-position:0 100%}to{background-position:0 -100%}}
+.hero__pic{justify-self:end;position:relative;width:min(460px,100%);aspect-ratio:16/10}
+.hero__pic .ph{width:100%;height:100%;border-radius:999px;overflow:hidden;background:var(--coffee)}
+.hero__pic img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.badge{position:absolute;left:-58px;top:-58px;width:132px;height:132px;border-radius:50%;background:var(--tomato);color:var(--coffee);display:grid;place-items:center;box-shadow:0 14px 30px -14px rgba(43,24,16,.6)}
+.badge svg.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 16s linear infinite}
+.badge text{font:800 15.5px var(--f-display);letter-spacing:.06em;fill:var(--coffee)}
+.badge .bean{width:34px;height:46px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero__hint{position:absolute;z-index:3;left:50%;top:104px;transform:translateX(-50%);font:700 12px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;padding:10px 16px;border-radius:999px;background:var(--coffee);color:var(--cream);display:none}
+.has-mouse .hero__hint{display:block}
+.trail{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden}
+.trail img{position:absolute;left:0;top:0;width:clamp(150px,13vw,210px);aspect-ratio:4/5;object-fit:cover;border-radius:18px;opacity:0;will-change:transform,opacity;box-shadow:0 18px 40px -18px rgba(43,24,16,.7)}
+
+/* ===== BANDS / MARQUEE ===== */
+.bands{position:relative;padding:56px 0 64px;overflow:hidden;background:var(--cream)}
+.marquee{overflow:hidden;width:120%;margin-left:-10%;user-select:none}
+.marquee__track{display:flex;width:max-content;will-change:transform}
+.marquee__copy{display:flex;align-items:center;flex:none}
+.marquee__item{display:flex;align-items:center;gap:.45em;padding-right:.45em;font:800 clamp(28px,5.2vw,78px)/1 var(--f-display);text-transform:uppercase;letter-spacing:-.02em;white-space:nowrap}
+.marquee__item svg{width:.62em;height:.86em;flex:none;transform:rotate(30deg)}
+.marquee--tomato{background:var(--tomato);color:var(--coffee);transform:rotate(-3deg);padding:.32em 0}
+.marquee--tomato svg ellipse{fill:var(--coffee)}
+.marquee--tomato svg path{stroke:var(--tomato)}
+.marquee--coffee{background:var(--coffee);color:var(--cream);transform:rotate(2deg);margin-top:clamp(14px,2.6vw,40px);padding:.32em 0}
+.marquee--coffee svg ellipse{fill:var(--tomato)}
+.marquee--coffee svg path{stroke:var(--coffee)}
+.marquee--outline .marquee__item{font-size:clamp(40px,9vw,150px);color:var(--coffee);-webkit-text-stroke:3px var(--cream);paint-order:stroke fill;padding-right:.35em}
+.marquee--outline .marquee__item:nth-child(even){color:var(--tomato);-webkit-text-stroke:0}
+
+/* ===== ABOUT ===== */
+.about{padding:clamp(64px,8vw,120px) var(--gutter) clamp(80px,10vw,150px);max-width:1440px;margin:0 auto}
+.about__text{margin-top:28px;font:600 clamp(25px,4.1vw,62px)/1.16 var(--f-display);letter-spacing:-.025em}
+.about__text .word{display:inline}
+.ipill{display:inline-block;width:1.9em;height:.82em;border-radius:999px;background:var(--img) center/cover;vertical-align:-.06em;margin:0 .08em}
+.stats{margin-top:clamp(56px,7vw,100px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;border-top:2px solid var(--coffee);padding-top:28px}
+.stat b{display:block;font:900 clamp(46px,6.4vw,100px)/1 var(--f-display);letter-spacing:-.04em;color:var(--tomato)}
+.stat b small{font-size:.38em;letter-spacing:0;margin-left:.15em;color:var(--coffee)}
+.stat > span{display:block;margin-top:10px;font-weight:600;max-width:22ch}
+
+/* ===== PROCESS ===== */
+.process{background:var(--coffee);color:var(--cream);position:relative}
+.process__stage{padding:clamp(80px,10vw,120px) var(--gutter) 60px;max-width:1440px;margin:0 auto}
+.process .eyebrow::before{background:var(--tomato)}
+.process__title{margin-top:18px}
+.pcount,.pbar,.process__media{display:none}
+.steps{margin-top:48px;display:grid;gap:56px}
+.step__img{border-radius:24px;overflow:hidden;aspect-ratio:4/5;margin-bottom:22px;background:var(--coffee-2)}
+.step__img img{width:100%;height:100%;object-fit:cover}
+.step__num{font:800 14px/1 var(--f-display);color:var(--tomato);letter-spacing:.06em}
+.step h3{font:800 clamp(34px,4.4vw,66px)/1 var(--f-display);letter-spacing:-.035em;margin-top:10px}
+.step p{margin-top:16px;font-size:clamp(16px,1.2vw,19px);line-height:1.55;max-width:40ch;color:rgba(245,235,220,.82)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{padding:9px 14px;border-radius:999px;border:1.5px solid rgba(245,235,220,.3);font:700 13px/1 var(--f-body)}
+.chips span:first-child{background:var(--tomato);border-color:var(--tomato);color:var(--coffee)}
+
+@media (min-width:900px){
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:64px 48px}
+  .motion .process__stage{height:100vh;height:100svh;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(32px,4vw,72px);padding:96px var(--gutter) 32px;max-width:none}
+  .motion .process__text{display:flex;flex-direction:column;min-height:0}
+  .motion .process__title{font-size:clamp(36px,min(4.6vw,8vh),76px)}
+  .motion .step h3{font-size:clamp(30px,min(4.2vw,7.4vh),64px)}
+  .motion .step p{font-size:clamp(15px,min(1.2vw,2.3vh),19px);margin-top:12px}
+  .motion .chips{margin-top:16px}
+  .motion .pcount{display:flex;align-items:flex-start;gap:12px;margin-top:auto;font:900 clamp(64px,15vh,180px)/1 var(--f-display);letter-spacing:-.05em;color:var(--tomato)}
+  .motion .pcount__win{height:1em;overflow:hidden}
+  .motion .pcount__list{display:flex;flex-direction:column}
+  .motion .pcount__list span{display:block;height:1em}
+  .motion .pcount__total{font-size:.26em;letter-spacing:0;color:rgba(245,235,220,.55);margin-top:.35em}
+  .motion .steps{position:relative;display:block;margin-top:16px;height:230px}
+  .motion .step{position:absolute;inset:0}
+  .motion .step__img,.motion .step__num{display:none}
+  .motion .step h3{margin-top:0}
+  .motion .pbar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}
+  .motion .pbar__item{font:700 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:rgba(245,235,220,.45);transition:color .4s}
+  .motion .pbar__item i{display:block;height:3px;border-radius:3px;background:rgba(245,235,220,.18);margin-bottom:12px;overflow:hidden}
+  .motion .pbar__item i b{display:block;height:100%;background:var(--tomato);transform:scaleX(0);transform-origin:left}
+  .motion .pbar__item.is-active{color:var(--cream)}
+  .motion .process__media{display:block;position:relative;border-radius:36px;overflow:hidden;background:var(--coffee-2);min-height:0}
+  .pm{position:absolute;inset:0;overflow:hidden}
+  .pm img{width:100%;height:100%;object-fit:cover;will-change:transform}
+  .pm figcaption{position:absolute;left:20px;bottom:20px;padding:10px 16px;border-radius:999px;background:rgba(43,24,16,.88);font:700 13px/1 var(--f-body);color:var(--cream)}
+}
+
+/* ===== MENU ===== */
+.menu{padding:clamp(80px,11vw,170px) var(--gutter) clamp(80px,10vw,150px);max-width:1440px;margin:0 auto}
+.menu__head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex-wrap:wrap}
+.menu__head p{max-width:36ch;font-weight:500;font-size:18px}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:40px 0 28px}
+.filter{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 20px;border-radius:999px;border:2px solid var(--coffee);font:800 15px/1 var(--f-body);transition:background-color .3s var(--ease),color .3s var(--ease),transform .3s var(--spring)}
+.filter sup{font:800 11px/1 var(--f-display);opacity:.6}
+.filter:hover{transform:translateY(-2px)}
+.filter.is-active{background:var(--coffee);color:var(--cream)}
+.filter.is-active sup{color:var(--tomato);opacity:1}
+.mgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(230px,auto);grid-auto-flow:dense;gap:16px}
+.mcard{--bg:var(--paper);--fg:var(--coffee);--tag-bg:var(--coffee);--tag-fg:var(--cream);position:relative;display:flex;flex-direction:column;border-radius:var(--r);background:var(--bg);color:var(--fg);overflow:hidden;box-shadow:inset 0 0 0 1px rgba(43,24,16,.08);transition:transform .45s var(--spring)}
+.mcard.is-hidden{display:none}
+.mcard[data-cat="nocoffee"]{--bg:var(--mustard)}
+.mcard[data-cat="dessert"]{--bg:var(--peach)}
+.mcard[data-cat="beans"]{--bg:var(--coffee);--fg:var(--cream);--tag-bg:var(--tomato);--tag-fg:var(--coffee)}
+.mcard--photo{grid-row:span 2}
+.mcard__media{position:relative;flex:1 1 auto;min-height:180px;overflow:hidden;margin:8px 8px 0;border-radius:calc(var(--r) - 8px)}
+.mcard__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.mcard:hover .mcard__media img{transform:scale(1.06)}
+.mcard__body{display:flex;flex-direction:column;flex:1 0 auto;padding:20px 22px 20px}
+.mcard--photo .mcard__body{flex:0 0 auto}
+.mcard__top{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 12px/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase}
+.tag{padding:7px 11px;border-radius:999px;background:var(--tag-bg);color:var(--tag-fg)}
+.mcard h3{font:800 clamp(22px,1.9vw,28px)/1.05 var(--f-display);letter-spacing:-.03em;margin-top:18px}
+.mcard p{margin-top:10px;font-size:15px;line-height:1.45;font-weight:500;opacity:.85}
+.mcard__foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:18px}
+.price{font:800 24px/1 var(--f-display);letter-spacing:-.03em}
+.price small{font:700 12px var(--f-body);letter-spacing:.06em;margin-left:4px;opacity:.7}
+.add{width:46px;height:46px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;transition:transform .4s var(--spring),background-color .3s}
+.add svg{width:18px;height:18px}
+.add:hover{transform:rotate(90deg) scale(1.08);background:var(--tomato);color:var(--coffee)}
+.mcard--cta{grid-column:span 2;--bg:var(--tomato);justify-content:space-between;padding:26px 26px 24px;box-shadow:none}
+.mcard--cta h3{margin-top:0;font-size:clamp(26px,2.6vw,40px);max-width:16ch}
+.mcard--cta p{opacity:1;max-width:38ch}
+.mcard--cta .btn{align-self:flex-start;margin-top:20px}
+
+/* ===== BEANS ===== */
+.beans{background:var(--coffee);color:var(--cream);position:relative;overflow:hidden}
+.beans__in{padding:clamp(80px,11vw,170px) var(--gutter) clamp(80px,10vw,150px);max-width:1440px;margin:0 auto}
+.beans__head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex-wrap:wrap;margin-bottom:48px}
+.beans__head p{max-width:38ch;font-weight:500;font-size:18px;color:rgba(245,235,220,.82)}
+.bgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.bcard{perspective:1400px;height:520px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.bcard__inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .95s var(--spring);border-radius:var(--r)}
+.bcard.is-flipped .bcard__inner{transform:rotateY(180deg)}
+.bface{position:absolute;inset:0;border-radius:var(--r);backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:24px;display:flex;flex-direction:column;overflow:hidden}
+.bface--front{background:var(--c);color:var(--t)}
+.bface--back{background:var(--paper);color:var(--coffee);transform:rotateY(180deg)}
+.bf__top{display:flex;justify-content:space-between;font:700 12px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;position:relative;z-index:2}
+.bf__code{position:absolute;right:-.06em;top:38%;font:900 150px/1 var(--f-display);letter-spacing:-.06em;opacity:.14;pointer-events:none;transform:translateY(-50%)}
+.bf__photo{width:150px;height:150px;border-radius:50%;overflow:hidden;margin:34px 0 0;position:relative;z-index:2;box-shadow:0 0 0 6px rgba(255,255,255,.14);transform:rotate(var(--rot,0deg))}
+.bf__photo img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%);transform:scale(var(--zoom,1.15))}
+.bface h3{font:800 clamp(32px,2.7vw,42px)/1 var(--f-display);letter-spacing:-.04em;margin-top:auto;position:relative;z-index:2}
+.bf__region{margin-top:8px;font-weight:700;font-size:15px;opacity:.85}
+.bf__foot{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:22px;padding-top:18px;border-top:1.5px solid currentColor}
+.bf__foot .price{font-size:26px}
+.hint{display:inline-flex;align-items:center;gap:6px;font:700 12px/1.2 var(--f-body);letter-spacing:.06em;text-transform:uppercase;text-align:right}
+.hint svg{width:16px;height:16px;flex:none}
+.bb__label{font:700 12px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+.bb__title{font:800 clamp(20px,1.7vw,25px)/1.08 var(--f-display);letter-spacing:-.03em;margin-top:12px;overflow-wrap:break-word}
+.notes{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.notes li{padding:8px 12px;border-radius:999px;background:var(--cream-2);font:700 13px/1 var(--f-body)}
+.meters{margin-top:auto;display:grid;gap:14px}
+.meter{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center;font:700 13px/1 var(--f-body)}
+.meter b{font:800 13px/1 var(--f-display)}
+.meter__bar{grid-column:1/-1;height:12px;border-radius:999px;background:var(--cream-2);overflow:hidden}
+.meter__bar i{display:block;height:100%;border-radius:999px;background:var(--c);transform:scaleX(0);transform-origin:left;transition:transform 1.1s var(--ease) .35s}
+.meter:nth-child(2) .meter__bar i{transition-delay:.5s}
+.meter:nth-child(3) .meter__bar i{transition-delay:.65s}
+.bcard.is-flipped .meter__bar i{transform:scaleX(var(--v))}
+.bb__brew{margin-top:18px;padding-top:14px;border-top:1.5px solid rgba(43,24,16,.15);font-size:14px;font-weight:600}
+.bb__brew b{font-weight:800}
+
+/* ===== ATMOSPHERE ===== */
+.atmo{position:relative;background:var(--cream);overflow:hidden}
+.atmo__head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px 48px;flex-wrap:wrap;padding:clamp(80px,10vw,140px) var(--gutter) 36px;max-width:1440px;margin:0 auto}
+.atmo__head p{max-width:34ch;font-weight:500;font-size:18px}
+.atrack{display:flex;gap:16px;padding:0 var(--gutter) 24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--gutter);scrollbar-width:thin;-webkit-overflow-scrolling:touch;align-items:flex-start}
+.acard{flex:none;width:80vw;max-width:520px;scroll-snap-align:start}
+.acard__img{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:var(--cream-2)}
+.acard__img img{position:absolute;top:0;left:-12%;width:124%;max-width:none;height:100%;object-fit:cover;will-change:transform}
+.acard figcaption{display:flex;gap:12px;margin-top:14px;font-weight:600;font-size:15px;line-height:1.35;max-width:36ch}
+.acard figcaption b{font:800 13px/1.4 var(--f-display);color:var(--tomato)}
+.acard--end{display:flex;align-items:center}
+.acard--end a{display:flex;flex-direction:column;justify-content:space-between;width:100%;aspect-ratio:4/5;padding:28px;border-radius:24px;background:var(--tomato);color:var(--coffee);text-decoration:none;font:800 clamp(26px,2.5vw,38px)/1.04 var(--f-display);letter-spacing:-.03em;transition:background-color .3s}
+.acard--end a:hover{background:var(--coffee);color:var(--cream)}
+.acard--end svg{width:64px;height:64px;align-self:flex-end;transition:transform .4s var(--ease)}
+.acard--end a:hover svg{transform:rotate(-45deg)}
+.atmo__bar{display:none}
+@media (min-width:900px){
+  .motion .atmo{height:100vh;height:100svh;display:flex;flex-direction:column}
+  .motion .atmo__head{padding-top:96px;padding-bottom:3vh;width:100%;max-width:none}
+  .motion .atmo .h2{font-size:clamp(36px,min(4.8vw,8vh),80px)}
+  .motion .atrack{padding-bottom:9vh}
+  .motion .atrack{overflow:visible;flex:1;align-items:center;gap:22px;width:max-content;scroll-snap-type:none}
+  .motion .acard{width:auto;max-width:none}
+  .motion .acard__img{height:42vh;aspect-ratio:auto;width:calc(42vh * .8)}
+  .motion .acard--wide .acard__img{width:calc(42vh * 1.4)}
+  .motion .acard--tall .acard__img{height:47vh;width:calc(47vh * .72)}
+  .motion .acard--end a{height:42vh;width:calc(42vh * .8);aspect-ratio:auto}
+  .motion .atmo__bar{display:block;position:absolute;left:var(--gutter);right:var(--gutter);bottom:3vh;height:3px;border-radius:3px;background:rgba(43,24,16,.12);overflow:hidden}
+  .motion .atmo__bar i{display:block;height:100%;background:var(--tomato);transform:scaleX(0);transform-origin:left}
+}
+
+/* ===== VISIT ===== */
+.visit{background:var(--tomato);color:var(--coffee);position:relative;overflow:hidden}
+.visit .eyebrow::before{background:var(--coffee)}
+.visit__in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,80px);align-items:center;padding:clamp(80px,10vw,150px) var(--gutter);max-width:1440px;margin:0 auto}
+.visit__addr{margin-top:22px;font:900 clamp(34px,5.6vw,96px)/.92 var(--f-display);letter-spacing:-.045em;white-space:nowrap}
+.visit__city{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:20px;font:800 22px/1 var(--f-display);letter-spacing:-.02em}
+.concept{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:var(--coffee);color:var(--cream);font:700 12px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase}
+.status{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:14px 20px 14px 16px;border-radius:999px;background:var(--cream);font:800 15px/1.2 var(--f-body)}
+.status i{position:relative;width:12px;height:12px;border-radius:50%;background:#1F9D55;flex:none}
+.status i::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid #1F9D55;animation:pulse 1.8s var(--ease) infinite}
+.status.is-closed i{background:var(--cherry)}
+.status.is-closed i::after{border-color:var(--cherry)}
+@keyframes pulse{from{transform:scale(.6);opacity:1}to{transform:scale(1.6);opacity:0}}
+.hours{margin-top:30px;display:grid;gap:0;max-width:460px}
+.hours div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:2px solid rgba(43,24,16,.25);font-weight:700;font-size:18px}
+.hours div:first-child{border-top:2px solid rgba(43,24,16,.25)}
+.hours dd{font:800 18px/1.3 var(--f-display);letter-spacing:-.02em}
+.visit__note{margin-top:22px;font-weight:600;max-width:40ch}
+.visit .btn{margin-top:28px}
+.visit__pic{position:relative}
+.visit__pic .ph{border-radius:40px;overflow:hidden;aspect-ratio:4/5;background:var(--coffee)}
+.visit__pic img{width:100%;height:100%;object-fit:cover}
+.sticker{position:absolute;left:-28px;bottom:42px;padding:20px 24px;border-radius:24px;background:var(--cream);font:800 22px/1.05 var(--f-display);letter-spacing:-.03em;transform:rotate(-7deg);box-shadow:0 18px 40px -20px rgba(43,24,16,.7)}
+.sticker small{display:block;margin-top:8px;font:700 13px/1.3 var(--f-body);letter-spacing:0}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--coffee);color:var(--cream);overflow:hidden;position:relative}
+.footer .marquee{width:100%;margin:0;padding:clamp(48px,6vw,90px) 0 clamp(36px,5vw,70px);border-bottom:1px solid rgba(245,235,220,.14)}
+.footer__grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.6fr;gap:40px;padding:56px var(--gutter) 40px;max-width:1440px;margin:0 auto}
+.footer h4{margin:0 0 16px;font:700 12px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:rgba(245,235,220,.55)}
+.footer__brand p{margin-top:14px;max-width:30ch;color:rgba(245,235,220,.8);font-weight:500}
+.footer__brand .nav__logo{font-size:28px}
+.footer ul{display:grid;gap:8px;font-weight:600}
+.footer ul a{text-decoration:none;transition:color .2s}
+.footer ul a:hover{color:var(--tomato)}
+.credits{font-size:13px;line-height:1.5;color:rgba(245,235,220,.7)}
+.credits li{display:block}
+.credits a{text-decoration:underline;text-decoration-color:rgba(245,235,220,.35);text-underline-offset:2px}
+.credits a:hover{color:var(--tomato)}
+.footer__bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:24px var(--gutter);max-width:1440px;margin:0 auto;border-top:1px solid rgba(245,235,220,.14);font-weight:600;font-size:15px}
+.footer__bottom a{color:var(--tomato);text-decoration:none;border-bottom:2px solid currentColor}
+.footer__bottom span{color:rgba(245,235,220,.6)}
+.footer__giant{font:900 19vw/.9 var(--f-display);letter-spacing:-.02em;display:flex;justify-content:space-between;color:var(--tomato);padding:.04em var(--gutter) .1em;white-space:nowrap;user-select:none;overflow:hidden}
+.footer__giant span{display:inline-block}
+
+/* toast + cursor */
+.toast{position:fixed;z-index:150;left:50%;bottom:20px;transform:translate(-50%,calc(100% + 40px));visibility:hidden;width:max-content;max-width:calc(100vw - 32px);padding:14px 18px;border-radius:18px;background:var(--coffee);color:var(--cream);font-weight:600;font-size:15px;line-height:1.35;box-shadow:0 20px 40px -20px rgba(0,0,0,.6);transition:transform .5s var(--spring),visibility 0s .5s}
+.toast.is-on{transform:translate(-50%,0);visibility:visible;transition:transform .5s var(--spring),visibility 0s}
+.toast b{color:var(--tomato)}
+.nav__count.bump{animation:bump .5s var(--spring)}
+@keyframes bump{40%{transform:scale(1.45)}}
+.cursor{position:fixed;left:0;top:0;z-index:180;pointer-events:none;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--tomato);color:var(--coffee);display:grid;place-items:center;text-align:center;font:800 12px/1.1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;transform:scale(0);opacity:0}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1180px){
+  .nav__links a{padding:12px 10px}
+  .mgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:980px){
+  .nav__links{display:none}
+  .nav__burger{display:block}
+}
+@media (max-width:899px){
+  body{font-size:16px}
+  .hero{padding-top:92px;justify-content:space-between;gap:22px}
+  .hero__today{display:none}
+  .hero__left{gap:0}
+  .bands{padding:36px 0 44px}
+  .about{padding-top:56px}
+  .hours div{font-size:15px;padding:12px 0}
+  .hours dd{font-size:16px}
+  .hero__top{font-size:11px}
+  .hero__bottom{grid-template-columns:1fr;gap:38px}
+  .hero__scroll{display:none}
+  .hero__pic{order:-1;justify-self:stretch;width:auto;margin-left:46px;aspect-ratio:4/3;max-height:40svh}
+  .badge{width:104px;height:104px;left:-46px;top:auto;bottom:-30px}
+  .badge text{font-size:15px}
+  .badge .bean{width:26px;height:36px}
+  .hero__ctas .btn{flex:1 1 auto}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}
+  .visit__in{grid-template-columns:1fr}
+  .visit__pic{order:-1;margin:0 0 0 18px}
+  .sticker{left:-18px;bottom:24px;font-size:18px;padding:16px 18px}
+}
+@media (max-width:720px){
+  .mgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .mgrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:10px}
+  .mcard{--r:22px}
+  .mcard--photo{grid-row:auto;grid-column:span 2}
+  .mcard__media{flex:none;aspect-ratio:16/10;min-height:0;margin:6px 6px 0}
+  .mcard--cta{grid-column:span 2;padding:22px}
+  .mcard__body{padding:14px 14px 14px}
+  .mcard__top{font-size:10px;letter-spacing:.04em}
+  .tag{padding:5px 8px}
+  .mcard h3{font-size:17px;margin-top:12px;hyphens:auto;-webkit-hyphens:auto}
+  .mcard p{font-size:13px;margin-top:8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .mcard--photo h3{font-size:22px}
+  .mcard--photo p{font-size:14px}
+  .mcard__foot{padding-top:12px}
+  .price{font-size:19px}
+  .add{width:38px;height:38px}
+  .add svg{width:15px;height:15px}
+  .bcard{height:450px}
+  .bgrid{grid-template-columns:1fr}
+  .footer__grid{grid-template-columns:1fr;gap:32px}
+  .filters{gap:8px}
+  .filter{height:44px;padding:0 16px;font-size:14px}
+  .nav{padding-left:18px}
+  .nav__cart{padding-left:14px}
+  .nav__cart .lbl{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .meter__bar i{transform:scaleX(var(--v))}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="Зерно — наверх"><i aria-hidden="true"></i>ЗЕРНО</a>
+  <nav class="nav__links" aria-label="Разделы">
+    <a href="#process">Процесс</a>
+    <a href="#menu">Меню</a>
+    <a href="#beans">Зерно</a>
+    <a href="#atmo">Атмосфера</a>
+    <a href="#visit">Контакты</a>
+  </nav>
+  <div class="nav__right">
+    <button class="nav__cart" type="button" id="cartBtn"><span class="lbl">С собой</span><span class="nav__count" id="cartCount">0</span><span class="sr-only">позиций в заказе</span></button>
+    <button class="nav__burger" type="button" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" aria-hidden="true">
+  <a href="#process">Процесс</a>
+  <a href="#menu">Меню</a>
+  <a href="#beans">Зерно</a>
+  <a href="#atmo">Атмосфера</a>
+  <a href="#visit">Контакты</a>
+  <p>Брест, ул. Советская, 1 · ежедневно с 8:00</p>
+</div>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="trail" id="trail" aria-hidden="true"></div>
+  <div class="hero__top">
+    <span class="eyebrow">Спешелти-кофейня и обжарка</span>
+    <span class="eyebrow">Брест · концепт</span>
+  </div>
+  <p class="hero__hint" aria-hidden="true">Поводи мышкой — тут пахнет кофе</p>
+  <h1 class="hero__title" id="heroTitle"><span class="sr-only">Зерно — кофейня и обжарка в Бресте</span><span class="ch" aria-hidden="true">З</span><span class="ch" aria-hidden="true">Е</span><span class="ch" aria-hidden="true">Р</span><span class="ch" aria-hidden="true">Н</span><span class="ch ch--o" aria-hidden="true">О</span></h1>
+  <div class="hero__bottom">
+    <div class="hero__left">
+      <p class="hero__today"><i aria-hidden="true"></i><span>Сегодня в воронке — <b>Кения Ньери</b></span></p>
+      <div>
+      <p class="hero__lead">Жарим зерно сами — <b>маленькими партиями, каждый вторник</b>. Варим так, чтобы завтра хотелось вернуться.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--tomato" href="#menu" data-magnetic>Смотреть меню <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#beans" data-magnetic>Купить зерно</a>
+      </div>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true"><i></i>Листай</div>
+    <figure class="hero__pic">
+      <div class="ph"><img src="assets/pour.jpg" alt="Бариста рисует латте-арт в чашке капучино" width="1600" height="1064" fetchpriority="high"></div>
+      <div class="badge" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><text><textPath href="#circ" textLength="474" lengthAdjust="spacing">СВЕЖАЯ ОБЖАРКА • КАЖДУЮ НЕДЕЛЮ •</textPath></text></svg>
+        <svg class="bean" viewBox="0 0 40 56"><g transform="rotate(30 20 28)"><ellipse cx="20" cy="28" rx="15" ry="22" fill="#2B1810"/><path d="M20 8C13 20 27 36 20 48" stroke="#FF5A1F" stroke-width="3.5" fill="none" stroke-linecap="round"/></g></svg>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ BANDS ============ -->
+<section class="bands" aria-label="Что у нас есть">
+  <div class="marquee marquee--tomato" data-dir="-1" data-speed="26">
+    <div class="marquee__track">
+      <div class="marquee__copy">
+        <span class="marquee__item">Свежая обжарка <svg viewBox="0 0 40 56" aria-hidden="true"><ellipse cx="20" cy="28" rx="15" ry="22"/><path d="M20 8C13 20 27 36 20 48" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span>
+        <span class="marquee__item">Спешелти <svg viewBox="0 0 40 56" aria-hidden="true"><ellipse cx="20" cy="28" rx="15" ry="22"/><path d="M20 8C13 20 27 36 20 48" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span>
+        <span class="marquee__item">Кофе с собой <svg viewBox="0 0 40 56" aria-hidden="true"><ellipse cx="20" cy="28" rx="15" ry="22"/><path d="M20 8C13 20 27 36 20 48" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span>
+        <span class="marquee__item">Зерно на развес <svg viewBox="0 0 40 56" aria-hidden="true"><ellipse cx="20" cy="28" rx="15" ry="22"/><path d="M20 8C13 20 27 36 20 48" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span>
+      </div>
+    </div>
+  </div>
+  <div class="marquee marquee--coffee" data-dir="1" data-speed="32" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__copy">
+        <span class="marquee__item">Круассаны к 8:30 <svg viewBox="0 0 40 56"><ellipse cx="20" cy="28" rx="15" ry="22"/><path d="M20 8C13 20 27 36 20 48" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span>
+        <span class="marquee__item">Воронка V60 <svg viewBox="0 0 40 56"><ellipse cx="20" cy="28" rx="15" ry="22"/><path d="M20 8C13 20 27 36 20 48" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span>
+        <span class="marquee__item">Эспрессо 9 бар <svg viewBox="0 0 40 56"><ellipse cx="20" cy="28" rx="15" ry="22"/><path d="M20 8C13 20 27 36 20 48" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span>
+        <span class="marquee__item">Мелем бесплатно <svg viewBox="0 0 40 56"><ellipse cx="20" cy="28" rx="15" ry="22"/><path d="M20 8C13 20 27 36 20 48" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <span class="eyebrow">Кто мы</span>
+  <p class="about__text" id="aboutText">Мы — маленькая обжарочная <span class="ipill" style="--img:url(assets/t-roast.jpg)" aria-hidden="true"></span> в самом центре Бреста. Сами выбираем зелёное зерно, сами его жарим <span class="ipill" style="--img:url(assets/t-beans.jpg)" aria-hidden="true"></span> и сами варим — от эспрессо до воронки. <span class="ipill" style="--img:url(assets/t-teal.jpg)" aria-hidden="true"></span> Без пафоса, но с весами, таймером и <span class="accent">большой любовью</span> к тому, что в чашке.</p>
+  <div class="stats">
+    <div class="stat"><b><span data-count="12">12</span><small>кг</small></b><span>зерна обжариваем за неделю</span></div>
+    <div class="stat"><b><span data-count="7">7</span><small>сортов</small></b><span>всегда на полке — от ягодных до шоколадных</span></div>
+    <div class="stat"><b><span data-count="3">3</span><small>дня</small></b><span>отдыхает зерно после обжарки, прежде чем попасть в чашку</span></div>
+    <div class="stat"><b><span data-count="8">8</span><small>:00</small></b><span>открываемся — первый эспрессо до работы</span></div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process" id="process">
+  <div class="process__stage" id="processStage">
+    <div class="process__text">
+      <span class="eyebrow">Процесс</span>
+      <h2 class="h2 process__title" data-split>От зерна до&nbsp;чашки</h2>
+      <div class="pcount" aria-hidden="true"><div class="pcount__win"><div class="pcount__list" id="pcountList"><span>01</span><span>02</span><span>03</span><span>04</span></div></div><span class="pcount__total">/04</span></div>
+      <ol class="steps" id="steps">
+        <li class="step">
+          <div class="step__img"><img src="assets/roast.jpg" alt="Ростер с горячим зерном в охлаждающем лотке" decoding="async" width="1227" height="1600"></div>
+          <span class="step__num">01</span>
+          <h3>Обжарка</h3>
+          <p>Зелёное зерно 11–12 минут крутится в барабане. Ловим первый крэк — и выгружаем, пока аромат не ушёл в дым.</p>
+          <div class="chips"><span>200 °C</span><span>12 минут</span><span>партия 5 кг</span></div>
+        </li>
+        <li class="step">
+          <div class="step__img"><img src="assets/grind.jpg" alt="Холдер со свежемолотым кофе среди зёрен" decoding="async" width="1600" height="1064"></div>
+          <span class="step__num">02</span>
+          <h3>Помол</h3>
+          <p>Мелем прямо перед заваркой: под эспрессо — почти в пудру, под воронку — как крупная соль. Молотый кофе выдыхается за 15 минут.</p>
+          <div class="chips"><span>18 г</span><span>под каждый способ</span><span>только свежий</span></div>
+        </li>
+        <li class="step">
+          <div class="step__img"><img src="assets/brew.jpg" alt="Пуровер: металлическая воронка над стеклянным сервером на весах" decoding="async" width="1600" height="1066"></div>
+          <span class="step__num">03</span>
+          <h3>Заваривание</h3>
+          <p>Эспрессо — 9 бар и 28 секунд. Воронка — 94 °C и три минуты терпения. Всё взвешиваем до грамма, никакой магии.</p>
+          <div class="chips"><span>9 бар</span><span>94 °C</span><span>1 : 16</span></div>
+        </li>
+        <li class="step">
+          <div class="step__img"><img src="assets/pour.jpg" alt="Латте-арт в белой чашке" decoding="async" width="1600" height="1064"></div>
+          <span class="step__num">04</span>
+          <h3>Чашка</h3>
+          <p>Взбиваем молоко до глянца и рисуем — не ради фото, а потому что так вкуснее. Ну ладно, и ради фото тоже.</p>
+          <div class="chips"><span>62 °C</span><span>латте-арт</span><span>с собой или здесь</span></div>
+        </li>
+      </ol>
+      <div class="pbar" id="pbar" aria-hidden="true">
+        <div class="pbar__item is-active"><i><b></b></i>Обжарка</div>
+        <div class="pbar__item"><i><b></b></i>Помол</div>
+        <div class="pbar__item"><i><b></b></i>Заварка</div>
+        <div class="pbar__item"><i><b></b></i>Чашка</div>
+      </div>
+    </div>
+    <div class="process__media" id="pmedia" aria-hidden="true">
+      <figure class="pm"><img src="assets/roast.jpg" alt="" decoding="async" style="object-position:50% 60%"><figcaption>Ростер стоит прямо в зале</figcaption></figure>
+      <figure class="pm"><img src="assets/grind.jpg" alt="" decoding="async"><figcaption>Мелем перед каждой чашкой</figcaption></figure>
+      <figure class="pm"><img src="assets/brew.jpg" alt="" decoding="async" style="object-position:60% 50%"><figcaption>Воронка — три минуты терпения</figcaption></figure>
+      <figure class="pm"><img src="assets/pour.jpg" alt="" decoding="async" style="object-position:55% 50%"><figcaption>Вуаля — ваш капучино</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="menu" id="menu">
+  <div class="menu__head">
+    <div>
+      <span class="eyebrow">Меню</span>
+      <h2 class="h2" data-split style="margin-top:18px">Что будем пить?</h2>
+    </div>
+    <p>Всё готовим из зерна собственной обжарки. В своей кружке — минус 10%, планете приятно.</p>
+  </div>
+  <div class="filters" role="group" aria-label="Фильтр меню">
+    <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Всё <sup>18</sup></button>
+    <button class="filter" type="button" data-filter="coffee" aria-pressed="false">Кофе <sup>6</sup></button>
+    <button class="filter" type="button" data-filter="nocoffee" aria-pressed="false">Не кофе <sup>4</sup></button>
+    <button class="filter" type="button" data-filter="dessert" aria-pressed="false">Десерты <sup>4</sup></button>
+    <button class="filter" type="button" data-filter="beans" aria-pressed="false">Зерно <sup>4</sup></button>
+  </div>
+  <div class="mgrid" id="mgrid">
+    <article class="mcard mcard--photo" data-cat="coffee">
+      <div class="mcard__media"><img src="assets/pour.jpg" alt="Капучино с латте-артом" decoding="async" width="1600" height="1064"></div>
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Кофе</span><span>250 мл</span></div>
+        <h3>Капучино</h3>
+        <p>Двойной эспрессо из Колумбии и шелковистое молоко. Классика, которую мы не трогаем.</p>
+        <div class="mcard__foot"><span class="price">6,5<small>BYN</small></span><button class="add" type="button" data-name="Капучино" aria-label="Добавить капучино"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="coffee">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Кофе</span><span>40 мл</span></div>
+        <h3>Эспрессо</h3>
+        <p>Бразилия Серрадо: молочный шоколад, фундук и ни капли лишней кислинки.</p>
+        <div class="mcard__foot"><span class="price">4,5<small>BYN</small></span><button class="add" type="button" data-name="Эспрессо" aria-label="Добавить эспрессо"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="nocoffee">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Не кофе</span><span>400 мл</span></div>
+        <h3>Чай с облепихой</h3>
+        <p>Облепиха, апельсин и мёд. Лечит брестскую осень лучше любого шарфа.</p>
+        <div class="mcard__foot"><span class="price">6<small>BYN</small></span><button class="add" type="button" data-name="Чай с облепихой" aria-label="Добавить чай с облепихой"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard mcard--photo" data-cat="dessert">
+      <div class="mcard__media"><img src="assets/croissant.jpg" alt="Румяный слоёный круассан на тарелке" decoding="async" width="1600" height="1066"></div>
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Десерт</span><span>из печи к 8:30</span></div>
+        <h3>Круассан</h3>
+        <p>Масло 82%, 27 слоёв и хруст, который слышно на весь зал.</p>
+        <div class="mcard__foot"><span class="price">5,5<small>BYN</small></span><button class="add" type="button" data-name="Круассан" aria-label="Добавить круассан"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="beans">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Зерно</span><span>250 г</span></div>
+        <h3>Эфиопия Иргачефф</h3>
+        <p>Жасмин, бергамот, персик. Для воронки и аэропресса.</p>
+        <div class="mcard__foot"><span class="price">32<small>BYN</small></span><button class="add" type="button" data-name="Эфиопия Иргачефф" aria-label="Добавить зерно Эфиопия Иргачефф"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="coffee">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Кофе</span><span>300 мл</span></div>
+        <h3>Раф «Зерно»</h3>
+        <p>Сливки, ваниль из стручка и щепотка морской соли. Фирменный и немного дерзкий.</p>
+        <div class="mcard__foot"><span class="price">8<small>BYN</small></span><button class="add" type="button" data-name="Раф «Зерно»" aria-label="Добавить раф"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="dessert">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Десерт</span><span>140 г</span></div>
+        <h3>Баскский чизкейк</h3>
+        <p>Подгоревший сверху и кремовый внутри. Так и задумано, честно.</p>
+        <div class="mcard__foot"><span class="price">8<small>BYN</small></span><button class="add" type="button" data-name="Баскский чизкейк" aria-label="Добавить баскский чизкейк"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard mcard--photo" data-cat="coffee">
+      <div class="mcard__media"><img src="assets/brew.jpg" alt="Воронка-пуровер и кофе в стеклянном сервере" decoding="async" width="1600" height="1066"></div>
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Кофе</span><span>300 мл</span></div>
+        <h3>Воронка V60</h3>
+        <p>Эфиопия или Кения на выбор. Пьётся как чай, бодрит как кофе.</p>
+        <div class="mcard__foot"><span class="price">7,5<small>BYN</small></span><button class="add" type="button" data-name="Воронка V60" aria-label="Добавить воронку V60"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="nocoffee">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Не кофе</span><span>300 мл</span></div>
+        <h3>Матча латте</h3>
+        <p>Японская матча церемониального сорта на овсяном молоке.</p>
+        <div class="mcard__foot"><span class="price">8,5<small>BYN</small></span><button class="add" type="button" data-name="Матча латте" aria-label="Добавить матча латте"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="beans">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Зерно</span><span>250 г</span></div>
+        <h3>Колумбия Уила</h3>
+        <p>Карамель, красное яблоко, какао. Универсал: и в эспрессо, и в турку.</p>
+        <div class="mcard__foot"><span class="price">28<small>BYN</small></span><button class="add" type="button" data-name="Колумбия Уила" aria-label="Добавить зерно Колумбия Уила"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="coffee">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Кофе</span><span>350 мл</span></div>
+        <h3>Колд брю</h3>
+        <p>Настаиваем 16 часов в холоде. Бодрит, но без горечи.</p>
+        <div class="mcard__foot"><span class="price">7<small>BYN</small></span><button class="add" type="button" data-name="Колд брю" aria-label="Добавить колд брю"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="dessert">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Десерт</span><span>2 шт.</span></div>
+        <h3>Канеле</h3>
+        <p>Карамельная корочка, ванильная серединка и капля рома.</p>
+        <div class="mcard__foot"><span class="price">4<small>BYN</small></span><button class="add" type="button" data-name="Канеле" aria-label="Добавить канеле"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard mcard--photo" data-cat="coffee">
+      <div class="mcard__media"><img src="assets/teal.jpg" alt="Флэт уайт в бирюзовой чашке на деревянном столе" decoding="async" width="1600" height="1067"></div>
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Кофе</span><span>200 мл</span></div>
+        <h3>Флэт уайт</h3>
+        <p>Двойной ристретто и тонкий слой молока — для тех, кто любит покрепче.</p>
+        <div class="mcard__foot"><span class="price">7<small>BYN</small></span><button class="add" type="button" data-name="Флэт уайт" aria-label="Добавить флэт уайт"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="nocoffee">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Не кофе</span><span>300 мл</span></div>
+        <h3>Какао на кокосовом</h3>
+        <p>Густое, как в детстве, только без комочков и с кокосовым молоком.</p>
+        <div class="mcard__foot"><span class="price">6<small>BYN</small></span><button class="add" type="button" data-name="Какао на кокосовом" aria-label="Добавить какао"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="beans">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Зерно</span><span>250 г</span></div>
+        <h3>Бразилия Серрадо</h3>
+        <p>Шоколад, орех, ирис. Наш эспрессо-бленд по умолчанию.</p>
+        <div class="mcard__foot"><span class="price">24<small>BYN</small></span><button class="add" type="button" data-name="Бразилия Серрадо" aria-label="Добавить зерно Бразилия Серрадо"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="dessert">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Десерт</span><span>160 г</span></div>
+        <h3>Морковный торт</h3>
+        <p>Пряный, влажный, со сливочным кремом. Овощ, а значит — полезно.</p>
+        <div class="mcard__foot"><span class="price">7,5<small>BYN</small></span><button class="add" type="button" data-name="Морковный торт" aria-label="Добавить морковный торт"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="nocoffee">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Не кофе</span><span>400 мл</span></div>
+        <h3>Брусника — розмарин</h3>
+        <p>Домашний лимонад: кисло, свежо и немного по-лесному.</p>
+        <div class="mcard__foot"><span class="price">6,5<small>BYN</small></span><button class="add" type="button" data-name="Лимонад «Брусника — розмарин»" aria-label="Добавить лимонад брусника-розмарин"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard" data-cat="beans">
+      <div class="mcard__body">
+        <div class="mcard__top"><span class="tag">Зерно</span><span>250 г</span></div>
+        <h3>Кения Ньери</h3>
+        <p>Чёрная смородина и грейпфрут. Яркая, сочная, громкая.</p>
+        <div class="mcard__foot"><span class="price">34<small>BYN</small></span><button class="add" type="button" data-name="Кения Ньери" aria-label="Добавить зерно Кения Ньери"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+      </div>
+    </article>
+    <article class="mcard mcard--cta" data-cat="all">
+      <h3>Не нашли свой кофе?</h3>
+      <p>Скажите бариста, что любите, — подберём зерно и способ заварки. Дегустация по субботам в 12:00.</p>
+      <a class="btn btn--cream" href="#visit">Как нас найти <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </article>
+  </div>
+</section>
+
+<!-- ============ BEANS ============ -->
+<section class="beans" id="beans">
+  <div class="beans__in">
+    <div class="beans__head">
+      <div>
+        <span class="eyebrow">Зерно на развес</span>
+        <h2 class="h2" data-split style="margin-top:18px">Унеси вкус<br>домой</h2>
+      </div>
+      <p>Обжариваем под эспрессо и под фильтр, смелем под вашу турку, гейзер или V60 — бесплатно. Переверните карточку, чтобы узнать характер сорта.</p>
+    </div>
+    <div class="bgrid" id="bgrid">
+      <div class="bcard" style="--c:#FF5A1F;--t:#2B1810;--rot:-14deg;--pos:20% 30%;--zoom:1.5" role="button" tabindex="0" aria-pressed="false" aria-label="Эфиопия Иргачефф — показать вкусовой профиль">
+        <div class="bcard__inner">
+          <div class="bface bface--front">
+            <div class="bf__top"><span>ETH · 01</span><span>Светлая</span></div>
+            <span class="bf__code" aria-hidden="true">ETH</span>
+            <div class="bf__photo"><img src="assets/t-beans.jpg" alt="" decoding="async"></div>
+            <h3>Эфиопия</h3>
+            <p class="bf__region">Иргачефф · мытая обработка</p>
+            <div class="bf__foot"><span class="price">32<small>BYN / 250 г</small></span><span class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg>Переверни</span></div>
+          </div>
+          <div class="bface bface--back">
+            <p class="bb__label">Вкусовой профиль</p>
+            <p class="bb__title">Цветочная, как чай с бергамотом</p>
+            <ul class="notes"><li>жасмин</li><li>бергамот</li><li>персик</li></ul>
+            <div class="meters">
+              <div class="meter"><span>Кислотность</span><b>8,5</b><div class="meter__bar"><i style="--v:.85"></i></div></div>
+              <div class="meter"><span>Сладость</span><b>6,5</b><div class="meter__bar"><i style="--v:.65"></i></div></div>
+              <div class="meter"><span>Тело</span><b>3,5</b><div class="meter__bar"><i style="--v:.35"></i></div></div>
+            </div>
+            <p class="bb__brew">Лучше всего: <b>воронка, аэропресс</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="bcard" style="--c:#EDB43C;--t:#2B1810;--rot:22deg;--pos:80% 70%;--zoom:1.7" role="button" tabindex="0" aria-pressed="false" aria-label="Колумбия Уила — показать вкусовой профиль">
+        <div class="bcard__inner">
+          <div class="bface bface--front">
+            <div class="bf__top"><span>COL · 02</span><span>Средняя</span></div>
+            <span class="bf__code" aria-hidden="true">COL</span>
+            <div class="bf__photo"><img src="assets/t-beans.jpg" alt="" decoding="async"></div>
+            <h3>Колумбия</h3>
+            <p class="bf__region">Уила · мытая обработка</p>
+            <div class="bf__foot"><span class="price">28<small>BYN / 250 г</small></span><span class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg>Переверни</span></div>
+          </div>
+          <div class="bface bface--back">
+            <p class="bb__label">Вкусовой профиль</p>
+            <p class="bb__title">Ровная, как яблочный пирог</p>
+            <ul class="notes"><li>карамель</li><li>красное яблоко</li><li>какао</li></ul>
+            <div class="meters">
+              <div class="meter"><span>Кислотность</span><b>6</b><div class="meter__bar"><i style="--v:.6"></i></div></div>
+              <div class="meter"><span>Сладость</span><b>7,5</b><div class="meter__bar"><i style="--v:.75"></i></div></div>
+              <div class="meter"><span>Тело</span><b>6</b><div class="meter__bar"><i style="--v:.6"></i></div></div>
+            </div>
+            <p class="bb__brew">Лучше всего: <b>эспрессо, турка, гейзер</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="bcard" style="--c:#5B3624;--t:#F5EBDC;--rot:-40deg;--pos:60% 20%;--zoom:1.25" role="button" tabindex="0" aria-pressed="false" aria-label="Бразилия Серрадо — показать вкусовой профиль">
+        <div class="bcard__inner">
+          <div class="bface bface--front">
+            <div class="bf__top"><span>BRA · 03</span><span>Средне-тёмная</span></div>
+            <span class="bf__code" aria-hidden="true">BRA</span>
+            <div class="bf__photo"><img src="assets/t-beans.jpg" alt="" decoding="async"></div>
+            <h3>Бразилия</h3>
+            <p class="bf__region">Серрадо · натуральная</p>
+            <div class="bf__foot"><span class="price">24<small>BYN / 250 г</small></span><span class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg>Переверни</span></div>
+          </div>
+          <div class="bface bface--back">
+            <p class="bb__label">Вкусовой профиль</p>
+            <p class="bb__title">Плотная, как молочный шоколад</p>
+            <ul class="notes"><li>шоколад</li><li>фундук</li><li>ирис</li></ul>
+            <div class="meters">
+              <div class="meter"><span>Кислотность</span><b>3</b><div class="meter__bar"><i style="--v:.3"></i></div></div>
+              <div class="meter"><span>Сладость</span><b>7</b><div class="meter__bar"><i style="--v:.7"></i></div></div>
+              <div class="meter"><span>Тело</span><b>8,5</b><div class="meter__bar"><i style="--v:.85"></i></div></div>
+            </div>
+            <p class="bb__brew">Лучше всего: <b>эспрессо, капучино</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="bcard" style="--c:#8E2B3A;--t:#F5EBDC;--rot:8deg;--pos:30% 85%;--zoom:1.9" role="button" tabindex="0" aria-pressed="false" aria-label="Кения Ньери — показать вкусовой профиль">
+        <div class="bcard__inner">
+          <div class="bface bface--front">
+            <div class="bf__top"><span>KEN · 04</span><span>Светлая</span></div>
+            <span class="bf__code" aria-hidden="true">KEN</span>
+            <div class="bf__photo"><img src="assets/t-beans.jpg" alt="" decoding="async"></div>
+            <h3>Кения</h3>
+            <p class="bf__region">Ньери · мытая обработка</p>
+            <div class="bf__foot"><span class="price">34<small>BYN / 250 г</small></span><span class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg>Переверни</span></div>
+          </div>
+          <div class="bface bface--back">
+            <p class="bb__label">Вкусовой профиль</p>
+            <p class="bb__title">Сочная, как ягодный морс</p>
+            <ul class="notes"><li>чёрная смородина</li><li>грейпфрут</li><li>тростниковый сахар</li></ul>
+            <div class="meters">
+              <div class="meter"><span>Кислотность</span><b>9</b><div class="meter__bar"><i style="--v:.9"></i></div></div>
+              <div class="meter"><span>Сладость</span><b>6</b><div class="meter__bar"><i style="--v:.6"></i></div></div>
+              <div class="meter"><span>Тело</span><b>5</b><div class="meter__bar"><i style="--v:.5"></i></div></div>
+            </div>
+            <p class="bb__brew">Лучше всего: <b>воронка, кемекс, колд брю</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ATMOSPHERE ============ -->
+<section class="atmo" id="atmo" data-cursor="Листай">
+  <div class="atmo__head">
+    <div>
+      <span class="eyebrow">Атмосфера</span>
+      <h2 class="h2" data-split style="margin-top:18px">Здесь хочется<br>задержаться</h2>
+    </div>
+    <p>Кирпич, тёплые лампы и длинный общий стол. Работайте, болтайте, залипайте в окно — мы не торопим.</p>
+  </div>
+  <div class="atrack" id="atrack">
+    <figure class="acard acard--wide"><div class="acard__img"><img src="assets/interior.jpg" alt="Зал кофейни: кирпичная стена, лампочки, деревянный стол и жёлтые стулья" decoding="async" width="1600" height="1066"></div><figcaption><b>01</b>Кирпич, лампочки и длинный общий стол на двенадцать человек</figcaption></figure>
+    <figure class="acard acard--tall"><div class="acard__img"><img src="assets/barista.jpg" alt="Бариста взбивает молоко паровым краном" decoding="async" width="1067" height="1600"></div><figcaption><b>02</b>Молоко взбиваем вручную — каждый питчер</figcaption></figure>
+    <figure class="acard acard--wide"><div class="acard__img"><img src="assets/teal.jpg" alt="Флэт уайт в бирюзовой чашке" decoding="async" width="1600" height="1067"></div><figcaption><b>03</b>Бирюзовые чашки — главный кадр для ваших сторис</figcaption></figure>
+    <figure class="acard"><div class="acard__img"><img src="assets/roast.jpg" alt="Ростер на фоне оранжевой стены" decoding="async" width="1227" height="1600"></div><figcaption><b>04</b>Ростер живёт прямо в зале. По вторникам пахнет на всю улицу</figcaption></figure>
+    <figure class="acard acard--wide"><div class="acard__img"><img src="assets/croissant.jpg" alt="Круассан крупным планом" decoding="async" width="1600" height="1066"></div><figcaption><b>05</b>Круассаны из печи к 8:30 — кто рано встаёт…</figcaption></figure>
+    <figure class="acard acard--tall"><div class="acard__img"><img src="assets/brew.jpg" alt="Пуровер на барной стойке" decoding="async" width="1600" height="1066"></div><figcaption><b>06</b>Бар открыт: смотрите, как варится ваша воронка</figcaption></figure>
+    <div class="acard acard--end"><a href="#visit">Приходи&nbsp;— проверь сам<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+  <div class="atmo__bar" aria-hidden="true"><i id="atmoBar"></i></div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section class="visit" id="visit">
+  <div class="visit__in">
+    <div class="visit__info">
+      <span class="eyebrow">Как нас найти</span>
+      <h2 class="visit__addr" data-split>Советская,&nbsp;1</h2>
+      <p class="visit__city">Брест <span class="concept">концепт · адрес вымышленный</span></p>
+      <div class="status" id="status" role="status"><i aria-hidden="true"></i><span id="statusText">Ежедневно с 8:00</span></div>
+      <dl class="hours">
+        <div><dt>Понедельник — пятница</dt><dd>8:00 — 21:00</dd></div>
+        <div><dt>Суббота — воскресенье</dt><dd>9:00 — 22:00</dd></div>
+      </dl>
+      <p class="visit__note">Кофе с собой — в любое время работы. Приходите со своей кружкой — скидка 10%.</p>
+      <a class="btn btn--cream" href="#menu" data-magnetic>Выбрать кофе с собой <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <figure class="visit__pic">
+      <div class="ph"><img src="assets/table.jpg" alt="Две чашки кофе на длинном деревянном столе у окна" decoding="async" width="1600" height="1066" style="object-position:62% 50%"></div>
+      <p class="sticker">Заходи<br>на чашку<small>в пяти минутах от вокзала</small></p>
+    </figure>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="marquee marquee--outline" data-dir="1" data-speed="40" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__copy">
+        <span class="marquee__item">Заходи на чашку</span>
+        <span class="marquee__item">Обжарка по вторникам</span>
+        <span class="marquee__item">Заходи на чашку</span>
+        <span class="marquee__item">Свежее зерно</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <a class="nav__logo" href="#top"><i aria-hidden="true"></i>ЗЕРНО</a>
+      <p>Кофейня и обжарочная. Свежая обжарка, спешелти-кофе, десерты и зерно на развес.</p>
+    </div>
+    <div>
+      <h4>Разделы</h4>
+      <ul>
+        <li><a href="#process">Процесс</a></li>
+        <li><a href="#menu">Меню</a></li>
+        <li><a href="#beans">Зерно на развес</a></li>
+        <li><a href="#atmo">Атмосфера</a></li>
+        <li><a href="#visit">Контакты</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Часы</h4>
+      <ul>
+        <li>Пн — Пт: 8:00 — 21:00</li>
+        <li>Сб — Вс: 9:00 — 22:00</li>
+        <li>Брест, ул. Советская, 1 <span style="opacity:.6">(концепт)</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Фото · Wikimedia Commons</h4>
+      <ul class="credits">
+        <li><a href="https://commons.wikimedia.org/wiki/File:Coffee_Roasting_Machine.JPG" target="_blank" rel="noopener">«Coffee Roasting Machine»</a> — RudolfSimon, <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:00_Croissant._Yum.jpg" target="_blank" rel="noopener">«00 Croissant. Yum»</a> — Mark Mitchell, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+        <li>CC0 / общественное достояние: <a href="https://commons.wikimedia.org/wiki/File:Latte_art_3.jpg" target="_blank" rel="noopener">Kim Sanso</a>, <a href="https://commons.wikimedia.org/wiki/File:Coffee-206142.jpg" target="_blank" rel="noopener">Elias Shariff Falla Mardini</a>, <a href="https://commons.wikimedia.org/wiki/File:Drip_brewing_(Unsplash).jpg" target="_blank" rel="noopener">Thomas Martinsen</a>, <a href="https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans.jpg" target="_blank" rel="noopener">MarkSweep</a>, <a href="https://commons.wikimedia.org/wiki/File:Empty_coffee_shop_interior_with_wooden_table_and_water_skis.jpg" target="_blank" rel="noopener">Drew Coffman</a>, <a href="https://commons.wikimedia.org/wiki/File:Barista_pouring_coffee_(Unsplash).jpg" target="_blank" rel="noopener">James Sutton</a>, <a href="https://commons.wikimedia.org/wiki/File:Blue_coffee_cup_(Unsplash).jpg" target="_blank" rel="noopener">rawpixel</a>, <a href="https://commons.wikimedia.org/wiki/File:Coffee_in_Montreal_(Unsplash).jpg" target="_blank" rel="noopener">Luke Chesser</a>.</li>
+        <li>Фото обрезаны и сжаты.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>Концепт-проект. Дизайн и разработка — <a href="https://nikich196.github.io/portfolio/" target="_blank" rel="noopener">Никита Сацюк</a></p>
+    <span>Кофейня «Зерно» вымышленная · 2026</span>
+  </div>
+  <div class="footer__giant" id="footGiant" aria-hidden="true"><span>З</span><span>Е</span><span>Р</span><span>Н</span><span>О</span></div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(() => {
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
+  const root = document.documentElement;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const mouse = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+  const motion = hasGSAP && !reduce;
+  if (motion) root.classList.add('motion');
+  if (mouse && !reduce) root.classList.add('has-mouse');
+
+  /* ---------- hero title fit ---------- */
+  const title = $('#heroTitle');
+  const chars = $$('.ch', title);
+  const giant = $('#footGiant');
+  function fit(el, letters, air) {
+    el.style.fontSize = '100px';
+    const sum = letters.reduce((w, c) => w + c.offsetWidth, 0);
+    const cs = getComputedStyle(el);
+    const avail = el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    el.style.fontSize = Math.max(40, 100 * avail * (1 - air) / sum).toFixed(2) + 'px';
+  }
+  function fitTitle() { fit(title, chars, .035); fit(giant, $$('span', giant), .03); }
+  fitTitle();
+
+  /* ---------- open / closed status (Europe/Minsk) ---------- */
+  (function status() {
+    const el = $('#status'), txt = $('#statusText');
+    try {
+      const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Minsk', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+      const get = t => (parts.find(p => p.type === t) || {}).value;
+      const wd = get('weekday'); const h = +get('hour'); const m = +get('minute');
+      const weekend = wd === 'Sat' || wd === 'Sun';
+      const open = weekend ? 9 : 8, close = weekend ? 22 : 21;
+      const now = h + m / 60;
+      if (now >= open && now < close) {
+        txt.textContent = `Сейчас открыто · до ${close}:00`;
+      } else {
+        el.classList.add('is-closed');
+        const nextWeekend = now >= close ? (wd === 'Fri' || wd === 'Sat') : weekend;
+        txt.textContent = `Сейчас закрыто · откроемся в ${nextWeekend ? 9 : 8}:00`;
+      }
+    } catch (e) { /* оставляем текст по умолчанию */ }
+  })();
+
+  /* ---------- nav: burger, hide on scroll ---------- */
+  const burger = $('#burger'), mnav = $('#mnav');
+  function setMenu(open) {
+    root.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    mnav.setAttribute('aria-hidden', String(!open));
+    if (window.__lenis) open ? window.__lenis.stop() : window.__lenis.start();
+  }
+  burger.addEventListener('click', () => setMenu(!root.classList.contains('menu-open')));
+  $$('#mnav a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && root.classList.contains('menu-open')) setMenu(false); });
+
+  /* ---------- cart + toast ---------- */
+  let cart = 0, toastTimer;
+  const toast = $('#toast'), count = $('#cartCount');
+  function showToast(html) {
+    toast.innerHTML = html;
+    toast.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('is-on'), 3200);
+  }
+  $$('.add').forEach(b => b.addEventListener('click', () => {
+    cart++;
+    count.textContent = cart;
+    count.classList.remove('bump'); void count.offsetWidth; count.classList.add('bump');
+    showToast(`<b>${b.dataset.name}</b> — в заказе с собой. Это концепт, так что кофе пока виртуальный.`);
+  }));
+  $('#cartBtn').addEventListener('click', () => showToast(cart ? `В заказе: <b>${cart}</b>. Оформление появится, когда кофейня станет настоящей.` : 'Пока пусто. Загляните в <b>меню</b> — там вкусно.'));
+
+  /* ---------- bean flip cards ---------- */
+  $$('.bcard').forEach(card => {
+    const set = v => { card.classList.toggle('is-flipped', v); card.setAttribute('aria-pressed', String(v)); };
+    if (mouse) {
+      card.addEventListener('mouseenter', () => set(true));
+      card.addEventListener('mouseleave', () => set(false));
+    }
+    card.addEventListener('click', () => set(!card.classList.contains('is-flipped')));
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); set(!card.classList.contains('is-flipped')); } });
+  });
+
+  /* ---------- menu filter (FLIP) ---------- */
+  const cards = $$('.mcard');
+  const hasFlip = motion && typeof window.Flip !== 'undefined';
+  $$('.filter').forEach(btn => btn.addEventListener('click', () => {
+    if (btn.classList.contains('is-active')) return;
+    $$('.filter').forEach(b => { const on = b === btn; b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', String(on)); });
+    const f = btn.dataset.filter;
+    const apply = () => cards.forEach(c => c.classList.toggle('is-hidden', !(f === 'all' || c.dataset.cat === f || c.dataset.cat === 'all')));
+    if (!hasFlip) { apply(); if (hasGSAP) ScrollTrigger.refresh(); return; }
+    if (window.__menuBatch) { window.__menuBatch.forEach(t => t.kill()); window.__menuBatch = null; gsap.killTweensOf(cards); gsap.set(cards, { clearProps: 'transform,opacity' }); }
+    const state = Flip.getState(cards);
+    apply();
+    Flip.from(state, {
+      duration: .75, ease: 'power3.inOut', absolute: true, scale: true, stagger: .015,
+      onEnter: els => gsap.fromTo(els, { opacity: 0, scale: .6, rotate: () => gsap.utils.random(-8, 8) }, { opacity: 1, scale: 1, rotate: 0, duration: .6, delay: .2, ease: 'back.out(1.6)' }),
+      onLeave: els => gsap.to(els, { opacity: 0, scale: .6, duration: .4, ease: 'power2.in' }),
+      onComplete: () => ScrollTrigger.refresh()
+    });
+  }));
+
+  /* ---------- no GSAP / reduced motion: stop here ---------- */
+  if (!motion) {
+    $$('.marquee').forEach(m => { const t = $('.marquee__track', m); const c = $('.marquee__copy', m); t.appendChild(c.cloneNode(true)).setAttribute('aria-hidden', 'true'); });
+    window.addEventListener('resize', fitTitle);
+    if (document.fonts) document.fonts.ready.then(fitTitle);
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger, Flip);
+
+  /* ---------- Lenis ---------- */
+  let lenis = null;
+  if (typeof window.Lenis !== 'undefined') {
+    lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1 });
+    window.__lenis = lenis;
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+  $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    const target = id === '#top' ? 0 : $(id);
+    if (target === null) return;
+    e.preventDefault();
+    if (root.classList.contains('menu-open')) setMenu(false);
+    if (lenis) lenis.scrollTo(target, { offset: 0, duration: 1.4 });
+    else window.scrollTo({ top: target === 0 ? 0 : target.getBoundingClientRect().top + scrollY, behavior: 'smooth' });
+  }));
+
+  /* nav hide/show */
+  const nav = $('#nav');
+  let lastY = 0;
+  ScrollTrigger.create({ start: 0, end: 'max', onUpdate: self => {
+    const y = self.scroll();
+    nav.classList.toggle('is-hidden', y > 300 && y > lastY && !root.classList.contains('menu-open'));
+    lastY = y;
+  }});
+
+  /* ---------- split headings into words ---------- */
+  $$('[data-split]').forEach(h => {
+    const html = h.innerHTML.split(/(<br\s*\/?>)/i).map(part => {
+      if (/^<br/i.test(part)) return part;
+      return part.split(/(\s+)/).map(w => /^\s+$/.test(w) || !w ? w : `<span class="w"><span class="wi">${w}</span></span>`).join('');
+    }).join('');
+    h.innerHTML = html;
+    gsap.from($$('.wi', h), { yPercent: 110, rotate: 4, duration: 1, ease: 'expo.out', stagger: .07,
+      scrollTrigger: { trigger: h, start: 'top 88%', once: true } });
+  });
+
+  /* ---------- hero intro ---------- */
+  const tilts = [-14, 10, -8, 12, -10];
+  let introDone = false, heroReady = false;
+  function intro() {
+    if (introDone) return; introDone = true;
+    fitTitle();
+    gsap.set(chars, { opacity: 1 });
+    const tl = gsap.timeline({ defaults: { ease: 'expo.out' }, onComplete: () => { heroReady = true; } });
+    tl.from(chars, { yPercent: 115, xPercent: i => (i - 2) * 18, rotate: i => tilts[i] * 2, scale: .5, duration: 1.25, stagger: .09, ease: 'back.out(1.5)' })
+      .from('.hero__top .eyebrow', { y: 16, opacity: 0, duration: .8, stagger: .08 }, .2)
+      .from('.hero__pic .ph', { clipPath: 'inset(45% 45% 45% 45% round 999px)', duration: 1.3, ease: 'expo.inOut' }, .25)
+      .from('.hero__pic img', { scale: 1.5, duration: 1.6 }, .25)
+      .from('.badge', { scale: 0, rotate: -120, duration: 1, ease: 'back.out(1.8)' }, .9)
+      .from('.hero__today, .hero__lead, .hero__ctas .btn, .hero__scroll', { y: 24, opacity: 0, duration: .9, stagger: .07 }, .7)
+      .from('.hero__hint', { y: -10, opacity: 0, duration: .6 }, 1.3);
+    // уходим со сцены: буквы разлетаются с разной скоростью
+    chars.forEach((c, i) => {
+      gsap.to(c, { yPercent: [-26, -52, -18, -60, -34][i], rotate: tilts[i] * .6, ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    });
+    gsap.to('.hero__pic', { yPercent: -18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  }
+  const fontsReady = document.fonts ? Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 2500))]) : Promise.resolve();
+  fontsReady.then(() => requestAnimationFrame(intro));
+  let rw = innerWidth;
+  window.addEventListener('resize', () => { if (innerWidth !== rw) { rw = innerWidth; fitTitle(); } });
+
+  /* letters jiggle on hover */
+  if (mouse) chars.forEach(c => c.addEventListener('mouseenter', () => {
+    if (!heroReady || c._jig) return;
+    c._jig = true;
+    gsap.fromTo(c, { scaleY: 1, scaleX: 1 }, { scaleY: .84, scaleX: 1.1, duration: .16, yoyo: true, repeat: 1, ease: 'power2.out', onComplete: () => { c._jig = false; } });
+  }));
+
+  /* ---------- image trail ---------- */
+  if (mouse) {
+    const hero = $('.hero'), trail = $('#trail');
+    const srcs = ['pour', 'beans', 'croissant', 'teal', 'grind', 'brew', 'roast', 'barista', 'interior', 'table'];
+    const pool = [];
+    for (let i = 0; i < 14; i++) {
+      const img = new Image();
+      img.src = `assets/t-${srcs[i % srcs.length]}.jpg`;
+      img.alt = ''; img.decoding = 'async';
+      trail.appendChild(img); pool.push(img);
+    }
+    let idx = 0, z = 1, last = null, rect = hero.getBoundingClientRect();
+    const updRect = () => { rect = hero.getBoundingClientRect(); };
+    window.addEventListener('scroll', updRect, { passive: true });
+    window.addEventListener('resize', updRect);
+    hero.addEventListener('mousemove', e => {
+      if (!introDone) return;
+      const x = e.clientX - rect.left, y = e.clientY - rect.top;
+      if (!last) { last = { x, y }; return; }
+      const dx = x - last.x, dy = y - last.y;
+      if (Math.hypot(dx, dy) < 95) return;
+      last = { x, y };
+      const img = pool[idx++ % pool.length];
+      gsap.killTweensOf(img);
+      gsap.set(img, { x, y, xPercent: -50, yPercent: -50, zIndex: z++, rotate: gsap.utils.random(-16, 16), scale: .35, opacity: 0 });
+      gsap.timeline()
+        .to(img, { opacity: 1, scale: 1, x: x + dx * .35, y: y + dy * .35, duration: .45, ease: 'expo.out' })
+        .to(img, { opacity: 0, scale: .55, y: '+=60', rotate: '+=8', duration: .7, ease: 'power2.in' }, '+=.35');
+    });
+    hero.addEventListener('mouseleave', () => { last = null; });
+  }
+
+  /* ---------- contextual cursor ---------- */
+  if (mouse) {
+    const cur = $('#cursor');
+    const qx = gsap.quickTo(cur, 'x', { duration: .45, ease: 'power3' });
+    const qy = gsap.quickTo(cur, 'y', { duration: .45, ease: 'power3' });
+    window.addEventListener('mousemove', e => { qx(e.clientX); qy(e.clientY); }, { passive: true });
+    $$('[data-cursor]').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cur.textContent = el.dataset.cursor;
+        gsap.to(cur, { scale: 1, opacity: 1, duration: .35, ease: 'back.out(2)' });
+      });
+      el.addEventListener('mouseleave', () => gsap.to(cur, { scale: 0, opacity: 0, duration: .25 }));
+    });
+    $$('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => { if (el.closest('.atmo')) gsap.to(cur, { scale: .3, opacity: .0, duration: .2 }); });
+      el.addEventListener('mouseleave', () => { if (el.closest('.atmo')) gsap.to(cur, { scale: 1, opacity: 1, duration: .25 }); });
+    });
+    /* магнитные кнопки */
+    $$('[data-magnetic]').forEach(b => {
+      const mx = gsap.quickTo(b, 'x', { duration: .5, ease: 'elastic.out(1,.4)' });
+      const my = gsap.quickTo(b, 'y', { duration: .5, ease: 'elastic.out(1,.4)' });
+      b.addEventListener('mousemove', e => { const r = b.getBoundingClientRect(); mx((e.clientX - r.left - r.width / 2) * .25); my((e.clientY - r.top - r.height / 2) * .35); });
+      b.addEventListener('mouseleave', () => { mx(0); my(0); });
+    });
+  }
+
+  /* ---------- marquees: velocity-reactive ---------- */
+  const marquees = $$('.marquee').map(m => {
+    const track = $('.marquee__track', m), copy = $('.marquee__copy', m);
+    // клонируем, пока одна копия не станет шире контейнера
+    while (copy.scrollWidth < m.clientWidth * 1.05) copy.innerHTML += copy.innerHTML;
+    track.appendChild(copy.cloneNode(true)).setAttribute('aria-hidden', 'true');
+    const dir = +m.dataset.dir || -1;
+    const tween = gsap.fromTo(track, { xPercent: dir < 0 ? 0 : -50 }, { xPercent: dir < 0 ? -50 : 0, duration: +m.dataset.speed || 30, ease: 'none', repeat: -1 });
+    tween.totalTime(tween.duration() * 200);
+    return { tween, ts: 1 };
+  });
+  let scrollDir = 1, boost = 0;
+  ScrollTrigger.create({ start: 0, end: 'max', onUpdate: self => {
+    scrollDir = self.direction;
+    boost = Math.max(boost, Math.min(Math.abs(self.getVelocity()) / 220, 9));
+  }});
+  gsap.ticker.add(() => {
+    boost *= .93;
+    const target = scrollDir * (1 + boost);
+    marquees.forEach(m => { m.ts += (target - m.ts) * .08; m.tween.timeScale(m.ts); });
+  });
+
+  /* ---------- about: words fill on scroll ---------- */
+  (function about() {
+    const p = $('#aboutText');
+    const nodes = Array.from(p.childNodes);
+    p.innerHTML = '';
+    nodes.forEach(n => {
+      if (n.nodeType === 3) {
+        n.textContent.split(/(\s+)/).forEach(w => {
+          if (!w) return;
+          if (/^\s+$/.test(w)) { p.appendChild(document.createTextNode(w)); return; }
+          const s = document.createElement('span'); s.className = 'word'; s.textContent = w; p.appendChild(s);
+        });
+      } else if (n.classList && n.classList.contains('accent')) {
+        n.textContent.split(/(\s+)/).forEach(w => {
+          if (/^\s+$/.test(w)) { p.appendChild(document.createTextNode(w)); return; }
+          const s = document.createElement('span'); s.className = 'word accent'; s.textContent = w; p.appendChild(s);
+        });
+      } else p.appendChild(n);
+    });
+    const items = $$('.word, .ipill', p);
+    gsap.fromTo(items, { opacity: .12 }, { opacity: 1, stagger: .1, ease: 'none',
+      scrollTrigger: { trigger: p, start: 'top 80%', end: 'bottom 45%', scrub: true } });
+    gsap.from($$('.ipill', p), { scale: 0, rotate: -20, duration: .8, ease: 'back.out(2)', stagger: .15,
+      scrollTrigger: { trigger: p, start: 'top 70%', once: true } });
+    $$('[data-count]').forEach(el => {
+      const end = +el.dataset.count; const o = { v: 0 };
+      gsap.to(o, { v: end, duration: 1.6, ease: 'power3.out', onUpdate: () => { el.textContent = Math.round(o.v); },
+        scrollTrigger: { trigger: el, start: 'top 90%', once: true } });
+    });
+    gsap.from('.stat', { y: 40, opacity: 0, duration: .9, ease: 'expo.out', stagger: .08, scrollTrigger: { trigger: '.stats', start: 'top 88%', once: true } });
+  })();
+
+  /* ---------- section reveal (rounded inset → full) ---------- */
+  $$('.process, .beans, .visit').forEach(sec => {
+    gsap.fromTo(sec, { clipPath: 'inset(0% 4% 0% 4% round 56px 56px 0px 0px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px 0px 0px 0px)', ease: 'none',
+      scrollTrigger: { trigger: sec, start: 'top bottom', end: 'top 25%', scrub: true } });
+  });
+
+  const mm = gsap.matchMedia();
+
+  /* ---------- process: pinned scene (desktop) ---------- */
+  mm.add('(min-width: 900px)', () => {
+    const stage = $('#processStage');
+    const pms = $$('.pm', stage), imgs = pms.map(p => $('img', p));
+    const steps = $$('.step', stage);
+    const bars = $$('.pbar__item', stage), fills = bars.map(b => $('b', b));
+    const list = $('#pcountList');
+    const clips = [
+      ['circle(0% at 50% 50%)', 'circle(75% at 50% 50%)'],
+      ['inset(100% 0% 0% 0%)', 'inset(0% 0% 0% 0%)'],
+      ['circle(0% at 100% 100%)', 'circle(150% at 100% 100%)']
+    ];
+    const box = $('#steps');
+    const sizeSteps = () => { box.style.height = Math.max(...steps.map(st => st.offsetHeight)) + 'px'; };
+    sizeSteps();
+    ScrollTrigger.addEventListener('refreshInit', sizeSteps);
+    gsap.set(steps, { autoAlpha: 0, yPercent: 0 });
+    gsap.set(steps[0], { autoAlpha: 1 });
+    pms.forEach((p, i) => { if (i) gsap.set(p, { clipPath: clips[i - 1][0] }); });
+    const starts = [.35, 1.65, 2.95];
+    let curIdx = 0;
+    const tl = gsap.timeline({ defaults: { ease: 'none' },
+      scrollTrigger: { trigger: stage, start: 'top top', end: '+=320%', pin: true, scrub: .8, anticipatePin: 1,
+        onUpdate: self => {
+          const t = self.progress * tl.duration();
+          const idx = t < starts[0] + .5 ? 0 : t < starts[1] + .5 ? 1 : t < starts[2] + .5 ? 2 : 3;
+          if (idx !== curIdx) {
+            curIdx = idx;
+            gsap.to(list, { yPercent: -25 * idx, duration: .6, ease: 'expo.out' });
+            bars.forEach((b, i) => b.classList.toggle('is-active', i <= idx));
+          }
+        } } });
+    tl.fromTo(imgs[0], { scale: 1.12 }, { scale: 1, duration: .35 }, 0);
+    tl.to(fills[0], { scaleX: 1, duration: starts[0] + .5 }, 0);
+    starts.forEach((s, k) => {
+      const i = k + 1;
+      tl.fromTo(pms[i], { clipPath: clips[k][0] }, { clipPath: clips[k][1], duration: 1, ease: 'power1.inOut' }, s)
+        .fromTo(imgs[i], { scale: 1.35 }, { scale: 1, duration: 1.1 }, s)
+        .to(imgs[i - 1], { scale: 1.12, duration: 1 }, s)
+        .to(steps[i - 1], { autoAlpha: 0, yPercent: -18, duration: .4, ease: 'power2.in' }, s + .1)
+        .fromTo(steps[i], { autoAlpha: 0, yPercent: 22 }, { autoAlpha: 1, yPercent: 0, duration: .45, ease: 'power2.out' }, s + .5)
+        .to(fills[i], { scaleX: 1, duration: (starts[k + 1] || 4.1) - s }, s + .5);
+    });
+    tl.to({}, { duration: .3 }, 4.1);
+    return () => { ScrollTrigger.removeEventListener('refreshInit', sizeSteps); box.style.height = ''; gsap.set([steps, pms, imgs, list, fills], { clearProps: 'all' }); };
+  });
+
+  /* process: mobile — vertical steps with reveals */
+  mm.add('(max-width: 899px)', () => {
+    $$('.step').forEach(step => {
+      const img = $('.step__img', step);
+      gsap.fromTo(img, { clipPath: 'inset(18% 10% 18% 10% round 24px)' }, { clipPath: 'inset(0% 0% 0% 0% round 24px)', ease: 'none',
+        scrollTrigger: { trigger: img, start: 'top 95%', end: 'top 40%', scrub: true } });
+      gsap.fromTo($('img', img), { scale: 1.3 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: img, start: 'top bottom', end: 'bottom top', scrub: true } });
+      gsap.from($$('.step__num, h3, p, .chips', step), { y: 30, opacity: 0, duration: .8, stagger: .07, ease: 'expo.out', scrollTrigger: { trigger: step, start: 'top 75%', once: true } });
+    });
+  });
+
+  /* ---------- menu cards entrance ---------- */
+  gsap.set('.mcard', { y: 70, opacity: 0, rotate: () => gsap.utils.random(-4, 4) });
+  window.__menuBatch = ScrollTrigger.batch('.mcard', { start: 'top 94%', once: true,
+    onEnter: els => gsap.to(els, { y: 0, opacity: 1, rotate: 0, duration: .9, stagger: .06, ease: 'expo.out', clearProps: 'transform,opacity' }) });
+  gsap.from('.filter', { y: 20, opacity: 0, stagger: .05, duration: .6, ease: 'expo.out', scrollTrigger: { trigger: '.filters', start: 'top 90%', once: true } });
+
+  /* ---------- beans entrance ---------- */
+  gsap.from('.bcard', { y: 120, rotate: i => [-6, 4, -3, 6][i], opacity: 0, duration: 1.1, stagger: .1, ease: 'expo.out',
+    scrollTrigger: { trigger: '#bgrid', start: 'top 85%', once: true } });
+
+  /* ---------- atmosphere: horizontal ---------- */
+  mm.add('(min-width: 900px)', () => {
+    const sec = $('#atmo'), track = $('#atrack');
+    const dist = () => Math.max(0, track.scrollWidth - innerWidth);
+    const tween = gsap.to(track, { x: () => -dist(), ease: 'none',
+      scrollTrigger: { trigger: sec, start: 'top top', end: () => '+=' + dist(), pin: true, scrub: .7, invalidateOnRefresh: true, anticipatePin: 1,
+        onUpdate: self => gsap.set('#atmoBar', { scaleX: self.progress }) } });
+    $$('.acard', track).forEach(card => {
+      const img = $('img', card);
+      if (img) gsap.fromTo(img, { xPercent: -8 }, { xPercent: 8, ease: 'none',
+        scrollTrigger: { trigger: card, containerAnimation: tween, start: 'left right', end: 'right left', scrub: true } });
+      gsap.from($('figcaption, a', card), { y: 30, opacity: 0, duration: .8, ease: 'expo.out',
+        scrollTrigger: { trigger: card, containerAnimation: tween, start: 'left 85%', once: true } });
+    });
+    return () => gsap.set(track, { clearProps: 'transform' });
+  });
+  mm.add('(max-width: 899px)', () => {
+    const track = $('#atrack'), imgs = $$('.acard__img img', track);
+    let raf = 0;
+    const upd = () => {
+      raf = 0;
+      const vw = innerWidth;
+      imgs.forEach(img => {
+        const r = img.parentElement.getBoundingClientRect();
+        const p = ((r.left + r.width / 2) - vw / 2) / vw; // -1..1
+        img.style.transform = `translate3d(${(-p * 9).toFixed(2)}%,0,0)`;
+      });
+    };
+    const on = () => { if (!raf) raf = requestAnimationFrame(upd); };
+    track.addEventListener('scroll', on, { passive: true });
+    upd();
+    return () => { track.removeEventListener('scroll', on); imgs.forEach(i => (i.style.transform = '')); };
+  });
+
+  /* ---------- visit + footer ---------- */
+  gsap.from('.visit__city, .status, .hours div, .visit__note, .visit .btn', { y: 30, opacity: 0, duration: .8, stagger: .07, ease: 'expo.out',
+    scrollTrigger: { trigger: '.visit__info', start: 'top 70%', once: true } });
+  gsap.fromTo('.visit__pic .ph img', { scale: 1.25 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: '.visit__pic', start: 'top bottom', end: 'bottom top', scrub: true } });
+  gsap.from('.sticker', { scale: 0, rotate: -40, duration: 1, ease: 'back.out(1.8)', scrollTrigger: { trigger: '.visit__pic', start: 'top 70%', once: true } });
+  gsap.from('#footGiant span', { yPercent: 100, duration: 1.2, stagger: .08, ease: 'expo.out', scrollTrigger: { trigger: '#footGiant', start: 'top 98%', once: true } });
+
+  /* refresh after images/fonts settle */
+  window.addEventListener('load', () => ScrollTrigger.refresh());
+  fontsReady.then(() => ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>
